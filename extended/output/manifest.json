@@ -1,0 +1,1525 @@
+{
+  "n_variants": 5,
+  "seed": 0,
+  "time_limit_s": 60,
+  "templates": [
+    {
+      "task_id": "HumanEval/0",
+      "concrete_task_count": 9
+    },
+    {
+      "task_id": "HumanEval/1",
+      "concrete_task_count": 9
+    },
+    {
+      "task_id": "HumanEval/10",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/100",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/101",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/102",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/103",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/104",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/105",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/106",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/107",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/108",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/109",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/11",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/110",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/111",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/112",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/113",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/114",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/115",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/116",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/117",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/118",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/119",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/12",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/120",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/121",
+      "concrete_task_count": 23
+    },
+    {
+      "task_id": "HumanEval/122",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/123",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/124",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/125",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/126",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/127",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/128",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/129",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/13",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/130",
+      "concrete_task_count": 9
+    },
+    {
+      "task_id": "HumanEval/131",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/132",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/133",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/134",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/135",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/136",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/137",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/138",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/139",
+      "concrete_task_count": 9
+    },
+    {
+      "task_id": "HumanEval/14",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/140",
+      "concrete_task_count": 9
+    },
+    {
+      "task_id": "HumanEval/141",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/142",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/143",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/144",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/145",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/146",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/147",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/148",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/149",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/15",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/150",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/151",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/152",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/153",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/154",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/155",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/156",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/157",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/158",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/159",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/16",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/160",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/161",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/162",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/163",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/17",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/18",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/19",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/2",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/20",
+      "concrete_task_count": 7
+    },
+    {
+      "task_id": "HumanEval/21",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/22",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/23",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/24",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/25",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/26",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/27",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/28",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/29",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/3",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/30",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/31",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/32",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/33",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/34",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/35",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/36",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/37",
+      "concrete_task_count": 37
+    },
+    {
+      "task_id": "HumanEval/38",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/39",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/4",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/40",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/41",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/42",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/43",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/44",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/45",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/46",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/47",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/48",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/49",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/5",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/50",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/51",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/52",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/53",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/54",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/55",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/56",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/57",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/58",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/59",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/6",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/60",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/61",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/62",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/63",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/64",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/65",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/66",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/67",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/68",
+      "concrete_task_count": 17
+    },
+    {
+      "task_id": "HumanEval/69",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/7",
+      "concrete_task_count": 16
+    },
+    {
+      "task_id": "HumanEval/70",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/71",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/72",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/73",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/74",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/75",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/76",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/77",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/78",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/79",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/8",
+      "concrete_task_count": 7
+    },
+    {
+      "task_id": "HumanEval/80",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/81",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/82",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/83",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/84",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/85",
+      "concrete_task_count": 20
+    },
+    {
+      "task_id": "HumanEval/86",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/87",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/88",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/89",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/9",
+      "concrete_task_count": 7
+    },
+    {
+      "task_id": "HumanEval/90",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/91",
+      "concrete_task_count": 20
+    },
+    {
+      "task_id": "HumanEval/92",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/93",
+      "concrete_task_count": 11
+    },
+    {
+      "task_id": "HumanEval/94",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/95",
+      "concrete_task_count": 13
+    },
+    {
+      "task_id": "HumanEval/96",
+      "concrete_task_count": 14
+    },
+    {
+      "task_id": "HumanEval/97",
+      "concrete_task_count": 15
+    },
+    {
+      "task_id": "HumanEval/98",
+      "concrete_task_count": 20
+    },
+    {
+      "task_id": "HumanEval/99",
+      "concrete_task_count": 14
+    }
+  ],
+  "variants": [
+    {
+      "variant_id": "V1",
+      "total_lexical": 6.934112451840582,
+      "total_semantic": 19.76137352970239,
+      "total_difficulty": 0.0,
+      "concrete_task_ids": [
+        "HumanEval/0#006",
+        "HumanEval/1#006",
+        "HumanEval/10#003",
+        "HumanEval/100#008",
+        "HumanEval/101#008",
+        "HumanEval/102#004",
+        "HumanEval/103#010",
+        "HumanEval/104#004",
+        "HumanEval/105#005",
+        "HumanEval/106#003",
+        "HumanEval/107#007",
+        "HumanEval/108#002",
+        "HumanEval/109#005",
+        "HumanEval/11#001",
+        "HumanEval/110#005",
+        "HumanEval/111#011",
+        "HumanEval/112#007",
+        "HumanEval/113#004",
+        "HumanEval/114#005",
+        "HumanEval/115#006",
+        "HumanEval/116#003",
+        "HumanEval/117#009",
+        "HumanEval/118#010",
+        "HumanEval/119#011",
+        "HumanEval/12#001",
+        "HumanEval/120#011",
+        "HumanEval/121#022",
+        "HumanEval/122#011",
+        "HumanEval/123#005",
+        "HumanEval/124#005",
+        "HumanEval/125#003",
+        "HumanEval/126#005",
+        "HumanEval/127#004",
+        "HumanEval/128#012",
+        "HumanEval/129#001",
+        "HumanEval/13#003",
+        "HumanEval/130#003",
+        "HumanEval/131#005",
+        "HumanEval/132#010",
+        "HumanEval/133#001",
+        "HumanEval/134#001",
+        "HumanEval/135#011",
+        "HumanEval/136#005",
+        "HumanEval/137#001",
+        "HumanEval/138#005",
+        "HumanEval/139#004",
+        "HumanEval/14#009",
+        "HumanEval/140#002",
+        "HumanEval/141#005",
+        "HumanEval/142#006",
+        "HumanEval/143#008",
+        "HumanEval/144#010",
+        "HumanEval/145#009",
+        "HumanEval/146#007",
+        "HumanEval/147#002",
+        "HumanEval/148#005",
+        "HumanEval/149#007",
+        "HumanEval/15#002",
+        "HumanEval/150#005",
+        "HumanEval/151#007",
+        "HumanEval/152#005",
+        "HumanEval/153#010",
+        "HumanEval/154#011",
+        "HumanEval/155#005",
+        "HumanEval/156#003",
+        "HumanEval/157#009",
+        "HumanEval/158#006",
+        "HumanEval/159#013",
+        "HumanEval/16#004",
+        "HumanEval/160#005",
+        "HumanEval/161#007",
+        "HumanEval/162#011",
+        "HumanEval/163#003",
+        "HumanEval/17#002",
+        "HumanEval/18#013",
+        "HumanEval/19#010",
+        "HumanEval/2#012",
+        "HumanEval/20#006",
+        "HumanEval/21#001",
+        "HumanEval/22#007",
+        "HumanEval/23#007",
+        "HumanEval/24#003",
+        "HumanEval/25#009",
+        "HumanEval/26#005",
+        "HumanEval/27#007",
+        "HumanEval/28#011",
+        "HumanEval/29#003",
+        "HumanEval/3#008",
+        "HumanEval/30#005",
+        "HumanEval/31#005",
+        "HumanEval/32#007",
+        "HumanEval/33#003",
+        "HumanEval/34#004",
+        "HumanEval/35#005",
+        "HumanEval/36#014",
+        "HumanEval/37#016",
+        "HumanEval/38#009",
+        "HumanEval/39#002",
+        "HumanEval/4#008",
+        "HumanEval/40#011",
+        "HumanEval/41#002",
+        "HumanEval/42#005",
+        "HumanEval/43#004",
+        "HumanEval/44#001",
+        "HumanEval/45#005",
+        "HumanEval/46#005",
+        "HumanEval/47#009",
+        "HumanEval/48#010",
+        "HumanEval/49#009",
+        "HumanEval/5#005",
+        "HumanEval/50#001",
+        "HumanEval/51#006",
+        "HumanEval/52#015",
+        "HumanEval/53#007",
+        "HumanEval/54#013",
+        "HumanEval/55#010",
+        "HumanEval/56#001",
+        "HumanEval/57#002",
+        "HumanEval/58#008",
+        "HumanEval/59#009",
+        "HumanEval/6#006",
+        "HumanEval/60#009",
+        "HumanEval/61#007",
+        "HumanEval/62#001",
+        "HumanEval/63#010",
+        "HumanEval/64#007",
+        "HumanEval/65#001",
+        "HumanEval/66#005",
+        "HumanEval/67#011",
+        "HumanEval/68#010",
+        "HumanEval/69#007",
+        "HumanEval/7#011",
+        "HumanEval/70#009",
+        "HumanEval/71#010",
+        "HumanEval/72#001",
+        "HumanEval/73#011",
+        "HumanEval/74#009",
+        "HumanEval/75#001",
+        "HumanEval/76#004",
+        "HumanEval/77#010",
+        "HumanEval/78#005",
+        "HumanEval/79#005",
+        "HumanEval/8#002",
+        "HumanEval/80#001",
+        "HumanEval/81#003",
+        "HumanEval/82#010",
+        "HumanEval/83#005",
+        "HumanEval/84#005",
+        "HumanEval/85#006",
+        "HumanEval/86#009",
+        "HumanEval/87#005",
+        "HumanEval/88#009",
+        "HumanEval/89#005",
+        "HumanEval/9#003",
+        "HumanEval/90#005",
+        "HumanEval/91#011",
+        "HumanEval/92#005",
+        "HumanEval/93#003",
+        "HumanEval/94#004",
+        "HumanEval/95#001",
+        "HumanEval/96#006",
+        "HumanEval/97#014",
+        "HumanEval/98#011",
+        "HumanEval/99#005"
+      ]
+    },
+    {
+      "variant_id": "V2",
+      "total_lexical": 6.93475014683827,
+      "total_semantic": 19.076636445496426,
+      "total_difficulty": 0.0,
+      "concrete_task_ids": [
+        "HumanEval/0#003",
+        "HumanEval/1#007",
+        "HumanEval/10#005",
+        "HumanEval/100#007",
+        "HumanEval/101#013",
+        "HumanEval/102#005",
+        "HumanEval/103#011",
+        "HumanEval/104#005",
+        "HumanEval/105#006",
+        "HumanEval/106#008",
+        "HumanEval/107#006",
+        "HumanEval/108#001",
+        "HumanEval/109#004",
+        "HumanEval/11#004",
+        "HumanEval/110#011",
+        "HumanEval/111#006",
+        "HumanEval/112#001",
+        "HumanEval/113#005",
+        "HumanEval/114#001",
+        "HumanEval/115#013",
+        "HumanEval/116#001",
+        "HumanEval/117#007",
+        "HumanEval/118#006",
+        "HumanEval/119#006",
+        "HumanEval/12#009",
+        "HumanEval/120#001",
+        "HumanEval/121#002",
+        "HumanEval/122#002",
+        "HumanEval/123#010",
+        "HumanEval/124#006",
+        "HumanEval/125#008",
+        "HumanEval/126#006",
+        "HumanEval/127#001",
+        "HumanEval/128#005",
+        "HumanEval/129#007",
+        "HumanEval/13#013",
+        "HumanEval/130#007",
+        "HumanEval/131#004",
+        "HumanEval/132#006",
+        "HumanEval/133#004",
+        "HumanEval/134#003",
+        "HumanEval/135#005",
+        "HumanEval/136#003",
+        "HumanEval/137#004",
+        "HumanEval/138#006",
+        "HumanEval/139#005",
+        "HumanEval/14#014",
+        "HumanEval/140#005",
+        "HumanEval/141#007",
+        "HumanEval/142#010",
+        "HumanEval/143#003",
+        "HumanEval/144#006",
+        "HumanEval/145#001",
+        "HumanEval/146#003",
+        "HumanEval/147#005",
+        "HumanEval/148#003",
+        "HumanEval/149#006",
+        "HumanEval/15#007",
+        "HumanEval/150#001",
+        "HumanEval/151#005",
+        "HumanEval/152#004",
+        "HumanEval/153#004",
+        "HumanEval/154#007",
+        "HumanEval/155#004",
+        "HumanEval/156#001",
+        "HumanEval/157#001",
+        "HumanEval/158#010",
+        "HumanEval/159#009",
+        "HumanEval/16#011",
+        "HumanEval/160#004",
+        "HumanEval/161#001",
+        "HumanEval/162#010",
+        "HumanEval/163#001",
+        "HumanEval/17#005",
+        "HumanEval/18#010",
+        "HumanEval/19#009",
+        "HumanEval/2#013",
+        "HumanEval/20#002",
+        "HumanEval/21#014",
+        "HumanEval/22#006",
+        "HumanEval/23#006",
+        "HumanEval/24#011",
+        "HumanEval/25#014",
+        "HumanEval/26#009",
+        "HumanEval/27#001",
+        "HumanEval/28#010",
+        "HumanEval/29#013",
+        "HumanEval/3#014",
+        "HumanEval/30#002",
+        "HumanEval/31#009",
+        "HumanEval/32#010",
+        "HumanEval/33#001",
+        "HumanEval/34#001",
+        "HumanEval/35#007",
+        "HumanEval/36#011",
+        "HumanEval/37#020",
+        "HumanEval/38#004",
+        "HumanEval/39#011",
+        "HumanEval/4#007",
+        "HumanEval/40#004",
+        "HumanEval/41#005",
+        "HumanEval/42#010",
+        "HumanEval/43#011",
+        "HumanEval/44#013",
+        "HumanEval/45#011",
+        "HumanEval/46#006",
+        "HumanEval/47#005",
+        "HumanEval/48#005",
+        "HumanEval/49#001",
+        "HumanEval/5#003",
+        "HumanEval/50#007",
+        "HumanEval/51#010",
+        "HumanEval/52#002",
+        "HumanEval/53#009",
+        "HumanEval/54#003",
+        "HumanEval/55#006",
+        "HumanEval/56#002",
+        "HumanEval/57#006",
+        "HumanEval/58#015",
+        "HumanEval/59#004",
+        "HumanEval/6#005",
+        "HumanEval/60#005",
+        "HumanEval/61#005",
+        "HumanEval/62#009",
+        "HumanEval/63#005",
+        "HumanEval/64#001",
+        "HumanEval/65#009",
+        "HumanEval/66#011",
+        "HumanEval/67#007",
+        "HumanEval/68#012",
+        "HumanEval/69#009",
+        "HumanEval/7#005",
+        "HumanEval/70#005",
+        "HumanEval/71#013",
+        "HumanEval/72#006",
+        "HumanEval/73#001",
+        "HumanEval/74#013",
+        "HumanEval/75#007",
+        "HumanEval/76#001",
+        "HumanEval/77#007",
+        "HumanEval/78#006",
+        "HumanEval/79#008",
+        "HumanEval/8#001",
+        "HumanEval/80#004",
+        "HumanEval/81#004",
+        "HumanEval/82#005",
+        "HumanEval/83#006",
+        "HumanEval/84#010",
+        "HumanEval/85#002",
+        "HumanEval/86#011",
+        "HumanEval/87#011",
+        "HumanEval/88#004",
+        "HumanEval/89#009",
+        "HumanEval/9#001",
+        "HumanEval/90#010",
+        "HumanEval/91#003",
+        "HumanEval/92#001",
+        "HumanEval/93#005",
+        "HumanEval/94#001",
+        "HumanEval/95#005",
+        "HumanEval/96#010",
+        "HumanEval/97#001",
+        "HumanEval/98#006",
+        "HumanEval/99#007"
+      ]
+    },
+    {
+      "variant_id": "V3",
+      "total_lexical": 6.934081276970988,
+      "total_semantic": 17.872859165085515,
+      "total_difficulty": 0.0,
+      "concrete_task_ids": [
+        "HumanEval/0#001",
+        "HumanEval/1#003",
+        "HumanEval/10#008",
+        "HumanEval/100#005",
+        "HumanEval/101#004",
+        "HumanEval/102#009",
+        "HumanEval/103#005",
+        "HumanEval/104#001",
+        "HumanEval/105#009",
+        "HumanEval/106#007",
+        "HumanEval/107#002",
+        "HumanEval/108#007",
+        "HumanEval/109#011",
+        "HumanEval/11#011",
+        "HumanEval/110#006",
+        "HumanEval/111#005",
+        "HumanEval/112#003",
+        "HumanEval/113#001",
+        "HumanEval/114#007",
+        "HumanEval/115#014",
+        "HumanEval/116#008",
+        "HumanEval/117#004",
+        "HumanEval/118#005",
+        "HumanEval/119#005",
+        "HumanEval/12#007",
+        "HumanEval/120#013",
+        "HumanEval/121#009",
+        "HumanEval/122#001",
+        "HumanEval/123#006",
+        "HumanEval/124#011",
+        "HumanEval/125#005",
+        "HumanEval/126#011",
+        "HumanEval/127#009",
+        "HumanEval/128#006",
+        "HumanEval/129#010",
+        "HumanEval/13#014",
+        "HumanEval/130#008",
+        "HumanEval/131#001",
+        "HumanEval/132#007",
+        "HumanEval/133#007",
+        "HumanEval/134#008",
+        "HumanEval/135#007",
+        "HumanEval/136#009",
+        "HumanEval/137#009",
+        "HumanEval/138#011",
+        "HumanEval/139#003",
+        "HumanEval/14#010",
+        "HumanEval/140#001",
+        "HumanEval/141#006",
+        "HumanEval/142#011",
+        "HumanEval/143#002",
+        "HumanEval/144#005",
+        "HumanEval/145#005",
+        "HumanEval/146#008",
+        "HumanEval/147#006",
+        "HumanEval/148#001",
+        "HumanEval/149#002",
+        "HumanEval/15#009",
+        "HumanEval/150#010",
+        "HumanEval/151#009",
+        "HumanEval/152#002",
+        "HumanEval/153#001",
+        "HumanEval/154#010",
+        "HumanEval/155#009",
+        "HumanEval/156#007",
+        "HumanEval/157#014",
+        "HumanEval/158#007",
+        "HumanEval/159#014",
+        "HumanEval/16#005",
+        "HumanEval/160#010",
+        "HumanEval/161#003",
+        "HumanEval/162#006",
+        "HumanEval/163#014",
+        "HumanEval/17#007",
+        "HumanEval/18#006",
+        "HumanEval/19#001",
+        "HumanEval/2#008",
+        "HumanEval/20#001",
+        "HumanEval/21#013",
+        "HumanEval/22#011",
+        "HumanEval/23#008",
+        "HumanEval/24#013",
+        "HumanEval/25#002",
+        "HumanEval/26#010",
+        "HumanEval/27#005",
+        "HumanEval/28#006",
+        "HumanEval/29#014",
+        "HumanEval/3#007",
+        "HumanEval/30#010",
+        "HumanEval/31#004",
+        "HumanEval/32#002",
+        "HumanEval/33#007",
+        "HumanEval/34#007",
+        "HumanEval/35#010",
+        "HumanEval/36#007",
+        "HumanEval/37#013",
+        "HumanEval/38#011",
+        "HumanEval/39#006",
+        "HumanEval/4#014",
+        "HumanEval/40#001",
+        "HumanEval/41#009",
+        "HumanEval/42#011",
+        "HumanEval/43#005",
+        "HumanEval/44#014",
+        "HumanEval/45#014",
+        "HumanEval/46#007",
+        "HumanEval/47#004",
+        "HumanEval/48#011",
+        "HumanEval/49#007",
+        "HumanEval/5#006",
+        "HumanEval/50#009",
+        "HumanEval/51#007",
+        "HumanEval/52#008",
+        "HumanEval/53#006",
+        "HumanEval/54#009",
+        "HumanEval/55#005",
+        "HumanEval/56#009",
+        "HumanEval/57#010",
+        "HumanEval/58#011",
+        "HumanEval/59#005",
+        "HumanEval/6#011",
+        "HumanEval/60#003",
+        "HumanEval/61#001",
+        "HumanEval/62#007",
+        "HumanEval/63#007",
+        "HumanEval/64#009",
+        "HumanEval/65#004",
+        "HumanEval/66#006",
+        "HumanEval/67#005",
+        "HumanEval/68#005",
+        "HumanEval/69#005",
+        "HumanEval/7#006",
+        "HumanEval/70#001",
+        "HumanEval/71#014",
+        "HumanEval/72#011",
+        "HumanEval/73#005",
+        "HumanEval/74#001",
+        "HumanEval/75#004",
+        "HumanEval/76#005",
+        "HumanEval/77#011",
+        "HumanEval/78#011",
+        "HumanEval/79#003",
+        "HumanEval/8#005",
+        "HumanEval/80#005",
+        "HumanEval/81#011",
+        "HumanEval/82#006",
+        "HumanEval/83#011",
+        "HumanEval/84#011",
+        "HumanEval/85#010",
+        "HumanEval/86#005",
+        "HumanEval/87#007",
+        "HumanEval/88#001",
+        "HumanEval/89#008",
+        "HumanEval/9#006",
+        "HumanEval/90#007",
+        "HumanEval/91#006",
+        "HumanEval/92#010",
+        "HumanEval/93#001",
+        "HumanEval/94#007",
+        "HumanEval/95#007",
+        "HumanEval/96#007",
+        "HumanEval/97#009",
+        "HumanEval/98#002",
+        "HumanEval/99#006"
+      ]
+    },
+    {
+      "variant_id": "V4",
+      "total_lexical": 6.935204318878798,
+      "total_semantic": 21.017277300234124,
+      "total_difficulty": 0.0,
+      "concrete_task_ids": [
+        "HumanEval/0#004",
+        "HumanEval/1#001",
+        "HumanEval/10#007",
+        "HumanEval/100#004",
+        "HumanEval/101#003",
+        "HumanEval/102#010",
+        "HumanEval/103#007",
+        "HumanEval/104#007",
+        "HumanEval/105#003",
+        "HumanEval/106#005",
+        "HumanEval/107#010",
+        "HumanEval/108#008",
+        "HumanEval/109#006",
+        "HumanEval/11#009",
+        "HumanEval/110#007",
+        "HumanEval/111#007",
+        "HumanEval/112#009",
+        "HumanEval/113#008",
+        "HumanEval/114#009",
+        "HumanEval/115#011",
+        "HumanEval/116#007",
+        "HumanEval/117#005",
+        "HumanEval/118#011",
+        "HumanEval/119#007",
+        "HumanEval/12#004",
+        "HumanEval/120#014",
+        "HumanEval/121#003",
+        "HumanEval/122#009",
+        "HumanEval/123#007",
+        "HumanEval/124#010",
+        "HumanEval/125#001",
+        "HumanEval/126#007",
+        "HumanEval/127#010",
+        "HumanEval/128#007",
+        "HumanEval/129#005",
+        "HumanEval/13#009",
+        "HumanEval/130#004",
+        "HumanEval/131#009",
+        "HumanEval/132#011",
+        "HumanEval/133#011",
+        "HumanEval/134#004",
+        "HumanEval/135#006",
+        "HumanEval/136#007",
+        "HumanEval/137#005",
+        "HumanEval/138#007",
+        "HumanEval/139#001",
+        "HumanEval/14#011",
+        "HumanEval/140#003",
+        "HumanEval/141#010",
+        "HumanEval/142#005",
+        "HumanEval/143#010",
+        "HumanEval/144#011",
+        "HumanEval/145#007",
+        "HumanEval/146#005",
+        "HumanEval/147#010",
+        "HumanEval/148#004",
+        "HumanEval/149#010",
+        "HumanEval/15#001",
+        "HumanEval/150#011",
+        "HumanEval/151#001",
+        "HumanEval/152#001",
+        "HumanEval/153#005",
+        "HumanEval/154#005",
+        "HumanEval/155#001",
+        "HumanEval/156#008",
+        "HumanEval/157#003",
+        "HumanEval/158#005",
+        "HumanEval/159#011",
+        "HumanEval/16#001",
+        "HumanEval/160#011",
+        "HumanEval/161#005",
+        "HumanEval/162#005",
+        "HumanEval/163#009",
+        "HumanEval/17#006",
+        "HumanEval/18#014",
+        "HumanEval/19#006",
+        "HumanEval/2#004",
+        "HumanEval/20#004",
+        "HumanEval/21#009",
+        "HumanEval/22#010",
+        "HumanEval/23#001",
+        "HumanEval/24#014",
+        "HumanEval/25#011",
+        "HumanEval/26#006",
+        "HumanEval/27#004",
+        "HumanEval/28#007",
+        "HumanEval/29#001",
+        "HumanEval/3#006",
+        "HumanEval/30#006",
+        "HumanEval/31#011",
+        "HumanEval/32#006",
+        "HumanEval/33#005",
+        "HumanEval/34#009",
+        "HumanEval/35#011",
+        "HumanEval/36#008",
+        "HumanEval/37#015",
+        "HumanEval/38#008",
+        "HumanEval/39#005",
+        "HumanEval/4#006",
+        "HumanEval/40#009",
+        "HumanEval/41#014",
+        "HumanEval/42#006",
+        "HumanEval/43#009",
+        "HumanEval/44#009",
+        "HumanEval/45#010",
+        "HumanEval/46#010",
+        "HumanEval/47#001",
+        "HumanEval/48#006",
+        "HumanEval/49#005",
+        "HumanEval/5#009",
+        "HumanEval/50#008",
+        "HumanEval/51#005",
+        "HumanEval/52#007",
+        "HumanEval/53#003",
+        "HumanEval/54#001",
+        "HumanEval/55#004",
+        "HumanEval/56#005",
+        "HumanEval/57#005",
+        "HumanEval/58#002",
+        "HumanEval/59#007",
+        "HumanEval/6#010",
+        "HumanEval/60#001",
+        "HumanEval/61#004",
+        "HumanEval/62#002",
+        "HumanEval/63#011",
+        "HumanEval/64#005",
+        "HumanEval/65#005",
+        "HumanEval/66#007",
+        "HumanEval/67#006",
+        "HumanEval/68#011",
+        "HumanEval/69#001",
+        "HumanEval/7#009",
+        "HumanEval/70#007",
+        "HumanEval/71#011",
+        "HumanEval/72#013",
+        "HumanEval/73#009",
+        "HumanEval/74#014",
+        "HumanEval/75#009",
+        "HumanEval/76#010",
+        "HumanEval/77#006",
+        "HumanEval/78#010",
+        "HumanEval/79#007",
+        "HumanEval/8#004",
+        "HumanEval/80#007",
+        "HumanEval/81#010",
+        "HumanEval/82#007",
+        "HumanEval/83#009",
+        "HumanEval/84#006",
+        "HumanEval/85#011",
+        "HumanEval/86#004",
+        "HumanEval/87#006",
+        "HumanEval/88#007",
+        "HumanEval/89#003",
+        "HumanEval/9#004",
+        "HumanEval/90#006",
+        "HumanEval/91#002",
+        "HumanEval/92#011",
+        "HumanEval/93#007",
+        "HumanEval/94#005",
+        "HumanEval/95#004",
+        "HumanEval/96#011",
+        "HumanEval/97#013",
+        "HumanEval/98#014",
+        "HumanEval/99#011"
+      ]
+    },
+    {
+      "variant_id": "V5",
+      "total_lexical": 6.936890276821532,
+      "total_semantic": 18.813293260775556,
+      "total_difficulty": 0.0,
+      "concrete_task_ids": [
+        "HumanEval/0#008",
+        "HumanEval/1#004",
+        "HumanEval/10#006",
+        "HumanEval/100#003",
+        "HumanEval/101#002",
+        "HumanEval/102#001",
+        "HumanEval/103#006",
+        "HumanEval/104#009",
+        "HumanEval/105#008",
+        "HumanEval/106#009",
+        "HumanEval/107#005",
+        "HumanEval/108#005",
+        "HumanEval/109#010",
+        "HumanEval/11#007",
+        "HumanEval/110#010",
+        "HumanEval/111#010",
+        "HumanEval/112#008",
+        "HumanEval/113#003",
+        "HumanEval/114#004",
+        "HumanEval/115#001",
+        "HumanEval/116#005",
+        "HumanEval/117#001",
+        "HumanEval/118#007",
+        "HumanEval/119#010",
+        "HumanEval/12#003",
+        "HumanEval/120#004",
+        "HumanEval/121#011",
+        "HumanEval/122#014",
+        "HumanEval/123#011",
+        "HumanEval/124#007",
+        "HumanEval/125#007",
+        "HumanEval/126#010",
+        "HumanEval/127#005",
+        "HumanEval/128#004",
+        "HumanEval/129#011",
+        "HumanEval/13#001",
+        "HumanEval/130#006",
+        "HumanEval/131#010",
+        "HumanEval/132#005",
+        "HumanEval/133#009",
+        "HumanEval/134#005",
+        "HumanEval/135#010",
+        "HumanEval/136#004",
+        "HumanEval/137#007",
+        "HumanEval/138#010",
+        "HumanEval/139#006",
+        "HumanEval/14#002",
+        "HumanEval/140#006",
+        "HumanEval/141#011",
+        "HumanEval/142#007",
+        "HumanEval/143#005",
+        "HumanEval/144#007",
+        "HumanEval/145#004",
+        "HumanEval/146#002",
+        "HumanEval/147#011",
+        "HumanEval/148#009",
+        "HumanEval/149#005",
+        "HumanEval/15#004",
+        "HumanEval/150#009",
+        "HumanEval/151#004",
+        "HumanEval/152#011",
+        "HumanEval/153#007",
+        "HumanEval/154#006",
+        "HumanEval/155#007",
+        "HumanEval/156#006",
+        "HumanEval/157#013",
+        "HumanEval/158#011",
+        "HumanEval/159#001",
+        "HumanEval/16#009",
+        "HumanEval/160#006",
+        "HumanEval/161#008",
+        "HumanEval/162#007",
+        "HumanEval/163#013",
+        "HumanEval/17#010",
+        "HumanEval/18#002",
+        "HumanEval/19#005",
+        "HumanEval/2#009",
+        "HumanEval/20#005",
+        "HumanEval/21#003",
+        "HumanEval/22#005",
+        "HumanEval/23#003",
+        "HumanEval/24#001",
+        "HumanEval/25#003",
+        "HumanEval/26#002",
+        "HumanEval/27#011",
+        "HumanEval/28#005",
+        "HumanEval/29#009",
+        "HumanEval/3#002",
+        "HumanEval/30#009",
+        "HumanEval/31#001",
+        "HumanEval/32#005",
+        "HumanEval/33#009",
+        "HumanEval/34#005",
+        "HumanEval/35#006",
+        "HumanEval/36#002",
+        "HumanEval/37#001",
+        "HumanEval/38#003",
+        "HumanEval/39#007",
+        "HumanEval/4#002",
+        "HumanEval/40#005",
+        "HumanEval/41#011",
+        "HumanEval/42#002",
+        "HumanEval/43#001",
+        "HumanEval/44#011",
+        "HumanEval/45#015",
+        "HumanEval/46#011",
+        "HumanEval/47#007",
+        "HumanEval/48#007",
+        "HumanEval/49#004",
+        "HumanEval/5#014",
+        "HumanEval/50#004",
+        "HumanEval/51#011",
+        "HumanEval/52#011",
+        "HumanEval/53#008",
+        "HumanEval/54#014",
+        "HumanEval/55#011",
+        "HumanEval/56#004",
+        "HumanEval/57#009",
+        "HumanEval/58#007",
+        "HumanEval/59#001",
+        "HumanEval/6#001",
+        "HumanEval/60#008",
+        "HumanEval/61#009",
+        "HumanEval/62#004",
+        "HumanEval/63#006",
+        "HumanEval/64#004",
+        "HumanEval/65#011",
+        "HumanEval/66#010",
+        "HumanEval/67#010",
+        "HumanEval/68#015",
+        "HumanEval/69#004",
+        "HumanEval/7#003",
+        "HumanEval/70#004",
+        "HumanEval/71#001",
+        "HumanEval/72#014",
+        "HumanEval/73#004",
+        "HumanEval/74#003",
+        "HumanEval/75#005",
+        "HumanEval/76#009",
+        "HumanEval/77#005",
+        "HumanEval/78#002",
+        "HumanEval/79#002",
+        "HumanEval/8#003",
+        "HumanEval/80#009",
+        "HumanEval/81#006",
+        "HumanEval/82#002",
+        "HumanEval/83#010",
+        "HumanEval/84#007",
+        "HumanEval/85#014",
+        "HumanEval/86#001",
+        "HumanEval/87#010",
+        "HumanEval/88#005",
+        "HumanEval/89#001",
+        "HumanEval/9#002",
+        "HumanEval/90#011",
+        "HumanEval/91#015",
+        "HumanEval/92#009",
+        "HumanEval/93#002",
+        "HumanEval/94#009",
+        "HumanEval/95#002",
+        "HumanEval/96#005",
+        "HumanEval/97#007",
+        "HumanEval/98#017",
+        "HumanEval/99#010"
+      ]
+    }
+  ]
+}
