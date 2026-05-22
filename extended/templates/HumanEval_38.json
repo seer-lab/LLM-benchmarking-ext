@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/38",
+  "entry_point": "decode_cyclic",
+  "notes": "Decode strings produced by encode_cyclic. The helper encode_cyclic is in the prompt; kept intact since the decode solution relies on it. Tiny docstring so identifier rename carries most variation.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef encode_cyclic(s: str):\n    \"\"\"\n    returns encoded string by cycling groups of three characters.\n    \"\"\"\n    # split string to groups. Each of length 3.\n    groups = [s[(3 * i):min((3 * i + 3), len(s))] for i in range((len(s) + 2) // 3)]\n    # cycle elements in each group. Unless group has fewer elements than 3.\n    groups = [(group[1:] + group[0]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)\n\n\ndef <fn>(<arg1>: str):\n    \"\"\"\n    takes as input <encoded_phrase>. <return_verb> <decoded_phrase>.\n    \"\"\"\n",
+  "templated_solution": "    return encode_cyclic(encode_cyclic(<arg1>))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["decode_cyclic", "undo_cyclic_encoding", "reverse_cyclic"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "encoded", "text"]},
+    {"name": "encoded_phrase", "kind": "lexical", "values": ["string encoded with encode_cyclic function", "the output of encode_cyclic", "a string previously encoded by encode_cyclic"]},
+    {"name": "decoded_phrase", "kind": "lexical", "values": ["decoded string", "the original string", "the original pre-encoded text"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Returns", "Outputs", "Produces"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

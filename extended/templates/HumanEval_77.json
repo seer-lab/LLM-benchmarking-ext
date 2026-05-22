@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/77",
+  "entry_point": "iscube",
+  "notes": "Is a a perfect cube (sign-independent).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    <write_verb> a function that takes an integer a and returns True \n    if this ingeger is a <cube_phrase>.\n    Note: you may assume the input is always valid.\n    Examples:\n    <fn>(1) ==> True\n    <fn>(2) ==> False\n    <fn>(-1) ==> True\n    <fn>(64) ==> True\n    <fn>(0) ==> True\n    <fn>(180) ==> False\n    '''\n",
+  "templated_solution": "    <arg1> = abs(<arg1>)\n    return int(round(<arg1> ** (1. / 3))) ** 3 == <arg1>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["iscube", "is_perfect_cube", "is_cube_of_integer"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "n", "value"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "cube_phrase", "kind": "lexical", "values": ["cube of some integer number", "perfect integer cube", "third power of an integer"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "HumanEval/8",
+  "entry_point": "sum_product",
+  "notes": "Paper problem_8. The paper additionally varied the math operations (sum/product \u2192 product/cumulative_sum, etc.) but those change the function's behavior and would break the original HumanEval test. Only the wording of 'integers' is varied here under keep_original.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List, Tuple\n\n\ndef <fn>(<arg1>: List[int]) -> Tuple[int, int]:\n    \"\"\" For a given list of <items_word>, return a tuple consisting of a sum and a product of all the integers in a list.\n    Empty sum should be equal to 0 and empty product should be equal to 1.\n    >>> <fn>([])\n    (0, 1)\n    >>> <fn>([1, 2, 3, 4])\n    (10, 24)\n    \"\"\"\n",
+  "templated_solution": "    sum_value = 0\n    prod_value = 1\n\n    for n in <arg1>:\n        sum_value += n\n        prod_value *= n\n    return sum_value, prod_value\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "sum_product"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "numbers"
+      ]
+    },
+    {
+      "name": "items_word",
+      "kind": "lexical",
+      "values": [
+        "integers",
+        "numbers",
+        "values",
+        "elements",
+        "data points",
+        "whole numbers",
+        "int values"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

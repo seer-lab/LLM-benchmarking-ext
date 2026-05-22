@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/155",
+  "entry_point": "even_odd_count",
+  "notes": "Count even and odd digits.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Given an integer. <return_verb> a tuple that has the number of <even_word> and <odd_word> digits respectively.\n\n     Example:\n        <fn>(-12) ==> (1, 1)\n        <fn>(123) ==> (1, 2)\n    \"\"\"\n",
+  "templated_solution": "    even_count = 0\n    odd_count = 0\n    for i in str(abs(<arg1>)):\n        if int(i)%2==0:\n            even_count +=1\n        else:\n            odd_count +=1\n    return (even_count, odd_count)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["even_odd_count", "digit_parity_counts", "count_digits_by_parity"]},
+    {"name": "arg1", "kind": "identifier", "values": ["num", "n", "value"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]},
+    {"name": "even_word", "kind": "lexical", "values": ["even", "even-valued", "divisible-by-two"]},
+    {"name": "odd_word", "kind": "lexical", "values": ["odd", "odd-valued", "not-divisible-by-two"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

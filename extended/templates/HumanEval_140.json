@@ -1,0 +1,14 @@
+{
+  "task_id": "HumanEval/140",
+  "entry_point": "fix_spaces",
+  "notes": "Replace 1-2 spaces with '_', 3+ consecutive spaces with '-'.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a string text, replace all spaces in it with underscores, \n    and if a string has more than 2 consecutive spaces, \n    then replace all consecutive spaces with - \n    \n    <fn>(\"Example\") == \"Example\"\n    <fn>(\"Example 1\") == \"Example_1\"\n    <fn>(\" Example 2\") == \"_Example_2\"\n    <fn>(\" Example   3\") == \"_Example-3\"\n    \"\"\"\n",
+  "templated_solution": "    new_text = \"\"\n    i = 0\n    start, end = 0, 0\n    while i < len(<arg1>):\n        if <arg1>[i] == \" \":\n            end += 1\n        else:\n            if end - start > 2:\n                new_text += \"-\"+<arg1>[i]\n            elif end - start > 0:\n                new_text += \"_\"*(end - start)+<arg1>[i]\n            else:\n                new_text += <arg1>[i]\n            start, end = i+1, i+1\n        i+=1\n    if end - start > 2:\n        new_text += \"-\"\n    elif end - start > 0:\n        new_text += \"_\"\n    return new_text\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["fix_spaces", "replace_runs_of_spaces", "normalize_spaces"]},
+    {"name": "arg1", "kind": "identifier", "values": ["text", "s", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

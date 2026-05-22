@@ -1,0 +1,56 @@
+problem_5_versions = {
+    "problem": "Problem 5",
+    "meta_prompt": "Given a list of <X>, calculate the <Y> around the <Z> of this dataset. The <Y> is the average absolute difference between each element and a central point (in this case, the <Z>).",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a list of input numbers, calculate the Mean Absolute Deviation (MAD) around the mean of this dataset. The MAD is the average absolute difference between each element and a central point (in this case, the mean).",
+            "assertions": [
+                {"input": {"numbers": [1.0, 2.0, 3.0]}, "output": 0.6666666666666666},
+                {"input": {"numbers": [1.0, 2.0, 3.0, 4.0]}, "output": 1.0},
+                {"input": {"numbers": [1.0, 2.0, 3.0, 4.0, 5.0]}, "output": 1.2},
+                {"input": {"numbers": [10.0, 20.0, 30.0]}, "output": 6.666666666666667}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a list of data points, calculate the average absolute deviation around the mean of this dataset. The average absolute deviation is the average absolute difference between each element and a central point (in this case, the mean).",
+            "assertions": [
+                {"input": {"numbers": [2.0, 4.0, 6.0, 8.0]}, "output": 2.0},
+                {"input": {"numbers": [1.0, 1.0, 1.0]}, "output": 0.0},
+                {"input": {"numbers": [1.5, 2.5, 3.5]}, "output": 0.6666666666666666},
+                {"input": {"numbers": [7.0, 8.0, 9.0, 10.0, 11.0]}, "output": 1.2}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a list of values, calculate the mean deviation around the average of this dataset. The mean deviation is the average absolute difference between each element and a central point (in this case, the average).",
+            "assertions": [
+                {"input": {"numbers": [1.0, 3.0, 5.0]}, "output": 1.3333333333333333},
+                {"input": {"numbers": [10.0, 20.0, 30.0, 40.0]}, "output": 10.0},
+                {"input": {"numbers": [5.0, 10.0, 15.0]}, "output": 3.3333333333333335},
+                {"input": {"numbers": [0.0, 0.0, 0.0]}, "output": 0.0}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a list of measurements, calculate the mean absolute distance around the mean of this dataset. The mean absolute distance is the average absolute difference between each element and a central point (in this case, the mean).",
+            "assertions": [
+                {"input": {"numbers": [4.0, 4.0, 4.0, 4.0]}, "output": 0.0},
+                {"input": {"numbers": [5.0, 15.0, 25.0]}, "output": 6.666666666666667},
+                {"input": {"numbers": [7.0, 7.5, 8.5, 9.0]}, "output": 0.75},
+                {"input": {"numbers": [2.0, 3.0, 4.0, 5.0]}, "output": 1.0}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a list of data points, calculate the average absolute deviation around the central value of this dataset. The average absolute deviation is the average absolute difference between each element and a central point (in this case, the central value).",
+            "assertions": [
+                {"input": {"numbers": [5.5, 6.5, 7.5]}, "output": 0.6666666666666666},
+                {"input": {"numbers": [1.0, 3.0, 3.0, 1.0]}, "output": 1.0},
+                {"input": {"numbers": [8.0, 9.0, 10.0]}, "output": 0.6666666666666666},
+                {"input": {"numbers": [3.3, 4.4, 5.5]}, "output": 0.7333333333333334}
+            ]
+        }
+    ]
+}

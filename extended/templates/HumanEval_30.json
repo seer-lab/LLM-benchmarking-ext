@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/30",
+  "entry_point": "get_positive",
+  "notes": "Return strictly positive elements. Lexical variation on the 'positive' descriptor (strictly > 0, not >= 0).",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> only <positive_phrase> in the list.\n    >>> <fn>([-1, 2, -4, 5, 6])\n    [2, 5, 6]\n    >>> <fn>([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    [5, 3, 2, 3, 9, 123, 1]\n    \"\"\"\n",
+  "templated_solution": "    return [e for e in <arg1> if e > 0]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["get_positive", "only_positive", "filter_positive"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "numbers", "lst"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Keep", "Select"]},
+    {"name": "positive_phrase", "kind": "lexical", "values": ["positive numbers", "numbers greater than zero", "strictly positive values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

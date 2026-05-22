@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/29",
+  "entry_point": "filter_by_prefix",
+  "notes": "Filter strings that startswith prefix. Lexical variation on 'filter ... start with', plus standard string/prefix nouns.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[str], <arg2>: str) -> List[str]:\n    \"\"\" <filter_phrase> an input list of <string_word> only for ones that start with a given <prefix_word>.\n    >>> <fn>([], 'a')\n    []\n    >>> <fn>(['abc', 'bcd', 'cde', 'array'], 'a')\n    ['abc', 'array']\n    \"\"\"\n",
+  "templated_solution": "    return [x for x in <arg1> if x.startswith(<arg2>)]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["filter_by_prefix", "prefix_filter", "starts_with_filter"]},
+    {"name": "arg1", "kind": "identifier", "values": ["strings", "items", "words"]},
+    {"name": "arg2", "kind": "identifier", "values": ["prefix", "lead", "starter"]},
+    {"name": "filter_phrase", "kind": "lexical", "values": ["Filter", "Keep only entries from", "Retain from"]},
+    {"name": "string_word", "kind": "lexical", "values": ["strings", "words", "text values"]},
+    {"name": "prefix_word", "kind": "lexical", "values": ["prefix", "starting fragment", "leading substring"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

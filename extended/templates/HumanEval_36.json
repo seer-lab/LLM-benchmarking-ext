@@ -1,0 +1,19 @@
+{
+  "task_id": "HumanEval/36",
+  "entry_point": "fizz_buzz",
+  "notes": "Count occurrences of digit 7 in integers < n divisible by 11 or 13. The digits/divisors are values not wording — leave intact.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"<return_verb> the <count_word> the <digit_phrase> appears in <integers_phrase> less than n which are <divisible_phrase>.\n    >>> <fn>(50)\n    0\n    >>> <fn>(78)\n    2\n    >>> <fn>(79)\n    3\n    \"\"\"\n",
+  "templated_solution": "    ns = []\n    for i in range(<arg1>):\n        if i % 11 == 0 or i % 13 == 0:\n            ns.append(i)\n    s = ''.join(list(map(str, ns)))\n    ans = 0\n    for c in s:\n        ans += (c == '7')\n    return ans\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["fizz_buzz", "count_sevens_in_multiples", "sevens_below_n"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "upper", "limit"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Count and return"]},
+    {"name": "count_word", "kind": "lexical", "values": ["number of times", "count of times", "total number of times"]},
+    {"name": "digit_phrase", "kind": "lexical", "values": ["digit 7", "numeral 7", "digit seven"]},
+    {"name": "integers_phrase", "kind": "lexical", "values": ["integers", "positive integers", "whole numbers"]},
+    {"name": "divisible_phrase", "kind": "lexical", "values": ["divisible by 11 or 13", "multiples of 11 or 13", "evenly divisible by 11 or by 13"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

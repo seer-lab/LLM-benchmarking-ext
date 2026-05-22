@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/87",
+  "entry_point": "get_row",
+  "notes": "Find x in jagged 2D list, return coordinates with specific sort order.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"\n    You are given a 2 dimensional data, as a <nested_word>,\n    which is similar to matrix, however, unlike matrices,\n    each row may contain a different number of columns.\n    Given lst, and integer x, find integers x in the list,\n    and return list of tuples, [(x1, y1), (x2, y2) ...] such that\n    each tuple is a coordinate - (row, columns), starting with 0.\n    Sort coordinates initially by rows in ascending order.\n    Also, sort coordinates of the row by columns in descending order.\n    \n    Examples:\n    <fn>([\n      [1,2,3,4,5,6],\n      [1,2,3,4,1,6],\n      [1,2,3,4,5,1]\n    ], 1) == [(0, 0), (1, 4), (1, 0), (2, 5), (2, 0)]\n    <fn>([], 1) == []\n    <fn>([[], [1], [1, 2, 3]], 3) == [(2, 2)]\n    \"\"\"\n",
+  "templated_solution": "    coords = [(i, j) for i in range(len(<arg1>)) for j in range(len(<arg1>[i])) if <arg1>[i][j] == <arg2>]\n    return sorted(sorted(coords, key=lambda x: x[1], reverse=True), key=lambda x: x[0])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["get_row", "find_coords_of_x", "locate_value_coords"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "matrix", "grid"]},
+    {"name": "arg2", "kind": "identifier", "values": ["x", "target", "value"]},
+    {"name": "nested_word", "kind": "lexical", "values": ["nested lists", "list of lists", "jagged 2D array"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

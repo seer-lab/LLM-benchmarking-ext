@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/85",
+  "entry_point": "add",
+  "notes": "Sum even elements at odd indices. Same fn name as HE/53 but distinct problem.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Given a non-empty list of integers lst. <add_verb> the <even_word> elements that are at <odd_word>..\n\n\n    Examples:\n        <fn>([4, 2, 6, 7]) ==> 2 \n    \"\"\"\n",
+  "templated_solution": "    return sum([<arg1>[i] for i in range(1, len(<arg1>), 2) if <arg1>[i]%2 == 0])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["add", "sum_even_at_odd_indices", "even_at_odd_total"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "items"]},
+    {"name": "add_verb", "kind": "lexical", "values": ["add", "sum", "compute the total of"]},
+    {"name": "even_word", "kind": "lexical", "values": ["even", "evenly divisible", "divisible by 2"]},
+    {"name": "odd_word", "kind": "lexical", "values": ["odd indices", "odd positions", "indexes 1, 3, 5, ..."]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

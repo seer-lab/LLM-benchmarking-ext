@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/151",
+  "entry_point": "double_the_difference",
+  "notes": "Sum of squares of positive odd integers in the list.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    Given a list of numbers, <return_verb> the <sum_phrase> of <squared_word> of the numbers\n    in the list that are odd. Ignore numbers that are negative or not integers.\n    \n    <fn>([1, 3, 2, 0]) == 1 + 9 + 0 + 0 = 10\n    <fn>([-1, -2, 0]) == 0\n    <fn>([9, -2]) == 81\n    <fn>([0]) == 0  \n   \n    If the input list is empty, return 0.\n    '''\n",
+  "templated_solution": "    return sum([i**2 for i in <arg1> if i > 0 and i%2!=0 and \".\" not in str(i)])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["double_the_difference", "sum_of_squares_positive_odd_ints", "positive_odd_int_squared_sum"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "values"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "compute"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "cumulative sum"]},
+    {"name": "squared_word", "kind": "lexical", "values": ["squares", "squared values", "second powers"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,20 @@
+{
+  "task_id": "HumanEval/18",
+  "entry_point": "how_many_times",
+  "notes": "Counts substring occurrences including overlaps. Lexical variation on 'how many times', 'substring', and the overlapping-counts phrasing.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str, <arg2>: str) -> int:\n    \"\"\" <find_verb> <count_phrase> a given <pattern_word> can be found in the original <source_word>. <overlap_phrase>.\n    >>> <fn>('', 'a')\n    0\n    >>> <fn>('aaa', 'a')\n    3\n    >>> <fn>('aaaa', 'aa')\n    3\n    \"\"\"\n",
+  "templated_solution": "    times = 0\n\n    for i in range(len(<arg1>) - len(<arg2>) + 1):\n        if <arg1>[i:i+len(<arg2>)] == <arg2>:\n            times += 1\n\n    return times\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["how_many_times", "count_occurrences", "substring_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "source"]},
+    {"name": "arg2", "kind": "identifier", "values": ["substring", "pattern", "needle"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["Find", "Compute", "Determine"]},
+    {"name": "count_phrase", "kind": "lexical", "values": ["how many times", "the number of times", "the count of times"]},
+    {"name": "pattern_word", "kind": "lexical", "values": ["substring", "pattern", "fragment"]},
+    {"name": "source_word", "kind": "lexical", "values": ["string", "text", "input"]},
+    {"name": "overlap_phrase", "kind": "lexical", "values": ["Count overlaping cases", "Include overlapping matches", "Treat overlapping occurrences as separate matches"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

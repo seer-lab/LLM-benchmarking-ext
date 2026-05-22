@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/90",
+  "entry_point": "next_smallest",
+  "notes": "2nd smallest distinct element.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    You are given a list of integers.\n    <write_verb> a function <fn>() that returns the <second_phrase> element of the list.\n    Return None if there is no such element.\n    \n    <fn>([1, 2, 3, 4, 5]) == 2\n    <fn>([5, 1, 4, 3, 2]) == 2\n    <fn>([]) == None\n    <fn>([1, 1]) == None\n    \"\"\"\n",
+  "templated_solution": "    <arg1> = sorted(set(<arg1>))\n    return None if len(<arg1>) < 2 else <arg1>[1]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["next_smallest", "second_smallest_distinct", "second_smallest"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "items"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "second_phrase", "kind": "lexical", "values": ["2nd smallest", "second smallest distinct", "second-lowest"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

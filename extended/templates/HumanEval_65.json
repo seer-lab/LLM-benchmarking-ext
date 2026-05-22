@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/65",
+  "entry_point": "circular_shift",
+  "notes": "Rotate digits right; if shift exceeds length, return reversed.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"<shift_verb> the digits of the <integer_word> x, shift the digits right by shift\n    and return the result as a string.\n    If shift > number of digits, return digits reversed.\n    >>> <fn>(12, 1)\n    \"21\"\n    >>> <fn>(12, 2)\n    \"12\"\n    \"\"\"\n",
+  "templated_solution": "    s = str(<arg1>)\n    if <arg2> > len(s):\n        return s[::-1]\n    else:\n        return s[len(s) - <arg2>:] + s[:len(s) - <arg2>]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["circular_shift", "rotate_digits_right", "right_rotate"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "n", "value"]},
+    {"name": "arg2", "kind": "identifier", "values": ["shift", "k", "amount"]},
+    {"name": "shift_verb", "kind": "lexical", "values": ["Circular shift", "Rotate", "Cyclically shift"]},
+    {"name": "integer_word", "kind": "lexical", "values": ["integer", "whole number", "number"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

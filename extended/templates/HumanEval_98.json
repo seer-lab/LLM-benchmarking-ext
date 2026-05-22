@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/98",
+  "entry_point": "count_upper",
+  "notes": "Count uppercase vowels at even indices.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a string s, <count_verb> the number of <upper_word> vowels in <even_phrase>.\n    \n    For example:\n    <fn>('aBCdEf') returns 1\n    <fn>('abcdefg') returns 0\n    <fn>('dBBE') returns 0\n    \"\"\"\n",
+  "templated_solution": "    count = 0\n    for i in range(0,len(<arg1>),2):\n        if <arg1>[i] in \"AEIOU\":\n            count += 1\n    return count\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["count_upper", "count_uppercase_vowels_at_even_indices", "upper_vowel_even_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "string"]},
+    {"name": "count_verb", "kind": "lexical", "values": ["count", "tally", "compute the total of"]},
+    {"name": "upper_word", "kind": "lexical", "values": ["uppercase", "capital", "upper-case"]},
+    {"name": "even_phrase", "kind": "lexical", "values": ["even indices", "even-numbered positions", "indices 0, 2, 4, ..."]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/147",
+  "entry_point": "get_max_triples",
+  "notes": "Number of (i<j<k) triples whose a[i]+a[j]+a[k] is divisible by 3 in the sequence a[i] = i*i - i + 1.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    You are given a positive integer n. You have to create an integer array a of length n.\n        For each i (1 ≤ i ≤ n), the value of a[i] = i * i - i + 1.\n        <return_verb> the number of triples (a[i], a[j], a[k]) of a where i < j < k, \n    and a[i] + a[j] + a[k] is a <multiple_phrase>.\n\n    Example :\n        Input: n = 5\n        Output: 1\n        Explanation: \n        a = [1, 3, 7, 13, 21]\n        The only valid triple is (1, 7, 13).\n    \"\"\"\n",
+  "templated_solution": "    A = [i*i - i + 1 for i in range(1,<arg1>+1)]\n    ans = []\n    for i in range(<arg1>):\n        for j in range(i+1,<arg1>):\n            for k in range(j+1,<arg1>):\n                if (A[i]+A[j]+A[k])%3 == 0:\n                    ans += [(A[i],A[j],A[k])]\n    return len(ans)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["get_max_triples", "count_triples_divisible_by_3", "n_triples_mod3_zero"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "length", "size"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Output", "Produce"]},
+    {"name": "multiple_phrase", "kind": "lexical", "values": ["multiple of 3", "divisible by 3", "evenly divisible by three"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

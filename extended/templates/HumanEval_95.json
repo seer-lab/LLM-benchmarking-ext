@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/95",
+  "entry_point": "check_dict_case",
+  "notes": "All keys lowercase OR all uppercase strings, non-empty.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a dictionary, <return_verb> True if all keys are strings in <lower_word>\n    case or all keys are strings in <upper_word> case, else return False.\n    The function should return False is the given dictionary is empty.\n    Examples:\n    <fn>({\"a\":\"apple\", \"b\":\"banana\"}) should return True.\n    <fn>({\"a\":\"apple\", \"A\":\"banana\", \"B\":\"banana\"}) should return False.\n    <fn>({\"a\":\"apple\", 8:\"banana\", \"a\":\"apple\"}) should return False.\n    <fn>({\"Name\":\"John\", \"Age\":\"36\", \"City\":\"Houston\"}) should return False.\n    <fn>({\"STATE\":\"NC\", \"ZIP\":\"12345\" }) should return True.\n    \"\"\"\n",
+  "templated_solution": "    if len(<arg1>.keys()) == 0:\n        return False\n    else:\n        state = \"start\"\n        for key in <arg1>.keys():\n\n            if isinstance(key, str) == False:\n                state = \"mixed\"\n                break\n            if state == \"start\":\n                if key.isupper():\n                    state = \"upper\"\n                elif key.islower():\n                    state = \"lower\"\n                else:\n                    break\n            elif (state == \"upper\" and not key.isupper()) or (state == \"lower\" and not key.islower()):\n                    state = \"mixed\"\n                    break\n            else:\n                break\n        return state == \"upper\" or state == \"lower\" \n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["check_dict_case", "keys_same_case", "dict_keys_uniform_case"]},
+    {"name": "arg1", "kind": "identifier", "values": ["dict", "d", "mapping"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "yield", "produce"]},
+    {"name": "lower_word", "kind": "lexical", "values": ["lower", "lowercase", "minuscule"]},
+    {"name": "upper_word", "kind": "lexical", "values": ["upper", "uppercase", "capital"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

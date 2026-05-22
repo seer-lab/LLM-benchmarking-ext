@@ -1,0 +1,46 @@
+{
+  "task_id": "HumanEval/1",
+  "entry_point": "separate_paren_groups",
+  "notes": "Paper problem_2. Wording-only variations; the underlying function still operates on parentheses so doctest examples remain valid.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: str) -> List[str]:\n    \"\"\" Input to this function is a string containing multiple <group_word> of nested <bracket_word>. Your goal is to\n    separate those group into separate strings and return the list of those.\n    Separate groups are balanced (each open brace is properly closed) and not nested within each other\n    Ignore any spaces in the input string.\n    >>> <fn>('( ) (( )) (( )( ))')\n    ['()', '(())', '(()())']\n    \"\"\"\n",
+  "templated_solution": "    result = []\n    current_string = []\n    current_depth = 0\n\n    for c in <arg1>:\n        if c == '(':\n            current_depth += 1\n            current_string.append(c)\n        elif c == ')':\n            current_depth -= 1\n            current_string.append(c)\n\n            if current_depth == 0:\n                result.append(''.join(current_string))\n                current_string.clear()\n\n    return result\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "separate_paren_groups"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "paren_string"
+      ]
+    },
+    {
+      "name": "bracket_word",
+      "kind": "lexical",
+      "values": [
+        "parentheses",
+        "brackets",
+        "braces"
+      ]
+    },
+    {
+      "name": "group_word",
+      "kind": "lexical",
+      "values": [
+        "groups",
+        "sections",
+        "clusters"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/41",
+  "entry_point": "car_race_collision",
+  "notes": "Returns n*n collisions for two groups of n cars passing each other. The narrative docstring offers rich lexical surface (vehicles, road).",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"\n    Imagine a <road_word> that's a perfectly straight infinitely long line.\n    n <vehicle_word> are driving left to right;  simultaneously, a different set of n <vehicle_word>\n    are driving right to left.   The two sets of <vehicle_word> start out being very far from\n    each other.  All <vehicle_word> move in the same speed.  Two <vehicle_word> are said to <collide_word>\n    when a <vehicle_word> that's moving left to right hits a <vehicle_word> that's moving right to left.\n    However, the <vehicle_word> are infinitely sturdy and strong; as a result, they continue moving\n    in their trajectory as if they did not <collide_word>.\n\n    This function outputs the number of such <collision_word>.\n    \"\"\"\n",
+  "templated_solution": "    return <arg1>**2\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["car_race_collision", "head_on_collisions", "passing_collisions"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "count", "per_side"]},
+    {"name": "road_word", "kind": "lexical", "values": ["road", "highway", "straight path"]},
+    {"name": "vehicle_word", "kind": "lexical", "values": ["cars", "vehicles", "automobiles"]},
+    {"name": "collide_word", "kind": "lexical", "values": ["collide", "crash", "meet head-on"]},
+    {"name": "collision_word", "kind": "lexical", "values": ["collisions", "crashes", "head-on meetings"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

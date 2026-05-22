@@ -1,0 +1,13 @@
+# HumanEval_T extended — runtime dependencies.
+# Use:    pip install -r requirements.txt
+# (The final line also installs the local `humaneval_t` package in editable mode.)
+
+pydantic>=2.6
+requests>=2.31
+python-Levenshtein>=0.25
+streamlit>=1.30
+pulp>=2.7
+scikit-learn>=1.3
+matplotlib>=3.7
+
+-e .

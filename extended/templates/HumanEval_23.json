@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/23",
+  "entry_point": "strlen",
+  "notes": "String length. Trivial docstring; minimal lexical surface so identifier renames carry most of the variation.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str) -> int:\n    \"\"\" <return_verb> <length_word> of given <input_word>\n    >>> <fn>('')\n    0\n    >>> <fn>('abc')\n    3\n    \"\"\"\n",
+  "templated_solution": "    return len(<arg1>)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["strlen", "string_length", "length_of", "char_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "s"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Give"]},
+    {"name": "length_word", "kind": "lexical", "values": ["length", "character count", "size"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

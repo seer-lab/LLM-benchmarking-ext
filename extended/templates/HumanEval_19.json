@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/19",
+  "entry_point": "sort_numbers",
+  "notes": "Sorts English number words (zero..nine) in a space-delimited string. The literal word list must stay intact (function depends on it); variation centers on the delimiter phrasing and sort-order wording.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: str) -> str:\n    \"\"\" Input is a <delim_phrase> string of numberals from 'zero' to 'nine'.\n    Valid choices are 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' and 'nine'.\n    Return the string with numbers <sort_phrase>\n    >>> <fn>('three one five')\n    'one three five'\n    \"\"\"\n",
+  "templated_solution": "    value_map = {\n        'zero': 0,\n        'one': 1,\n        'two': 2,\n        'three': 3,\n        'four': 4,\n        'five': 5,\n        'six': 6,\n        'seven': 7,\n        'eight': 8,\n        'nine': 9\n    }\n    return ' '.join(sorted([x for x in <arg1>.split(' ') if x], key=lambda x: value_map[x]))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sort_numbers", "sort_word_numbers", "order_numerals"]},
+    {"name": "arg1", "kind": "identifier", "values": ["numbers", "numerals", "words"]},
+    {"name": "delim_phrase", "kind": "lexical", "values": ["space-delimited", "space-separated", "whitespace-separated"]},
+    {"name": "sort_phrase", "kind": "lexical", "values": ["sorted from smallest to largest", "ordered in ascending numeric value", "arranged from least to greatest"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

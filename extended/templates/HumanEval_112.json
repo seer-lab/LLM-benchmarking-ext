@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/112",
+  "entry_point": "reverse_delete",
+  "notes": "Delete chars in c from s, then check palindrome. Return (result, is_palindrome).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>,<arg2>):\n    \"\"\"Task\n    We are given two strings s and c, you have to deleted all the characters in s that are equal to any character in c\n    then check if the result string is palindrome.\n    A string is called palindrome if it reads the same backward as forward.\n    You should return a tuple containing the result string and True/False for the check.\n    Example\n    For s = \"abcde\", c = \"ae\", the result should be ('bcd',False)\n    For s = \"abcdef\", c = \"b\"  the result should be ('acdef',False)\n    For s = \"abcdedcba\", c = \"ab\", the result should be ('cdedc',True)\n    \"\"\"\n",
+  "templated_solution": "    <arg1> = ''.join([char for char in <arg1> if char not in <arg2>])\n    return (<arg1>,<arg1>[::-1] == <arg1>)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["reverse_delete", "delete_and_check_palindrome", "filter_chars_then_palindrome_check"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "source"]},
+    {"name": "arg2", "kind": "identifier", "values": ["c", "chars", "remove"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

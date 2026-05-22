@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/100",
+  "entry_point": "make_a_pile",
+  "notes": "Pile of stones: n, n+2, n+4, ... (n elements).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    <return_verb> the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> <fn>(3)\n    [3, 5, 7]\n    \"\"\"\n",
+  "templated_solution": "    return [<arg1> + 2*i for i in range(<arg1>)]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["make_a_pile", "stone_pile_levels", "build_pile"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "levels", "k"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Output", "Produce"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

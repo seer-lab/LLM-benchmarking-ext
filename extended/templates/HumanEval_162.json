@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/162",
+  "entry_point": "string_to_md5",
+  "notes": "MD5 hex digest of ascii-encoded text; None if empty.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a string 'text', <return_verb> its <md5_phrase>.\n    If 'text' is an empty string, return None.\n\n    >>> <fn>('Hello world') == '3e25960a79dbc69b674cd4ec67a72c62'\n    \"\"\"\n",
+  "templated_solution": "    import hashlib\n    return hashlib.md5(<arg1>.encode('ascii')).hexdigest() if <arg1> else None\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["string_to_md5", "md5_of_text", "md5_hex_digest"]},
+    {"name": "arg1", "kind": "identifier", "values": ["text", "s", "input"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "give back"]},
+    {"name": "md5_phrase", "kind": "lexical", "values": ["md5 hash equivalent string", "MD5 hex digest", "MD5 fingerprint as a hex string"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/158",
+  "entry_point": "find_max",
+  "notes": "Word with max unique chars; tiebreak lexicographically.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<write_verb> a function that accepts a list of strings.\n    The list contains different words. Return the word with <maximum_phrase>. If multiple strings have maximum number of unique\n    characters, return the one which comes first in lexicographical order.\n\n    <fn>([\"name\", \"of\", \"string\"]) == \"string\"\n    <fn>([\"name\", \"enam\", \"game\"]) == \"enam\"\n    <fn>([\"aaaaaaa\", \"bb\" ,\"cc\"]) == \"\"aaaaaaa\"\n    \"\"\"\n",
+  "templated_solution": "    return sorted(<arg1>, key = lambda x: (-len(set(x)), x))[0]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["find_max", "word_with_most_unique_chars", "max_unique_char_word"]},
+    {"name": "arg1", "kind": "identifier", "values": ["words", "lst", "strings"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "maximum_phrase", "kind": "lexical", "values": ["maximum number of unique characters", "most distinct characters", "largest set of unique letters"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

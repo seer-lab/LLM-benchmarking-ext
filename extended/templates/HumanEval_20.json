@@ -1,0 +1,41 @@
+{
+  "task_id": "HumanEval/20",
+  "entry_point": "find_closest_elements",
+  "notes": "Paper problem_10. The paper varied the ordering convention of the returned tuple (smaller,larger vs ascending vs first-in-appearance) but the canonical HumanEval test expects a specific order, so only the noun is varied here.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List, Tuple\n\n\ndef <fn>(<arg1>: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of <items_word> (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> <fn>([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> <fn>([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n",
+  "templated_solution": "    closest_pair = None\n    distance = None\n\n    for idx, elem in enumerate(<arg1>):\n        for idx2, elem2 in enumerate(<arg1>):\n            if idx != idx2:\n                if distance is None:\n                    distance = abs(elem - elem2)\n                    closest_pair = tuple(sorted([elem, elem2]))\n                else:\n                    new_distance = abs(elem - elem2)\n                    if new_distance < distance:\n                        distance = new_distance\n                        closest_pair = tuple(sorted([elem, elem2]))\n\n    return closest_pair\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "find_closest_elements"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "numbers"
+      ]
+    },
+    {
+      "name": "items_word",
+      "kind": "lexical",
+      "values": [
+        "numbers",
+        "floats",
+        "values",
+        "data points",
+        "measurements",
+        "elements",
+        "items"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

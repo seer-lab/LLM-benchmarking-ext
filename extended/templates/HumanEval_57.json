@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/57",
+  "entry_point": "monotonic",
+  "notes": "Monotonic increasing OR decreasing.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> True is list elements are <monotonic_phrase>.\n    >>> <fn>([1, 2, 4, 20])\n    True\n    >>> <fn>([1, 20, 4, 10])\n    False\n    >>> <fn>([4, 1, 0, -10])\n    True\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == sorted(<arg1>) or <arg1> == sorted(<arg1>, reverse=True):\n        return True\n    return False\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["monotonic", "is_monotonic", "monotone_check"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "values", "lst"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Yield", "Produce"]},
+    {"name": "monotonic_phrase", "kind": "lexical", "values": ["monotonically increasing or decreasing", "either non-decreasing or non-increasing", "strictly going one direction"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

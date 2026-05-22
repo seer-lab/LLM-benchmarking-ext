@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/115",
+  "entry_point": "max_fill",
+  "notes": "Bucket-empties-wells problem. Floor of (row_sum / capacity) summed over rows.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    import math\n    \"\"\"\n    You are given a rectangular grid of <well_word>. Each row represents a single well,\n    and each 1 in a row represents a single unit of water.\n    Each well has a corresponding <bucket_word> that can be used to extract water from it, \n    and all <bucket_plural> have the same capacity.\n    Your task is to use the <bucket_plural> to empty the wells.\n    Output the number of times you need to lower the <bucket_plural>.\n\n    Example 1:\n        Input: \n            grid : [[0,0,1,0], [0,1,0,0], [1,1,1,1]]\n            bucket_capacity : 1\n        Output: 6\n\n    Example 2:\n        Input: \n            grid : [[0,0,1,1], [0,0,0,0], [1,1,1,1], [0,1,1,1]]\n            bucket_capacity : 2\n        Output: 5\n    \n    Example 3:\n        Input: \n            grid : [[0,0,0], [0,0,0]]\n            bucket_capacity : 5\n        Output: 0\n\n    Constraints:\n        * all wells have the same length\n        * 1 <= grid.length <= 10^2\n        * 1 <= grid[:,1].length <= 10^2\n        * grid[i][j] -> 0 | 1\n        * 1 <= capacity <= 10\n    \"\"\"\n",
+  "templated_solution": "    return sum([math.ceil(sum(arr)/<arg2>) for arr in <arg1>])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["max_fill", "bucket_lowering_count", "water_extractions_needed"]},
+    {"name": "arg1", "kind": "identifier", "values": ["grid", "wells", "matrix"]},
+    {"name": "arg2", "kind": "identifier", "values": ["capacity", "bucket_size", "cap"]},
+    {"name": "well_word", "kind": "lexical", "values": ["wells", "shafts", "water columns"]},
+    {"name": "bucket_word", "kind": "lexical", "values": ["bucket", "pail", "container"]},
+    {"name": "bucket_plural", "kind": "lexical", "values": ["buckets", "pails", "containers"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

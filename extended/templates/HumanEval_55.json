@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/55",
+  "entry_point": "fib",
+  "notes": "Classic Fibonacci by recursion. Tiny docstring.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"<return_verb> <ordinal_phrase> Fibonacci number.\n    >>> <fn>(10)\n    55\n    >>> <fn>(1)\n    1\n    >>> <fn>(8)\n    21\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == 0:\n        return 0\n    if <arg1> == 1:\n        return 1\n    return <fn>(<arg1> - 1) + <fn>(<arg1> - 2)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["fib", "fibonacci", "nth_fib"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "index", "k"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Give"]},
+    {"name": "ordinal_phrase", "kind": "lexical", "values": ["n-th", "the n-th", "the index-n"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/54",
+  "entry_point": "same_chars",
+  "notes": "Check if two strings have the same set of characters (multiplicity ignored).",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str, <arg2>: str):\n    \"\"\"\n    <check_verb> if two <word_word> have the same <char_word>.\n    >>> <fn>('eabcdzzzz', 'dddzzzzzzzddeddabc')\n    True\n    >>> <fn>('abcd', 'dddddddabc')\n    True\n    >>> <fn>('dddddddabc', 'abcd')\n    True\n    >>> <fn>('eabcd', 'dddddddabc')\n    False\n    >>> <fn>('abcd', 'dddddddabce')\n    False\n    >>> <fn>('eabcdzzzz', 'dddzzzzzzzddddabc')\n    False\n    \"\"\"\n",
+  "templated_solution": "    return set(<arg1>) == set(<arg2>)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["same_chars", "have_same_chars", "char_sets_equal"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s0", "first", "a"]},
+    {"name": "arg2", "kind": "identifier", "values": ["s1", "second", "b"]},
+    {"name": "check_verb", "kind": "lexical", "values": ["Check", "Determine", "Decide"]},
+    {"name": "word_word", "kind": "lexical", "values": ["words", "strings", "inputs"]},
+    {"name": "char_word", "kind": "lexical", "values": ["characters", "letters", "set of characters"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

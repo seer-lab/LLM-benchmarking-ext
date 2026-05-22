@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/48",
+  "entry_point": "is_palindrome",
+  "notes": "Pure palindrome check. Same function name as the helper in HE/10 but a separate problem. Lexical variation on the check verb and on 'string'.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str):\n    \"\"\"\n    <check_verb> if given <input_word> is a palindrome\n    >>> <fn>('')\n    True\n    >>> <fn>('aba')\n    True\n    >>> <fn>('aaaaa')\n    True\n    >>> <fn>('zbcd')\n    False\n    \"\"\"\n",
+  "templated_solution": "    for i in range(len(<arg1>)):\n        if <arg1>[i] != <arg1>[len(<arg1>) - 1 - i]:\n            return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_palindrome", "check_palindrome", "palindrome_p"]},
+    {"name": "arg1", "kind": "identifier", "values": ["text", "string", "s"]},
+    {"name": "check_verb", "kind": "lexical", "values": ["Checks", "Determines", "Tests"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

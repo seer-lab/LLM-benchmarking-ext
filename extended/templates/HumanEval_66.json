@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/66",
+  "entry_point": "digitSum",
+  "notes": "Sum of ASCII codes of uppercase letters only.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Task\n    <write_verb> a function that takes a string as input and returns the <sum_phrase> of the upper characters only'\n    ASCII codes.\n\n    Examples:\n        <fn>(\"\") => 0\n        <fn>(\"abAB\") => 131\n        <fn>(\"abcCd\") => 67\n        <fn>(\"helloE\") => 69\n        <fn>(\"woArBld\") => 131\n        <fn>(\"aAaaaXa\") => 153\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == \"\": return 0\n    return sum(ord(char) if char.isupper() else 0 for char in <arg1>)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["digitSum", "uppercase_ascii_sum", "ord_sum_upper"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "input"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "addition"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

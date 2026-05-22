@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/94",
+  "entry_point": "skjkasdkd",
+  "notes": "Sum of digits of the largest prime in the list. Cryptic fn name in HumanEval — kept as the canonical value.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>):\n    \"\"\"You are given a list of integers.\n    You need to <find_verb> the <largest_word> prime value and return the <sum_phrase> of its digits.\n\n    Examples:\n    For lst = [0,3,2,1,3,5,7,4,5,5,5,2,181,32,4,32,3,2,32,324,4,3] the output should be 10\n    For lst = [1,0,1,8,2,4597,2,1,3,40,1,2,1,2,4,2,5,1] the output should be 25\n    For lst = [1,3,1,32,5107,34,83278,109,163,23,2323,32,30,1,9,3] the output should be 13\n    For lst = [0,724,32,71,99,32,6,0,5,91,83,0,5,6] the output should be 11\n    For lst = [0,81,12,3,1,21] the output should be 3\n    For lst = [0,8,1,2,1,7] the output should be 7\n    \"\"\"\n",
+  "templated_solution": "    def isPrime(n):\n        for i in range(2,int(n**0.5)+1):\n            if n%i==0:\n                return False\n\n        return True\n    maxx = 0\n    i = 0\n    while i < len(<arg1>):\n        if(<arg1>[i] > maxx and isPrime(<arg1>[i])):\n            maxx = <arg1>[i]\n        i+=1\n    result = sum(int(digit) for digit in str(maxx))\n    return result\n\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["skjkasdkd", "max_prime_digit_sum", "digit_sum_of_largest_prime"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "items"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "locate", "identify"]},
+    {"name": "largest_word", "kind": "lexical", "values": ["largest", "biggest", "greatest"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "addition"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

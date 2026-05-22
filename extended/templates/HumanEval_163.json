@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/163",
+  "entry_point": "generate_integers",
+  "notes": "Even single digits (2..8) between min(a,b) and max(a,b).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"\n    Given two positive integers a and b, <return_verb> the <even_phrase> between a\n    and b, in <order_phrase>.\n\n    For example:\n    <fn>(2, 8) => [2, 4, 6, 8]\n    <fn>(8, 2) => [2, 4, 6, 8]\n    <fn>(10, 14) => []\n    \"\"\"\n",
+  "templated_solution": "    lower = max(2, min(<arg1>, <arg2>))\n    upper = min(8, max(<arg1>, <arg2>))\n\n    return [i for i in range(lower, upper+1) if i % 2 == 0]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["generate_integers", "even_digits_in_range", "even_single_digits_between"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "lo", "first"]},
+    {"name": "arg2", "kind": "identifier", "values": ["b", "hi", "second"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]},
+    {"name": "even_phrase", "kind": "lexical", "values": ["even digits", "even single-digit values", "even integers"]},
+    {"name": "order_phrase", "kind": "lexical", "values": ["ascending order", "increasing order", "smallest-to-largest order"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

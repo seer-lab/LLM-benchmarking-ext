@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/27",
+  "entry_point": "flip_case",
+  "notes": "Case swap. Lexical variation on the flip verb and the case nouns.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str) -> str:\n    \"\"\" For a given <input_word>, <flip_verb> lowercase <char_word> to uppercase and uppercase to lowercase.\n    >>> <fn>('Hello')\n    'hELLO'\n    \"\"\"\n",
+  "templated_solution": "    return <arg1>.swapcase()\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["flip_case", "swap_case", "invert_case"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "s"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input"]},
+    {"name": "flip_verb", "kind": "lexical", "values": ["flip", "swap", "invert"]},
+    {"name": "char_word", "kind": "lexical", "values": ["characters", "letters", "symbols"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

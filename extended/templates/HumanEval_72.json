@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/72",
+  "entry_point": "will_it_fly",
+  "notes": "True iff palindromic list AND sum <= w.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>,<arg2>):\n    '''\n    <write_verb> a function that returns True if the object q will fly, and False otherwise.\n    The object q will fly if it's <balanced_word> (it is a palindromic list) and the sum of its elements is less than or equal the maximum possible weight w.\n\n    Example:\n    <fn>([1, 2], 5) ➞ False \n    # 1+2 is less than the maximum possible weight, but it's <unbalanced_word>.\n\n    <fn>([3, 2, 3], 1) ➞ False\n    # it's <balanced_word>, but 3+2+3 is more than the maximum possible weight.\n\n    <fn>([3, 2, 3], 9) ➞ True\n    # 3+2+3 is less than the maximum possible weight, and it's <balanced_word>.\n\n    <fn>([3], 5) ➞ True\n    # 3 is less than the maximum possible weight, and it's <balanced_word>.\n    '''\n",
+  "templated_solution": "    if sum(<arg1>) > <arg2>:\n        return False\n\n    i, j = 0, len(<arg1>)-1\n    while i<j:\n        if <arg1>[i] != <arg1>[j]:\n            return False\n        i+=1\n        j-=1\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["will_it_fly", "is_flyable", "can_fly"]},
+    {"name": "arg1", "kind": "identifier", "values": ["q", "weights", "items"]},
+    {"name": "arg2", "kind": "identifier", "values": ["w", "max_weight", "limit"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "balanced_word", "kind": "lexical", "values": ["balanced", "symmetric", "palindromic"]},
+    {"name": "unbalanced_word", "kind": "lexical", "values": ["unbalanced", "asymmetric", "not palindromic"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

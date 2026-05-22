@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/103",
+  "entry_point": "rounded_avg",
+  "notes": "Average of [n..m] rounded, converted to binary string.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"You are given two positive integers n and m, and your task is to compute the\n    <average_word> of the integers from n through m (including n and m). \n    Round the answer to the nearest integer and convert that to binary.\n    If n is greater than m, return -1.\n    Example:\n    <fn>(1, 5) => \"0b11\"\n    <fn>(7, 5) => -1\n    <fn>(10, 20) => \"0b1111\"\n    <fn>(20, 33) => \"0b11010\"\n    \"\"\"\n",
+  "templated_solution": "    if <arg2> < <arg1>:\n        return -1\n    summation = 0\n    for i in range(<arg1>, <arg2>+1):\n        summation += i\n    return bin(round(summation/(<arg2> - <arg1> + 1)))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["rounded_avg", "avg_range_in_binary", "binary_rounded_average"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "lo", "start"]},
+    {"name": "arg2", "kind": "identifier", "values": ["m", "hi", "end"]},
+    {"name": "average_word", "kind": "lexical", "values": ["average", "mean", "arithmetic mean"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

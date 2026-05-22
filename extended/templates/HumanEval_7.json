@@ -1,0 +1,55 @@
+{
+  "task_id": "HumanEval/7",
+  "entry_point": "filter_by_substring",
+  "notes": "Paper problem_7. Wording-only.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[str], <arg2>: str) -> List[str]:\n    \"\"\" Filter an input list of <items_word> only for ones that contain given <match_target>\n    >>> <fn>([], 'a')\n    []\n    >>> <fn>(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['abc', 'bacd', 'array']\n    \"\"\"\n",
+  "templated_solution": "    return [x for x in <arg1> if <arg2> in x]\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "filter_by_substring"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "strings"
+      ]
+    },
+    {
+      "name": "arg2",
+      "kind": "identifier",
+      "values": [
+        "substring"
+      ]
+    },
+    {
+      "name": "items_word",
+      "kind": "lexical",
+      "values": [
+        "strings",
+        "words",
+        "text elements",
+        "phrases"
+      ]
+    },
+    {
+      "name": "match_target",
+      "kind": "lexical",
+      "values": [
+        "substring",
+        "sequence",
+        "pattern",
+        "text fragment"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

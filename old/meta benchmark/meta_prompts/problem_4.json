@@ -1,0 +1,56 @@
+problem_4_versions = {
+    "problem": "Problem 4",
+    "meta_prompt": "Given a list of <X> representing <Y>, detect if the <Z> falls <A> zero at any point, and return <B> if it does, otherwise return <C>.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a list of operations representing bank account deposits and withdrawals, detect if the balance falls below zero at any point, and return True if it does, otherwise return False.",
+            "assertions": [
+                {"input": {"operations": [1, 2, 3]}, "output": False},
+                {"input": {"operations": [1, 2, -4, 5]}, "output": True},
+                {"input": {"operations": []}, "output": False},
+                {"input": {"operations": [1, -1, 2, -2, 5, -5, 4, -5]}, "output": True}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a list of transactions representing account credits and debits, detect if the account total falls under zero at any point, and return Yes if it does, otherwise return No.",
+            "assertions": [
+                {"input": {"operations": [10, -5, -6]}, "output": "Yes"},
+                {"input": {"operations": [5, 5, 5]}, "output": "No"},
+                {"input": {"operations": [7, -3, -10]}, "output": "Yes"},
+                {"input": {"operations": [1, -1, 1, -1, 1]}, "output": "No"}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a list of entries representing financial activities, detect if the current sum falls below zero at any point, and return True if it does, otherwise return False.",
+            "assertions": [
+                {"input": {"operations": [2, -3, 5]}, "output": False},
+                {"input": {"operations": [5, -6, 2]}, "output": True},
+                {"input": {"operations": [1, 1, 1]}, "output": False},
+                {"input": {"operations": [4, -4, -1]}, "output": True}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a list of balance changes representing account credits and debits, detect if the running total falls less than zero at any point, and return True if it does, otherwise return False.",
+            "assertions": [
+                {"input": {"operations": [5, -2, -4, 1]}, "output": True},
+                {"input": {"operations": [10, -10, 10, -10]}, "output": False},
+                {"input": {"operations": [3, -1, -2, 4]}, "output": False},
+                {"input": {"operations": [10, -15, 5]}, "output": True}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a list of operations representing balance updates, detect if the balance falls under zero at any point, and return Yes if it does, otherwise return No.",
+            "assertions": [
+                {"input": {"operations": [1, -2, 1]}, "output": "Yes"},
+                {"input": {"operations": [1, 2, 3, -5, 1]}, "output": "No"},
+                {"input": {"operations": [10, -20, 10]}, "output": "Yes"},
+                {"input": {"operations": [5, -5, 5, -5]}, "output": "No"}
+            ]
+        }
+    ]
+}

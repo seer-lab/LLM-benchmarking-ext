@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/116",
+  "entry_point": "sort_array",
+  "notes": "Sort by popcount ascending; tiebreak by value. Same fn name as HE/88 but distinct.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    In this Kata, you have to sort an array of non-negative integers according to\n    number of <ones_phrase> in their binary representation in ascending order.\n    For similar number of <ones_phrase>, sort based on decimal value.\n\n    It must be implemented like this:\n    >>> <fn>([1, 5, 2, 3, 4]) == [1, 2, 3, 4, 5]\n    >>> <fn>([-2, -3, -4, -5, -6]) == [-6, -5, -4, -3, -2]\n    >>> <fn>([1, 0, 2, 3, 4]) [0, 1, 2, 3, 4]\n    \"\"\"\n",
+  "templated_solution": "    return sorted(sorted(<arg1>), key=lambda x: bin(x)[2:].count('1'))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sort_array", "sort_by_popcount", "popcount_sort"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "ones_phrase", "kind": "lexical", "values": ["ones", "set bits", "1-bits"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,56 @@
+problem_10_versions = {
+    "problem": "Problem 10",
+    "meta_prompt": "Given a list of <X> with at least two elements, select and return a tuple of <Y> that are <Z> in the list, ordered as <A>.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a list of numbers with at least two elements, select and return a tuple of two closest elements that are closest to each other in the list, ordered as (smaller, larger).",
+            "assertions": [
+                {"input": {"numbers": [1.0, 2.0, 3.9, 4.0, 5.0, 2.2]}, "output": (3.9, 4.0)},
+                {"input": {"numbers": [1.0, 2.0, 5.9, 4.0, 5.0]}, "output": (5.0, 5.9)},
+                {"input": {"numbers": [1.0, 2.0, 3.0, 4.0, 5.0, 2.2]}, "output": (2.0, 2.2)},
+                {"input": {"numbers": [1.0, 2.0, 3.0, 4.0, 5.0, 2.0]}, "output": (2.0, 2.0)}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a list of floats with at least two elements, select and return a tuple of two nearest values that are nearest in value in the list, ordered as (ascending order).",
+            "assertions": [
+                {"input": {"numbers": [1.5, 3.3, 3.35, 5.0, 7.2]}, "output": (3.3, 3.35)},
+                {"input": {"numbers": [10.1, 9.9, 8.8, 8.81]}, "output": (8.8, 8.81)},
+                {"input": {"numbers": [2.0, 2.01, 5.0, 6.0]}, "output": (2.0, 2.01)},
+                {"input": {"numbers": [4.5, 4.55, 5.5, 5.55]}, "output": (4.5, 4.55)}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a list of values with at least two elements, select and return a tuple of two closest data points that are most similar in the list, ordered as (first in order of appearance).",
+            "assertions": [
+                {"input": {"numbers": [6.0, 5.9, 4.0, 4.1, 7.5]}, "output": (5.9, 6.0)},
+                {"input": {"numbers": [2.5, 2.4, 3.0, 3.01]}, "output": (3.0, 3.01)},
+                {"input": {"numbers": [1.1, 1.2, 1.15, 1.3]}, "output": (1.1, 1.15)},
+                {"input": {"numbers": [10.0, 10.01, 11.0, 12.0]}, "output": (10.0, 10.01)}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a list of data points with at least two elements, select and return a tuple of two nearest values that are closest to each other in the list, ordered as (smaller, larger).",
+            "assertions": [
+                {"input": {"numbers": [3.0, 4.0, 5.0, 3.1]}, "output": (3.0, 3.1)},
+                {"input": {"numbers": [1.0, 2.0, 2.05, 3.0]}, "output": (2.0, 2.05)},
+                {"input": {"numbers": [0.0, -0.1, 0.1]}, "output": (-0.1, 0.0)},
+                {"input": {"numbers": [100.0, 100.01, 101.0]}, "output": (100.0, 100.01)}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a list of floats with at least two elements, select and return a tuple of two closest elements that are nearest in value in the list, ordered as (ascending order).",
+            "assertions": [
+                {"input": {"numbers": [1.25, 1.26, 1.5, 2.0]}, "output": (1.25, 1.26)},
+                {"input": {"numbers": [9.0, 8.99, 8.0]}, "output": (8.99, 9.0)},
+                {"input": {"numbers": [5.5, 5.49, 5.0]}, "output": (5.49, 5.5)},
+                {"input": {"numbers": [0.1, 0.15, 0.14]}, "output": (0.14, 0.15)}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/15",
+  "entry_point": "string_sequence",
+  "notes": "Produces '0 1 2 ... n' as a single space-delimited string. Lexical variation on the delimiter phrasing and on 'numbers'.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int) -> str:\n    \"\"\" <return_verb> a string containing <delim_phrase> <number_word> starting from 0 upto n inclusive.\n    >>> <fn>(0)\n    '0'\n    >>> <fn>(5)\n    '0 1 2 3 4 5'\n    \"\"\"\n",
+  "templated_solution": "    return ' '.join([str(x) for x in range(<arg1> + 1)])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["string_sequence", "number_sequence", "range_as_string"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "upper", "limit"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Produce", "Build"]},
+    {"name": "delim_phrase", "kind": "lexical", "values": ["space-delimited", "space-separated", "whitespace-separated"]},
+    {"name": "number_word", "kind": "lexical", "values": ["numbers", "integers", "numerals"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

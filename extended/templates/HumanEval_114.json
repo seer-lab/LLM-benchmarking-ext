@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/114",
+  "entry_point": "minSubArraySum",
+  "notes": "Minimum subarray sum (Kadane-on-negative).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given an array of integers nums, <find_verb> the <min_word> <sum_phrase> of any non-empty sub-array\n    of nums.\n    Example\n    <fn>([2, 3, 4, 1, 2, 4]) == 1\n    <fn>([-1, -2, -3]) == -6\n    \"\"\"\n",
+  "templated_solution": "    max_sum = 0\n    s = 0\n    for num in <arg1>:\n        s += -num\n        if (s < 0):\n            s = 0\n        max_sum = max(s, max_sum)\n    if max_sum == 0:\n        max_sum = max(-i for i in <arg1>)\n    min_sum = -max_sum\n    return min_sum\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["minSubArraySum", "min_subarray_sum", "smallest_contiguous_sum"]},
+    {"name": "arg1", "kind": "identifier", "values": ["nums", "lst", "values"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "determine", "compute"]},
+    {"name": "min_word", "kind": "lexical", "values": ["minimum", "smallest", "lowest"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "cumulative sum"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

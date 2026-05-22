@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/138",
+  "entry_point": "is_equal_to_sum_even",
+  "notes": "n = sum of 4 positive even numbers iff n%2==0 and n>=8.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<evaluate_verb> whether the given number n can be written as the <sum_phrase> of exactly 4 positive even numbers\n    Example\n    <fn>(4) == False\n    <fn>(6) == False\n    <fn>(8) == True\n    \"\"\"\n",
+  "templated_solution": "    return <arg1>%2 == 0 and <arg1> >= 8\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_equal_to_sum_even", "expressible_as_four_even_sum", "can_be_split_to_four_evens"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "value", "target"]},
+    {"name": "evaluate_verb", "kind": "lexical", "values": ["Evaluate", "Determine", "Decide"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "addition"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

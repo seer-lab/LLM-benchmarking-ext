@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/60",
+  "entry_point": "sum_to_n",
+  "notes": "Sum from 1 to n.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"<fn> is a function that <sum_phrase> from 1 to n.\n    >>> <fn>(30)\n    465\n    >>> <fn>(100)\n    5050\n    >>> <fn>(5)\n    15\n    >>> <fn>(10)\n    55\n    >>> <fn>(1)\n    1\n    \"\"\"\n",
+  "templated_solution": "    return sum(range(<arg1> + 1))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sum_to_n", "sum_one_to_n", "triangular_number"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "upper", "k"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sums numbers", "adds the integers", "returns the cumulative sum of integers"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

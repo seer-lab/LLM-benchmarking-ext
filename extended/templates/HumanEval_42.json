@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/42",
+  "entry_point": "incr_list",
+  "notes": "Add 1 to each element. Tiny docstring.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> list with elements <incr_phrase>.\n    >>> <fn>([1, 2, 3])\n    [2, 3, 4]\n    >>> <fn>([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [6, 4, 6, 3, 4, 4, 10, 1, 124]\n    \"\"\"\n",
+  "templated_solution": "    return [(e + 1) for e in <arg1>]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["incr_list", "plus_one_each", "increment_all"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "numbers", "values"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Produce", "Output"]},
+    {"name": "incr_phrase", "kind": "lexical", "values": ["incremented by 1", "each increased by one", "with one added to every element"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

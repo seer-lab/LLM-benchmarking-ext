@@ -1,0 +1,57 @@
+{
+  "task_id": "HumanEval/4",
+  "entry_point": "mean_absolute_deviation",
+  "notes": "Paper problem_5. Wording-only.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[float]) -> float:\n    \"\"\" For a given list of input <items_word>, calculate <metric_phrase>\n    around the <center_word> of this dataset.\n    Mean Absolute Deviation is the average absolute difference between each\n    element and a centerpoint (mean in this case):\n    MAD = average | x - x_mean |\n    >>> <fn>([1.0, 2.0, 3.0, 4.0])\n    1.0\n    \"\"\"\n",
+  "templated_solution": "    mean = sum(<arg1>) / len(<arg1>)\n    return sum(abs(x - mean) for x in <arg1>) / len(<arg1>)\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "mean_absolute_deviation"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "numbers"
+      ]
+    },
+    {
+      "name": "items_word",
+      "kind": "lexical",
+      "values": [
+        "numbers",
+        "data points",
+        "values",
+        "measurements"
+      ]
+    },
+    {
+      "name": "metric_phrase",
+      "kind": "lexical",
+      "values": [
+        "Mean Absolute Deviation",
+        "average absolute deviation",
+        "mean deviation",
+        "mean absolute distance"
+      ]
+    },
+    {
+      "name": "center_word",
+      "kind": "lexical",
+      "values": [
+        "mean",
+        "average",
+        "central value"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

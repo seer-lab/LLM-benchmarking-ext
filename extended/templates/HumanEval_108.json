@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/108",
+  "entry_point": "count_nums",
+  "notes": "Count elements with signed digit sum > 0.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    <write_verb> a function <fn> which takes an array of integers and returns\n    the number of elements which has a sum of digits > 0.\n    If a number is negative, then its first signed digit will be negative:\n    e.g. -123 has signed digits -1, 2, and 3.\n    >>> <fn>([]) == 0\n    >>> <fn>([-1, 11, -11]) == 1\n    >>> <fn>([1, 1, 2]) == 3\n    \"\"\"\n",
+  "templated_solution": "    def digits_sum(n):\n        neg = 1\n        if n < 0: n, neg = -1 * n, -1 \n        n = [int(i) for i in str(n)]\n        n[0] = n[0] * neg\n        return sum(n)\n    return len(list(filter(lambda x: x > 0, [digits_sum(i) for i in <arg1>])))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["count_nums", "signed_digit_sum_positive", "positive_digit_sum_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "numbers"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

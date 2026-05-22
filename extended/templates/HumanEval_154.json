@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/154",
+  "entry_point": "cycpattern_check",
+  "notes": "True if any rotation of b appears as substring of a.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1> , <arg2>):\n    \"\"\"You are given 2 words. You need to return True if the second word or any of its <rotation_word> is a substring in the first word\n    <fn>(\"abcd\",\"abd\") => False\n    <fn>(\"hello\",\"ell\") => True\n    <fn>(\"whassup\",\"psus\") => False\n    <fn>(\"abab\",\"baa\") => True\n    <fn>(\"efef\",\"eeff\") => False\n    <fn>(\"himenss\",\"simen\") => True\n\n    \"\"\"\n",
+  "templated_solution": "    l = len(<arg2>)\n    pat = <arg2> + <arg2>\n    for i in range(len(<arg1>) - l + 1):\n        for j in range(l + 1):\n            if <arg1>[i:i+l] == pat[j:j+l]:\n                return True\n    return False\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["cycpattern_check", "any_rotation_is_substring", "rotation_substring_match"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "haystack", "outer"]},
+    {"name": "arg2", "kind": "identifier", "values": ["b", "needle", "inner"]},
+    {"name": "rotation_word", "kind": "lexical", "values": ["rotations", "cyclic shifts", "cyclic rotations"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

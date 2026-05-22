@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/156",
+  "entry_point": "int_to_mini_roman",
+  "notes": "Integer (1..1000) to lowercase Roman numeral.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a positive integer, obtain its <roman_phrase>,\n    and return it in lowercase.\n    Restrictions: 1 <= num <= 1000\n\n    Examples:\n    >>> <fn>(19) == 'xix'\n    >>> <fn>(152) == 'clii'\n    >>> <fn>(426) == 'cdxxvi'\n    \"\"\"\n",
+  "templated_solution": "    num = [1, 4, 5, 9, 10, 40, 50, 90,  \n           100, 400, 500, 900, 1000] \n    sym = [\"I\", \"IV\", \"V\", \"IX\", \"X\", \"XL\",  \n           \"L\", \"XC\", \"C\", \"CD\", \"D\", \"CM\", \"M\"] \n    i = 12\n    res = ''\n    while <arg1>: \n        div = <arg1> // num[i] \n        <arg1> %= num[i] \n        while div: \n            res += sym[i] \n            div -= 1\n        i -= 1\n    return res.lower()\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["int_to_mini_roman", "integer_to_lowercase_roman", "to_roman_numeral_lowercase"]},
+    {"name": "arg1", "kind": "identifier", "values": ["number", "n", "value"]},
+    {"name": "roman_phrase", "kind": "lexical", "values": ["roman numeral equivalent as a string", "Roman numeral spelling", "Roman-numeral representation"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

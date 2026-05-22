@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/126",
+  "entry_point": "is_sorted",
+  "notes": "Sorted ascending AND no element with >2 occurrences.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    Given a list of numbers, <return_verb> whether or not they are sorted\n    in <ascending_phrase>. If list has more than 1 duplicate of the same\n    number, return False. Assume no negative numbers and only integers.\n\n    Examples\n    <fn>([5]) ➞ True\n    <fn>([1, 2, 3, 4, 5]) ➞ True\n    <fn>([1, 3, 2, 4, 5]) ➞ False\n    <fn>([1, 2, 3, 4, 5, 6]) ➞ True\n    <fn>([1, 2, 3, 4, 5, 6, 7]) ➞ True\n    <fn>([1, 3, 2, 4, 5, 6, 7]) ➞ False\n    <fn>([1, 2, 2, 3, 3, 4]) ➞ True\n    <fn>([1, 2, 2, 2, 3, 4]) ➞ False\n    '''\n",
+  "templated_solution": "    count_digit = dict([(i, 0) for i in <arg1>])\n    for i in <arg1>:\n        count_digit[i]+=1 \n    if any(count_digit[i] > 2 for i in <arg1>):\n        return False\n    if all(<arg1>[i-1] <= <arg1>[i] for i in range(1, len(<arg1>))):\n        return True\n    else:\n        return False\n    \n    \n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_sorted", "sorted_no_triplicates", "ascending_with_at_most_two_dupes"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "values"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "yield", "output"]},
+    {"name": "ascending_phrase", "kind": "lexical", "values": ["ascending order", "non-decreasing order", "increasing order"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

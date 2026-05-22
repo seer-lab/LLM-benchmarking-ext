@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/93",
+  "entry_point": "encode",
+  "notes": "Swap case + shift vowels by 2 positions.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    <write_verb> a function that takes a message, and encodes in such a \n    way that it swaps case of all letters, replaces all vowels in \n    the message with the letter that appears 2 places ahead of that \n    vowel in the english alphabet. \n    Assume only letters. \n    \n    Examples:\n    >>> <fn>('test')\n    'TGST'\n    >>> <fn>('This is a message')\n    'tHKS KS C MGSSCGG'\n    \"\"\"\n",
+  "templated_solution": "    vowels = \"aeiouAEIOU\"\n    vowels_replace = dict([(i, chr(ord(i) + 2)) for i in vowels])\n    <arg1> = <arg1>.swapcase()\n    return ''.join([vowels_replace[i] if i in vowels else i for i in <arg1>])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["encode", "swap_and_shift_vowels", "case_swap_vowel_cipher"]},
+    {"name": "arg1", "kind": "identifier", "values": ["message", "text", "input"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

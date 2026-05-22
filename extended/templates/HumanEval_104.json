@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/104",
+  "entry_point": "unique_digits",
+  "notes": "Keep numbers whose digits are all odd; sort ascending.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Given a list of positive integers x. <return_verb> a sorted list of all \n    elements that hasn't any <even_word> digit.\n\n    Note: Returned list should be sorted in <order_phrase>.\n    \n    For example:\n    >>> <fn>([15, 33, 1422, 1])\n    [1, 15, 33]\n    >>> <fn>([152, 323, 1422, 10])\n    []\n    \"\"\"\n",
+  "templated_solution": "    odd_digit_elements = []\n    for i in <arg1>:\n        if all (int(c) % 2 == 1 for c in str(i)):\n            odd_digit_elements.append(i)\n    return sorted(odd_digit_elements)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["unique_digits", "all_odd_digit_only", "numbers_without_even_digits"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "lst", "numbers"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]},
+    {"name": "even_word", "kind": "lexical", "values": ["even", "evenly divisible", "divisible-by-two"]},
+    {"name": "order_phrase", "kind": "lexical", "values": ["increasing order", "ascending order", "smallest-to-largest order"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/24",
+  "entry_point": "largest_divisor",
+  "notes": "Largest proper divisor (strictly less than n). Lexical variation on 'largest', 'divides evenly', and the noun for n.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int) -> int:\n    \"\"\" For a given <num_word> n, <find_verb> the <largest_word> <num_word> that <divides_phrase>, smaller than n\n    >>> <fn>(15)\n    5\n    \"\"\"\n",
+  "templated_solution": "    for i in reversed(range(<arg1>)):\n        if <arg1> % i == 0:\n            return i\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["largest_divisor", "biggest_proper_divisor", "max_divisor_under"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "value", "num"]},
+    {"name": "num_word", "kind": "lexical", "values": ["number", "integer", "value"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "return", "compute"]},
+    {"name": "largest_word", "kind": "lexical", "values": ["largest", "greatest", "biggest"]},
+    {"name": "divides_phrase", "kind": "lexical", "values": ["divides n evenly", "divides n without remainder", "is a divisor of n"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

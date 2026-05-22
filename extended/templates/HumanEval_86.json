@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/86",
+  "entry_point": "anti_shuffle",
+  "notes": "Sort characters of each word by ASCII; keep word boundaries.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    <write_verb> a function that takes a string and returns an <ordered_word> version of it.\n    <ordered_word> version of string, is a string where all words (separated by space)\n    are replaced by a new word where all the characters arranged in\n    <order_phrase>.\n    Note: You should keep the order of words and blank spaces in the sentence.\n\n    For example:\n    <fn>('Hi') returns 'Hi'\n    <fn>('hello') returns 'ehllo'\n    <fn>('Hello World!!!') returns 'Hello !!!Wdlor'\n    \"\"\"\n",
+  "templated_solution": "    return ' '.join([''.join(sorted(list(i))) for i in <arg1>.split(' ')])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["anti_shuffle", "sort_each_word", "ascii_sort_words"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "sentence", "text"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "ordered_word", "kind": "lexical", "values": ["ordered", "sorted", "alphabetized"]},
+    {"name": "order_phrase", "kind": "lexical", "values": ["ascending order based on ascii value", "ascending ASCII order", "alphabetical order by codepoint"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

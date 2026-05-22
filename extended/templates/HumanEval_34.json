@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/34",
+  "entry_point": "unique",
+  "notes": "Sorted unique elements. Compact docstring; small lexical surface.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> <sorted_word> <unique_word> elements in a list\n    >>> <fn>([5, 3, 5, 2, 3, 3, 9, 0, 123])\n    [0, 2, 3, 5, 9, 123]\n    \"\"\"\n",
+  "templated_solution": "    return sorted(list(set(<arg1>)))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["unique", "sorted_unique", "distinct_sorted"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "items", "values"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Produce", "Compute"]},
+    {"name": "sorted_word", "kind": "lexical", "values": ["sorted", "ordered", "ascending"]},
+    {"name": "unique_word", "kind": "lexical", "values": ["unique", "distinct", "non-repeating"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/47",
+  "entry_point": "median",
+  "notes": "Median of a numeric list.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> <median_word> of <element_word> in the list l.\n    >>> <fn>([3, 1, 2, 4, 5])\n    3\n    >>> <fn>([-10, 4, 6, 1000, 10, 20])\n    15.0\n    \"\"\"\n",
+  "templated_solution": "    <arg1> = sorted(<arg1>)\n    if len(<arg1>) % 2 == 1:\n        return <arg1>[len(<arg1>) // 2]\n    else:\n        return (<arg1>[len(<arg1>) // 2 - 1] + <arg1>[len(<arg1>) // 2]) / 2.0\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["median", "list_median", "middle_value"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "numbers", "lst"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Give"]},
+    {"name": "median_word", "kind": "lexical", "values": ["median", "middle value", "central value"]},
+    {"name": "element_word", "kind": "lexical", "values": ["elements", "values", "numbers"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

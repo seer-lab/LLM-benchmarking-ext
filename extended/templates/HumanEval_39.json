@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/39",
+  "entry_point": "prime_fib",
+  "notes": "Return the n-th number that's both Fibonacci AND prime. Variation on the joint descriptor.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"\n    <fn> returns <ordinal_phrase> that is <joint_phrase>.\n    >>> <fn>(1)\n    2\n    >>> <fn>(2)\n    3\n    >>> <fn>(3)\n    5\n    >>> <fn>(4)\n    13\n    >>> <fn>(5)\n    89\n    \"\"\"\n",
+  "templated_solution": "    import math\n\n    def is_prime(p):\n        if p < 2:\n            return False\n        for k in range(2, min(int(math.sqrt(p)) + 1, p - 1)):\n            if p % k == 0:\n                return False\n        return True\n    f = [0, 1]\n    while True:\n        f.append(f[-1] + f[-2])\n        if is_prime(f[-1]):\n            <arg1> -= 1\n        if <arg1> == 0:\n            return f[-1]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["prime_fib", "nth_prime_fibonacci", "prime_fibonacci"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "index", "k"]},
+    {"name": "ordinal_phrase", "kind": "lexical", "values": ["n-th number", "the n-th value", "the number at position n"]},
+    {"name": "joint_phrase", "kind": "lexical", "values": ["a Fibonacci number and it's also prime", "both a Fibonacci number and a prime", "simultaneously prime and in the Fibonacci sequence"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

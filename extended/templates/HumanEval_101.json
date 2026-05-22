@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/101",
+  "entry_point": "words_string",
+  "notes": "Split string by comma OR space.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    You will be given a string of words <separated_phrase>. Your task is\n    to <split_verb> the string into words and <return_verb> an array of the words.\n    \n    For example:\n    <fn>(\"Hi, my name is John\") == [\"Hi\", \"my\", \"name\", \"is\", \"John\"]\n    <fn>(\"One, two, three, four, five, six\") == [\"One\", \"two\", \"three\", \"four\", \"five\", \"six\"]\n    \"\"\"\n",
+  "templated_solution": "    if not <arg1>:\n        return []\n\n    s_list = []\n\n    for letter in <arg1>:\n        if letter == ',':\n            s_list.append(' ')\n        else:\n            s_list.append(letter)\n\n    s_list = \"\".join(s_list)\n    return s_list.split()\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["words_string", "split_words", "tokenize_comma_or_space"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "sentence", "text"]},
+    {"name": "separated_phrase", "kind": "lexical", "values": ["separated by commas or spaces", "delimited by ',' or whitespace", "split apart by commas or spaces"]},
+    {"name": "split_verb", "kind": "lexical", "values": ["split", "break", "tokenize"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "output", "produce"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

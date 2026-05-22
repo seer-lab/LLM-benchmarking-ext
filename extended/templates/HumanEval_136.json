@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/136",
+  "entry_point": "largest_smallest_integers",
+  "notes": "Largest negative + smallest positive in a tuple; None if absent.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    <create_verb> a function that returns a tuple (a, b), where 'a' is\n    the <largest_phrase>, and 'b' is the <smallest_phrase> in a list.\n    If there is no negative or positive integers, return them as None.\n\n    Examples:\n    <fn>([2, 4, 1, 3, 5, 7]) == (None, 1)\n    <fn>([]) == (None, None)\n    <fn>([0]) == (None, None)\n    '''\n",
+  "templated_solution": "    smallest = list(filter(lambda x: x < 0, <arg1>))\n    largest = list(filter(lambda x: x > 0, <arg1>))\n    return (max(smallest) if smallest else None, min(largest) if largest else None)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["largest_smallest_integers", "max_neg_min_pos", "extremes_negative_positive"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "values"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]},
+    {"name": "largest_phrase", "kind": "lexical", "values": ["largest of negative integers", "biggest negative number", "max of the negative values"]},
+    {"name": "smallest_phrase", "kind": "lexical", "values": ["smallest of positive integers", "smallest positive number", "min of the positive values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

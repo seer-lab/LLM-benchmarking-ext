@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/26",
+  "entry_point": "remove_duplicates",
+  "notes": "STRICT remove: drop every element that occurs more than once, NOT a dedupe. Lexical variation must preserve this 'remove all copies including originals' semantics.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[int]) -> List[int]:\n    \"\"\" From a list of <int_word>, <remove_phrase>.\n    Keep order of elements left the same as in the input.\n    >>> <fn>([1, 2, 3, 2, 4])\n    [1, 3, 4]\n    \"\"\"\n",
+  "templated_solution": "    import collections\n    c = collections.Counter(<arg1>)\n    return [n for n in <arg1> if c[n] <= 1]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["remove_duplicates", "drop_repeated", "keep_only_unique"]},
+    {"name": "arg1", "kind": "identifier", "values": ["numbers", "values", "items"]},
+    {"name": "int_word", "kind": "lexical", "values": ["integers", "whole numbers", "int values"]},
+    {"name": "remove_phrase", "kind": "lexical", "values": ["remove all elements that occur more than once", "drop every value appearing two or more times in the input", "exclude entries with multiplicity greater than one"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

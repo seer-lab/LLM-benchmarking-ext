@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/21",
+  "entry_point": "rescale_to_unit",
+  "notes": "Min-max normalization to [0, 1]. Lexical variation on 'linear transform' and the smallest/largest endpoints language.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[float]) -> List[float]:\n    \"\"\" Given list of <num_word> (of at least two elements), apply a <transform_word> to that list,\n    such that the <min_word> number will become 0 and the <max_word> will become 1\n    >>> <fn>([1.0, 2.0, 3.0, 4.0, 5.0])\n    [0.0, 0.25, 0.5, 0.75, 1.0]\n    \"\"\"\n",
+  "templated_solution": "    min_number = min(<arg1>)\n    max_number = max(<arg1>)\n    return [(x - min_number) / (max_number - min_number) for x in <arg1>]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["rescale_to_unit", "min_max_normalize", "normalize_unit_range"]},
+    {"name": "arg1", "kind": "identifier", "values": ["numbers", "values", "data"]},
+    {"name": "num_word", "kind": "lexical", "values": ["numbers", "values", "data points"]},
+    {"name": "transform_word", "kind": "lexical", "values": ["linear transform", "min-max scaling", "linear rescaling"]},
+    {"name": "min_word", "kind": "lexical", "values": ["smallest", "minimum", "lowest"]},
+    {"name": "max_word", "kind": "lexical", "values": ["largest", "maximum", "highest"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

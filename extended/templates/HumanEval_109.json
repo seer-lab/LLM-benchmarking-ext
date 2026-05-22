@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/109",
+  "entry_point": "move_one_ball",
+  "notes": "Can rotations alone produce sorted array?",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"We have an array 'arr' of N integers arr[1], arr[2], ..., arr[N].The\n    numbers in the array will be randomly ordered. Your task is to determine if\n    it is possible to get an array sorted in <ordering_phrase> by performing \n    the following operation on the given array:\n        You are allowed to perform <shift_phrase> any number of times.\n    \n    One <shift_phrase> means shifting all elements of the array by one\n    position in the right direction. The last element of the array will be moved to\n    the starting position in the array i.e. 0th index. \n\n    If it is possible to obtain the sorted array by performing the above operation\n    then return True else return False.\n    If the given array is empty then return True.\n\n    Note: The given list is guaranteed to have unique elements.\n\n    For Example:\n    \n    <fn>([3, 4, 5, 1, 2])==>True\n    Explanation: By performin 2 right shift operations, non-decreasing order can\n                 be achieved for the given array.\n    <fn>([3, 5, 4, 1, 2])==>False\n    Explanation:It is not possible to get non-decreasing order for the given\n                array by performing any number of right shift operations.\n                \n    \"\"\"\n",
+  "templated_solution": "    if len(<arg1>)==0:\n      return True\n    sorted_array=sorted(<arg1>)\n    my_arr=[]\n    \n    min_value=min(<arg1>)\n    min_index=<arg1>.index(min_value)\n    my_arr=<arg1>[min_index:]+<arg1>[0:min_index]\n    for i in range(len(<arg1>)):\n      if my_arr[i]!=sorted_array[i]:\n        return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["move_one_ball", "rotatable_to_sorted", "is_cyclic_sort"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "ordering_phrase", "kind": "lexical", "values": ["non-decreasing order", "ascending order", "weakly increasing order"]},
+    {"name": "shift_phrase", "kind": "lexical", "values": ["right shift operation", "cyclic right rotation", "right rotation"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

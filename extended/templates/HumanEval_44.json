@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/44",
+  "entry_point": "change_base",
+  "notes": "Convert integer x to a string in another base. Lexical variation on 'numerical base' and the conversion phrasing.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int, <arg2>: int):\n    \"\"\"<change_phrase> of input <num_word> x to base.\n    <return_verb> string representation after the conversion.\n    base numbers are less than 10.\n    >>> <fn>(8, 3)\n    '22'\n    >>> <fn>(8, 2)\n    '1000'\n    >>> <fn>(7, 2)\n    '111'\n    \"\"\"\n",
+  "templated_solution": "    ret = \"\"\n    while <arg1> > 0:\n        ret = str(<arg1> % <arg2>) + ret\n        <arg1> //= <arg2>\n    return ret\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["change_base", "to_base", "convert_base"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "num", "value"]},
+    {"name": "arg2", "kind": "identifier", "values": ["base", "target_base", "b"]},
+    {"name": "change_phrase", "kind": "lexical", "values": ["Change numerical base", "Convert the radix", "Re-express in a new base"]},
+    {"name": "num_word", "kind": "lexical", "values": ["number", "integer", "value"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

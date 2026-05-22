@@ -1,0 +1,53 @@
+{
+  "task_id": "HumanEval/0",
+  "entry_point": "has_close_elements",
+  "notes": "Paper problem_1. Wording-only variations; behavior preserved.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[float], <arg2>: float) -> bool:\n    \"\"\" Check if in given list of <input_type>, are any two numbers closer to each other than\n    given <threshold_word>.\n    >>> <fn>([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> <fn>([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n",
+  "templated_solution": "    for idx, elem in enumerate(<arg1>):\n        for idx2, elem2 in enumerate(<arg1>):\n            if idx != idx2:\n                distance = abs(elem - elem2)\n                if distance < <arg2>:\n                    return True\n\n    return False\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "has_close_elements"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "numbers"
+      ]
+    },
+    {
+      "name": "arg2",
+      "kind": "identifier",
+      "values": [
+        "threshold"
+      ]
+    },
+    {
+      "name": "input_type",
+      "kind": "lexical",
+      "values": [
+        "numbers",
+        "measurements",
+        "float values"
+      ]
+    },
+    {
+      "name": "threshold_word",
+      "kind": "lexical",
+      "values": [
+        "threshold",
+        "minimum distance",
+        "tolerance"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/63",
+  "entry_point": "fibfib",
+  "notes": "Sum-of-last-3 sequence (tribonacci variant). Base-case lines must stay intact.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int):\n    \"\"\"The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:\n    <fn>(0) == 0\n    <fn>(1) == 0\n    <fn>(2) == 1\n    <fn>(n) == <fn>(n-1) + <fn>(n-2) + <fn>(n-3).\n    Please <write_verb> a function to <efficient_phrase> compute the n-th element of the fibfib number sequence.\n    >>> <fn>(1)\n    0\n    >>> <fn>(5)\n    4\n    >>> <fn>(8)\n    24\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == 0:\n        return 0\n    if <arg1> == 1:\n        return 0\n    if <arg1> == 2:\n        return 1\n    return <fn>(<arg1> - 1) + <fn>(<arg1> - 2) + <fn>(<arg1> - 3)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["fibfib", "tribonacci_like", "fib3"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "index", "k"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["write", "implement", "produce"]},
+    {"name": "efficient_phrase", "kind": "lexical", "values": ["efficiently", "without redundant work", "in linear time"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

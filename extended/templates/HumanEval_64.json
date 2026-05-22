@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/64",
+  "entry_point": "vowels_count",
+  "notes": "Count vowels (incl. 'y' as a final-position vowel). The FIX comment in the original prompt is preserved.",
+  "paper_subset": false,
+  "templated_prompt": "\nFIX = \"\"\"\nAdd more test cases.\n\"\"\"\n\ndef <fn>(<arg1>):\n    \"\"\"<write_verb> a function <fn> which takes a string representing\n    a word as input and <return_verb> the <count_word> in the string.\n    Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a\n    vowel, but only when it is at the end of the given word.\n\n    Example:\n    >>> <fn>(\"abcde\")\n    2\n    >>> <fn>(\"ACEDY\")\n    3\n    \"\"\"\n",
+  "templated_solution": "    vowels = \"aeiouAEIOU\"\n    n_vowels = sum(c in vowels for c in <arg1>)\n    if <arg1>[-1] == 'y' or <arg1>[-1] == 'Y':\n        n_vowels += 1\n    return n_vowels\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["vowels_count", "count_vowels", "number_of_vowels"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "word", "text"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Define", "Implement"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["returns", "outputs", "computes"]},
+    {"name": "count_word", "kind": "lexical", "values": ["number of vowels", "vowel count", "total vowels"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

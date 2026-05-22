@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/51",
+  "entry_point": "remove_vowels",
+  "notes": "Drop all vowels (case-insensitive). The 'aeiou' literal in solution must stay intact.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>):\n    \"\"\"\n    <fn> is a function that takes <input_word> and returns <input_word> <without_phrase> vowels.\n    >>> <fn>('')\n    ''\n    >>> <fn>(\"abcdef\\nghijklm\")\n    'bcdf\\nghjklm'\n    >>> <fn>('abcdef')\n    'bcdf'\n    >>> <fn>('aaaaa')\n    ''\n    >>> <fn>('aaBAA')\n    'B'\n    >>> <fn>('zbcd')\n    'zbcd'\n    \"\"\"\n",
+  "templated_solution": "    return \"\".join([s for s in <arg1> if s.lower() not in [\"a\", \"e\", \"i\", \"o\", \"u\"]])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["remove_vowels", "strip_vowels", "drop_vowels"]},
+    {"name": "arg1", "kind": "identifier", "values": ["text", "string", "s"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input string"]},
+    {"name": "without_phrase", "kind": "lexical", "values": ["without", "stripped of", "with no"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

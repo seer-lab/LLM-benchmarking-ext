@@ -1,0 +1,56 @@
+problem_8_versions = {
+    "problem": "Problem 8",
+    "meta_prompt": "For a given list of <X>, return a tuple consisting of the <Y> and the <Z> of all elements in the list. An empty <Y> should be equal to <A>, and an empty <Z> should be equal to <B>.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "For a given list of integers, return a tuple consisting of the sum and the product of all elements in the list. An empty sum should be equal to 0, and an empty product should be equal to 1.",
+            "assertions": [
+                {"input": {"numbers": []}, "output": (0, 1)},
+                {"input": {"numbers": [1, 2, 3, 4]}, "output": (10, 24)},
+                {"input": {"numbers": [0, 1, 2]}, "output": (3, 0)},
+                {"input": {"numbers": [5]}, "output": (5, 5)}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "For a given list of numbers, return a tuple consisting of the product and the cumulative sum of all elements in the list. An empty product should be equal to 1, and an empty cumulative sum should be equal to 0.",
+            "assertions": [
+                {"input": {"numbers": [2, 3, 4]}, "output": (24, 9)},
+                {"input": {"numbers": [7, 8, 9]}, "output": (504, 24)},
+                {"input": {"numbers": []}, "output": (1, 0)},
+                {"input": {"numbers": [10]}, "output": (10, 10)}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "For a given list of values, return a tuple consisting of the difference and the minimum of all elements in the list in order of appearance. An empty difference should be equal to 0, and an empty minimum should be equal to positive infinity.",
+            "assertions": [
+                {"input": {"numbers": [4, 5, 6]}, "output": (-7, 4)},
+                {"input": {"numbers": [10, 3]}, "output": (7, 3)},
+                {"input": {"numbers": [5]}, "output": (5, 5)},
+                {"input": {"numbers": []}, "output": (0, "inf")}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "For a given list of elements, return a tuple consisting of the average and the maximum of all elements in the list. An empty average should be equal to 0, and an empty maximum should be equal to negative infinity.",
+            "assertions": [
+                {"input": {"numbers": [2, 4, 6, 8]}, "output": (5, 8)},
+                {"input": {"numbers": [10]}, "output": (10, 10)},
+                {"input": {"numbers": [1, 1, 1]}, "output": (1, 1)},
+                {"input": {"numbers": []}, "output": (0, "-inf")}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "For a given list of numbers, return a tuple consisting of the cumulative sum and the maximum of all elements in the list. An empty cumulative sum should be equal to 0, and an empty maximum should be equal to negative infinity.",
+            "assertions": [
+                {"input": {"numbers": [10, 20, 30]}, "output": (60, 30)},
+                {"input": {"numbers": [100, 0]}, "output": (100, 100)},
+                {"input": {"numbers": [3, 5, 7]}, "output": (15, 7)},
+                {"input": {"numbers": []}, "output": (0, "-inf")}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/106",
+  "entry_point": "f",
+  "notes": "List where i-th element = factorial(i) if i even else sum(1..i).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\" <implement_verb> the function f that takes n as a parameter,\n    and returns a list of size n, such that the value of the element at index i is the factorial of i if i is even\n    or the sum of numbers from 1 to i otherwise.\n    i starts from 1.\n    the factorial of i is the multiplication of the numbers from 1 to i (1 * 2 * ... * i).\n    Example:\n    <fn>(5) == [1, 2, 6, 24, 15]\n    \"\"\"\n",
+  "templated_solution": "    ret = []\n    for i in range(1,<arg1>+1):\n        if i%2 == 0:\n            x = 1\n            for j in range(1,i+1): x *= j\n            ret += [x]\n        else:\n            x = 0\n            for j in range(1,i+1): x += j\n            ret += [x]\n    return ret\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["f", "even_factorial_odd_sum", "factorial_or_triangle"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "size", "length"]},
+    {"name": "implement_verb", "kind": "lexical", "values": ["Implement", "Write", "Build"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

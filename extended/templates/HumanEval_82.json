@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/82",
+  "entry_point": "prime_length",
+  "notes": "True iff len(string) is prime.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<write_verb> a function that takes a <string_word> and returns True if the <string_word>\n    length is a prime number or False otherwise\n    Examples\n    <fn>('Hello') == True\n    <fn>('abcdcba') == True\n    <fn>('kittens') == True\n    <fn>('orange') == False\n    \"\"\"\n",
+  "templated_solution": "    l = len(<arg1>)\n    if l == 0 or l == 1:\n        return False\n    for i in range(2, l):\n        if l % i == 0:\n            return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["prime_length", "has_prime_length", "is_prime_length"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "s", "text"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "string_word", "kind": "lexical", "values": ["string", "text", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

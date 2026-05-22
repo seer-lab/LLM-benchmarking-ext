@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/67",
+  "entry_point": "fruit_distribution",
+  "notes": "Given 'A apples and B oranges' + total fruit count n, return mango count = n - A - B.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>,<arg2>):\n    \"\"\"\n    In this task, you will be given a string that represents a <number_phrase> apples and oranges \n    that are distributed in a basket of fruit this basket contains \n    apples, oranges, and mango fruits. Given the string that represents the total number of \n    the oranges and apples and an integer that represent the total number of the fruits \n    in the basket return the number of the mango fruits in the basket.\n    for examble:\n    <fn>(\"5 apples and 6 oranges\", 19) ->19 - 5 - 6 = 8\n    <fn>(\"0 apples and 1 oranges\",3) -> 3 - 0 - 1 = 2\n    <fn>(\"2 apples and 3 oranges\", 100) -> 100 - 2 - 3 = 95\n    <fn>(\"100 apples and 1 oranges\",120) -> 120 - 100 - 1 = 19\n    \"\"\"\n",
+  "templated_solution": "    lis = list()\n    for i in <arg1>.split(' '):\n        if i.isdigit():\n            lis.append(int(i))\n    return <arg2> - sum(lis)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["fruit_distribution", "count_mangoes", "remaining_mango"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "description", "fruit_string"]},
+    {"name": "arg2", "kind": "identifier", "values": ["n", "total", "basket_count"]},
+    {"name": "number_phrase", "kind": "lexical", "values": ["number of", "count of", "quantity of"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

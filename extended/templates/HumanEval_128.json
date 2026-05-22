@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/128",
+  "entry_point": "prod_signs",
+  "notes": "sign-product * sum-of-magnitudes.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    You are given an array arr of integers and you need to <return_verb>\n    <sum_phrase> of <magnitude_phrase> of integers multiplied by <product_phrase> of all signs\n    of each number in the array, represented by 1, -1 or 0.\n    Note: return None for empty arr.\n\n    Example:\n    >>> <fn>([1, 2, 2, -4]) == -9\n    >>> <fn>([0, 1]) == 0\n    >>> <fn>([]) == None\n    \"\"\"\n",
+  "templated_solution": "    if not <arg1>: return None\n    prod = 0 if 0 in <arg1> else (-1) ** len(list(filter(lambda x: x < 0, <arg1>)))\n    return prod * sum([abs(i) for i in <arg1>])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["prod_signs", "magnitude_sum_signed", "sign_product_times_abs_sum"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "compute"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "total", "addition"]},
+    {"name": "magnitude_phrase", "kind": "lexical", "values": ["magnitudes", "absolute values", "moduli"]},
+    {"name": "product_phrase", "kind": "lexical", "values": ["product", "multiplication"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

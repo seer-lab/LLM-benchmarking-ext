@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/120",
+  "entry_point": "maximum",
+  "notes": "Sorted top-k from arr.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"\n    Given an array arr of integers and a positive integer k, <return_verb> a <sorted_word> list \n    of length k with the <max_phrase> in arr.\n\n    Example 1:\n\n        Input: arr = [-3, -4, 5], k = 3\n        Output: [-4, -3, 5]\n\n    Example 2:\n\n        Input: arr = [4, -4, 4], k = 2\n        Output: [4, 4]\n\n    Example 3:\n\n        Input: arr = [-3, 2, 1, 2, -1, -2, 1], k = 1\n        Output: [2]\n\n    Note:\n        1. The length of the array will be in the range of [1, 1000].\n        2. The elements in the array will be in the range of [-1000, 1000].\n        3. 0 <= k <= len(arr)\n    \"\"\"\n",
+  "templated_solution": "    if <arg2> == 0:\n        return []\n    <arg1>.sort()\n    ans = <arg1>[-<arg2>:]\n    return ans\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["maximum", "top_k_sorted", "k_largest_sorted"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "arg2", "kind": "identifier", "values": ["k", "n_top", "count"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]},
+    {"name": "sorted_word", "kind": "lexical", "values": ["sorted", "ordered", "ascending"]},
+    {"name": "max_phrase", "kind": "lexical", "values": ["maximum k numbers", "top k largest values", "k biggest elements"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

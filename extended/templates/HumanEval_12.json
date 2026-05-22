@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/12",
+  "entry_point": "longest",
+  "notes": "Returns the longest string from a list, with tie-break by first occurrence. Lexical variation on the item noun and on the tie-break wording.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List, Optional\n\n\ndef <fn>(<arg1>: List[str]) -> Optional[str]:\n    \"\"\" Out of list of <items_word>, return the <length_word> one. Return the <first_word> one in case of multiple\n    <items_word> of the same length. Return None in case the input list is empty.\n    >>> <fn>([])\n\n    >>> <fn>(['a', 'b', 'c'])\n    'a'\n    >>> <fn>(['a', 'bb', 'ccc'])\n    'ccc'\n    \"\"\"\n",
+  "templated_solution": "    if not <arg1>:\n        return None\n\n    maxlen = max(len(x) for x in <arg1>)\n    for s in <arg1>:\n        if len(s) == maxlen:\n            return s\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["longest", "longest_string", "pick_longest"]},
+    {"name": "arg1", "kind": "identifier", "values": ["strings", "words", "items"]},
+    {"name": "items_word", "kind": "lexical", "values": ["strings", "words", "text items"]},
+    {"name": "length_word", "kind": "lexical", "values": ["longest", "biggest", "maximum-length"]},
+    {"name": "first_word", "kind": "lexical", "values": ["first", "earliest", "leading"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

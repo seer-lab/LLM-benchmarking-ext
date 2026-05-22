@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/35",
+  "entry_point": "max_element",
+  "notes": "Max of list. Trivial docstring; identifier + small lexical variation.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"<return_verb> <max_word> element in the list.\n    >>> <fn>([1, 2, 3])\n    3\n    >>> <fn>([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10])\n    123\n    \"\"\"\n",
+  "templated_solution": "    m = <arg1>[0]\n    for e in <arg1>:\n        if e > m:\n            m = e\n    return m\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["max_element", "list_max", "biggest_in_list"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "numbers", "items"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Find", "Output"]},
+    {"name": "max_word", "kind": "lexical", "values": ["maximum", "biggest", "largest"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

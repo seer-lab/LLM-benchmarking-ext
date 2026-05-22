@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/125",
+  "entry_point": "split_words",
+  "notes": "Split on space, else comma, else count odd-position lowercase letters.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    Given a string of words, <return_verb> a list of words split on whitespace, if no whitespaces exists in the text you\n    should split on commas ',' if no commas exists you should return the number of lower-case letters with odd order in the\n    alphabet, ord('a') = 0, ord('b') = 1, ... ord('z') = 25\n    Examples\n    <fn>(\"Hello world!\") ➞ [\"Hello\", \"world!\"]\n    <fn>(\"Hello,world!\") ➞ [\"Hello\", \"world!\"]\n    <fn>(\"abcdef\") == 3 \n    '''\n",
+  "templated_solution": "    if \" \" in <arg1>:\n        return <arg1>.split()\n    elif \",\" in <arg1>:\n        return <arg1>.replace(',',' ').split()\n    else:\n        return len([i for i in <arg1> if i.islower() and ord(i)%2 == 0])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["split_words", "split_by_space_or_comma", "tokens_or_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["txt", "s", "text"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

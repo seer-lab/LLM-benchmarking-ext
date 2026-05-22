@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/96",
+  "entry_point": "count_up_to",
+  "notes": "Primes strictly less than n.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<implement_verb> a function that takes an non-negative integer and returns an array of the first n\n    integers that are <prime_word> and less than n.\n    for example:\n    <fn>(5) => [2,3]\n    <fn>(11) => [2,3,5,7]\n    <fn>(0) => []\n    <fn>(20) => [2,3,5,7,11,13,17,19]\n    <fn>(1) => []\n    <fn>(18) => [2,3,5,7,11,13,17]\n    \"\"\"\n",
+  "templated_solution": "    primes = []\n    for i in range(2, <arg1>):\n        is_prime = True\n        for j in range(2, i):\n            if i % j == 0:\n                is_prime = False\n                break\n        if is_prime:\n            primes.append(i)\n    return primes\n\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["count_up_to", "primes_below", "primes_under_n"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "upper", "limit"]},
+    {"name": "implement_verb", "kind": "lexical", "values": ["Implement", "Write", "Define"]},
+    {"name": "prime_word", "kind": "lexical", "values": ["prime numbers", "primes", "prime values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

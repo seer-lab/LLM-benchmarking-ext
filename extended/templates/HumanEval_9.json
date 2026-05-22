@@ -1,0 +1,41 @@
+{
+  "task_id": "HumanEval/9",
+  "entry_point": "rolling_max",
+  "notes": "Paper problem_9. The paper varied max \u2192 min (cumulative maximum vs minimum), which would break the original HumanEval test. Only the wording of 'integers' is varied here under keep_original.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List, Tuple\n\n\ndef <fn>(<arg1>: List[int]) -> List[int]:\n    \"\"\" From a given list of <items_word>, generate a list of rolling maximum element found until given moment\n    in the sequence.\n    >>> <fn>([1, 2, 3, 2, 3, 4, 2])\n    [1, 2, 3, 3, 3, 4, 4]\n    \"\"\"\n",
+  "templated_solution": "    running_max = None\n    result = []\n\n    for n in <arg1>:\n        if running_max is None:\n            running_max = n\n        else:\n            running_max = max(running_max, n)\n\n        result.append(running_max)\n\n    return result\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "rolling_max"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "numbers"
+      ]
+    },
+    {
+      "name": "items_word",
+      "kind": "lexical",
+      "values": [
+        "integers",
+        "floats",
+        "values",
+        "numbers",
+        "whole numbers",
+        "data points",
+        "int values"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

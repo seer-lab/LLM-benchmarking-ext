@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/11",
+  "entry_point": "string_xor",
+  "notes": "Binary-string XOR. Lexical variation on the binary-digit phrasing and the XOR operation name.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: str, <arg2>: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of <bit_phrase>.\n    Perform <xor_phrase> on these inputs and return result also as a string.\n    >>> <fn>('010', '110')\n    '100'\n    \"\"\"\n",
+  "templated_solution": "    def xor(i, j):\n        if i == j:\n            return '0'\n        else:\n            return '1'\n\n    return ''.join(xor(x, y) for x, y in zip(<arg1>, <arg2>))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["string_xor", "xor_strings", "binary_xor"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "x", "left"]},
+    {"name": "arg2", "kind": "identifier", "values": ["b", "y", "right"]},
+    {"name": "bit_phrase", "kind": "lexical", "values": ["1s and 0s", "binary digits", "the characters '0' and '1'"]},
+    {"name": "xor_phrase", "kind": "lexical", "values": ["binary XOR", "bitwise XOR", "exclusive-or"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

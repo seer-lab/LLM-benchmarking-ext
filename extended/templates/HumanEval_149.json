@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/149",
+  "entry_point": "sorted_list_sum",
+  "notes": "Keep even-length words, sort by length then alphabetic.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<write_verb> a function that accepts a list of strings as a parameter,\n    deletes the strings that have <odd_phrase> from it,\n    and returns the resulted list with a sorted order,\n    The list is always a list of strings and never an array of numbers,\n    and it may contain duplicates.\n    The order of the list should be ascending by length of each word, and you\n    should return the list sorted by that rule.\n    If two words have the same length, sort the list alphabetically.\n    The function should return a list of strings in sorted order.\n    You may assume that all words will have the same length.\n    For example:\n    assert list_sort([\"aa\", \"a\", \"aaa\"]) => [\"aa\"]\n    assert list_sort([\"ab\", \"a\", \"aaa\", \"cd\"]) => [\"ab\", \"cd\"]\n    \"\"\"\n",
+  "templated_solution": "    <arg1>.sort()\n    new_lst = []\n    for i in <arg1>:\n        if len(i)%2 == 0:\n            new_lst.append(i)\n    return sorted(new_lst, key=len)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sorted_list_sum", "even_length_words_sorted", "drop_odd_length_then_sort"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "words", "strings"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "odd_phrase", "kind": "lexical", "values": ["odd lengths", "an odd number of characters", "odd character counts"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

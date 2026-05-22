@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/105",
+  "entry_point": "by_length",
+  "notes": "Sort 1-9, reverse, replace with English names.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given an array of integers, <sort_verb> the integers that are between 1 and 9 inclusive,\n    reverse the resulting array, and then replace each digit by its corresponding name from\n    \"One\", \"Two\", \"Three\", \"Four\", \"Five\", \"Six\", \"Seven\", \"Eight\", \"Nine\".\n\n    For example:\n      arr = [2, 1, 1, 4, 5, 8, 2, 3]   \n            -> sort arr -> [1, 1, 2, 2, 3, 4, 5, 8] \n            -> reverse arr -> [8, 5, 4, 3, 2, 2, 1, 1]\n      return [\"Eight\", \"Five\", \"Four\", \"Three\", \"Two\", \"Two\", \"One\", \"One\"]\n    \n      If the array is empty, return an empty array:\n      arr = []\n      return []\n    \n      If the array has any strange number ignore it:\n      arr = [1, -1 , 55] \n            -> sort arr -> [-1, 1, 55]\n            -> reverse arr -> [55, 1, -1]\n      return = ['One']\n    \"\"\"\n",
+  "templated_solution": "    dic = {\n        1: \"One\",\n        2: \"Two\",\n        3: \"Three\",\n        4: \"Four\",\n        5: \"Five\",\n        6: \"Six\",\n        7: \"Seven\",\n        8: \"Eight\",\n        9: \"Nine\",\n    }\n    sorted_arr = sorted(<arg1>, reverse=True)\n    new_arr = []\n    for var in sorted_arr:\n        try:\n            new_arr.append(dic[var])\n        except:\n            pass\n    return new_arr\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["by_length", "digit_names_descending", "named_digits_reverse_sorted"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "numbers"]},
+    {"name": "sort_verb", "kind": "lexical", "values": ["sort", "order", "arrange"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

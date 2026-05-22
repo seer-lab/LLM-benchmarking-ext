@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/22",
+  "entry_point": "filter_integers",
+  "notes": "Filters a heterogeneous list keeping only Python ints. The filter verb + integer noun are the only meaningful lexical surfaces.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List, Any\n\n\ndef <fn>(<arg1>: List[Any]) -> List[int]:\n    \"\"\" <filter_verb> given list of any python values only for <int_word>\n    >>> <fn>(['a', 3.14, 5])\n    [5]\n    >>> <fn>([1, 2, 3, 'abc', {}, []])\n    [1, 2, 3]\n    \"\"\"\n",
+  "templated_solution": "    return [x for x in <arg1> if isinstance(x, int)]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["filter_integers", "only_integers", "keep_ints"]},
+    {"name": "arg1", "kind": "identifier", "values": ["values", "items", "mixed"]},
+    {"name": "filter_verb", "kind": "lexical", "values": ["Filter", "Sift", "Sieve"]},
+    {"name": "int_word", "kind": "lexical", "values": ["integers", "whole numbers", "int values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

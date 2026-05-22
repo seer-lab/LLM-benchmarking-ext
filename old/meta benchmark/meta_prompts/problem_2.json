@@ -1,0 +1,56 @@
+problem_2_versions = {
+    "problem": "Problem 2",
+    "meta_prompt": "Given a string containing multiple groups of <X> enclosed in <Y>, separate each group into a distinct string and return a list of these <Z>. Ignore any <A>.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a string containing multiple groups of balanced structures enclosed in parentheses, separate each group into a distinct string and return a list of these balanced groups. Ignore any spaces.",
+            "assertions": [
+                {"input": "( ) (( )) (( )( ))", "output": ["()", "(())", "(()())"]},
+                {"input": "(()()) ((())) () ((())()())", "output": ["(()())", "((()))", "()", "((())()())"]},
+                {"input": "() (()) ((())) (((())))", "output": ["()", "(())", "((()))", "(((())))"]},
+                {"input": "(()(())((())))", "output": ["(()(())((())))"]}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a string containing multiple groups of nested sections enclosed in brackets, separate each group into a distinct string and return a list of these separated groups. Ignore any extra whitespace.",
+            "assertions": [
+                {"input": "[ ] [[ ]] [[ ][ ]]", "output": ["[]", "[[]]", "[[][]]"]},
+                {"input": "[[]] [[[[]]]] [] [[[][]]]", "output": ["[[]]", "[[[]]]", "[]", "[[[][]]]"]},
+                {"input": "[] [[]] [[[[]]]] [[[[[]]]]]", "output": ["[]", "[[]]", "[[[]]]", "[[[[]]]]"]},
+                {"input": "[[][[[]]][]]", "output": ["[[][[[]]][]]"]}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a string containing multiple groups of grouped expressions enclosed in braces, separate each group into a distinct string and return a list of these distinct sections. Ignore any non-group characters.",
+            "assertions": [
+                {"input": "{ } {{ }} {{ }{ }}", "output": ["{}", "{{}}", "{{}{}}"]},
+                {"input": "{{}} {{{{}}}} {} {{{}{}}}", "output": ["{{}}", "{{{{}}}}", "{}", "{{{}{}}}"]},
+                {"input": "{} {{}} {{{}}} {{{{}}}}", "output": ["{}", "{{}}", "{{{}}}", "{{{{}}}}"]},
+                {"input": "{{{}}}", "output": ["{{{}}}"]}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a string containing multiple groups of pairs enclosed in parentheses, separate each group into a distinct string and return a list of these nested patterns. Ignore any spaces.",
+            "assertions": [
+                {"input": "( ) (( )) (( )( ))", "output": ["()", "(())", "(()())"]},
+                {"input": "() (()) ((())) (((())))", "output": ["()", "(())", "((()))", "(((())))"]},
+                {"input": "((a)(b)(c)) (((abc)(de))) () ((a(b)c))", "output": ["((a)(b)(c))", "(((abc)(de)))", "()", "((a(b)c))"]},
+                {"input": "(()(())((())))", "output": ["(()(())((())))"]}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a string containing multiple groups of balanced structures enclosed in brackets, separate each group into a distinct string and return a list of these balanced groups. Ignore any extra whitespace.",
+            "assertions": [
+                {"input": "[[abc]] [[[de]]] [] [[f[g]h]]", "output": ["[[abc]]", "[[[de]]]", "[]", "[[f[g]h]]"]},
+                {"input": "[] [abc] [[def]] [[[ghi]]]", "output": ["[]", "[abc]", "[[def]]", "[[[ghi]]]"]},
+                {"input": "[a[b[c[d]]]]", "output": ["[a[b[c[d]]]]"]},
+                {"input": "[ ] [[ ]] [[ ][ ]]", "output": ["[]", "[[]]", "[[][]]"]}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/74",
+  "entry_point": "total_match",
+  "notes": "Return the list whose strings have fewer total characters; tie-break first.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    '''\n    <write_verb> a function that accepts two lists of <string_word> and returns the list that has \n    <fewer_phrase> in the all <string_word> of the list less than the other list.\n\n    if the two lists have the same number of chars, return the first list.\n\n    Examples\n    <fn>([], []) ➞ []\n    <fn>(['hi', 'admin'], ['hI', 'Hi']) ➞ ['hI', 'Hi']\n    <fn>(['hi', 'admin'], ['hi', 'hi', 'admin', 'project']) ➞ ['hi', 'admin']\n    <fn>(['hi', 'admin'], ['hI', 'hi', 'hi']) ➞ ['hI', 'hi', 'hi']\n    <fn>(['4'], ['1', '2', '3', '4', '5']) ➞ ['4']\n    '''\n",
+  "templated_solution": "    l1 = 0\n    for st in <arg1>:\n        l1 += len(st)\n    \n    l2 = 0\n    for st in <arg2>:\n        l2 += len(st)\n    \n    if l1 <= l2:\n        return <arg1>\n    else:\n        return <arg2>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["total_match", "shorter_total_list", "fewer_chars_list"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst1", "first", "a"]},
+    {"name": "arg2", "kind": "identifier", "values": ["lst2", "second", "b"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "string_word", "kind": "lexical", "values": ["strings", "words", "text items"]},
+    {"name": "fewer_phrase", "kind": "lexical", "values": ["total number of chars", "total character count", "combined string length"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/153",
+  "entry_point": "Strongest_Extension",
+  "notes": "Pick extension with max (uppercase - lowercase) count.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"You will be given the name of a class (a string) and a list of extensions.\n    The extensions are to be used to load additional classes to the class. The\n    strength of the extension is as follows: Let CAP be the number of the uppercase\n    letters in the extension's name, and let SM be the number of lowercase letters \n    in the extension's name, the strength is given by the fraction CAP - SM. \n    You should <find_verb> the <strongest_word> extension and return a string in this \n    format: ClassName.StrongestExtensionName.\n    If there are two or more extensions with the same strength, you should\n    choose the one that comes first in the list.\n    For example, if you are given \"Slices\" as the class and a list of the\n    extensions: ['SErviNGSliCes', 'Cheese', 'StuFfed'] then you should\n    return 'Slices.SErviNGSliCes' since 'SErviNGSliCes' is the <strongest_word> extension \n    (its strength is -1).\n    Example:\n    for <fn>('my_class', ['AA', 'Be', 'CC']) == 'my_class.AA'\n    \"\"\"\n",
+  "templated_solution": "    strong = <arg2>[0]\n    my_val = len([x for x in <arg2>[0] if x.isalpha() and x.isupper()]) - len([x for x in <arg2>[0] if x.isalpha() and x.islower()])\n    for s in <arg2>:\n        val = len([x for x in s if x.isalpha() and x.isupper()]) - len([x for x in s if x.isalpha() and x.islower()])\n        if val > my_val:\n            strong = s\n            my_val = val\n\n    ans = <arg1> + \".\" + strong\n    return ans\n\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["Strongest_Extension", "best_extension_by_case_diff", "pick_strongest_extension"]},
+    {"name": "arg1", "kind": "identifier", "values": ["class_name", "cls", "name"]},
+    {"name": "arg2", "kind": "identifier", "values": ["extensions", "exts", "options"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "select", "pick"]},
+    {"name": "strongest_word", "kind": "lexical", "values": ["strongest", "highest-strength", "best"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

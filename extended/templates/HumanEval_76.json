@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/76",
+  "entry_point": "is_simple_power",
+  "notes": "Is x a power of n.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"Your task is to <write_verb> a function that returns true if a number x is a simple\n    <power_word> of n and false in other cases.\n    x is a simple <power_word> of n if n**int=x\n    For example:\n    <fn>(1, 4) => true\n    <fn>(2, 2) => true\n    <fn>(8, 2) => true\n    <fn>(3, 2) => false\n    <fn>(3, 1) => false\n    <fn>(5, 3) => false\n    \"\"\"\n",
+  "templated_solution": "    if (<arg2> == 1): \n        return (<arg1> == 1) \n    power = 1\n    while (power < <arg1>): \n        power = power * <arg2> \n    return (power == <arg1>) \n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_simple_power", "is_power_of", "is_integer_power"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "value", "target"]},
+    {"name": "arg2", "kind": "identifier", "values": ["n", "base", "b"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["write", "implement", "build"]},
+    {"name": "power_word", "kind": "lexical", "values": ["power", "integer power", "exponent"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/80",
+  "entry_point": "is_happy",
+  "notes": "Happy = length >=3 AND every 3 consecutive letters are distinct.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"You are given a string s.\n    Your task is to <check_verb> if the string is <happy_word> or not.\n    A string is <happy_word> if its length is at least 3 and every 3 <consecutive_word> letters are distinct\n    For example:\n    <fn>(a) => False\n    <fn>(aa) => False\n    <fn>(abcd) => True\n    <fn>(aabb) => False\n    <fn>(adb) => True\n    <fn>(xyy) => False\n    \"\"\"\n",
+  "templated_solution": "    if len(<arg1>) < 3:\n      return False\n\n    for i in range(len(<arg1>) - 2):\n      \n      if <arg1>[i] == <arg1>[i+1] or <arg1>[i+1] == <arg1>[i+2] or <arg1>[i] == <arg1>[i+2]:\n        return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_happy", "three_distinct_check", "all_triplets_distinct"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "string"]},
+    {"name": "check_verb", "kind": "lexical", "values": ["check", "determine", "decide"]},
+    {"name": "happy_word", "kind": "lexical", "values": ["happy", "good", "valid"]},
+    {"name": "consecutive_word", "kind": "lexical", "values": ["consecutive", "successive", "adjacent"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

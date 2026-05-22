@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/16",
+  "entry_point": "count_distinct_characters",
+  "notes": "Counts unique characters case-insensitively. Lexical variation on 'distinct', 'characters', and the case-insensitive phrasing.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str) -> int:\n    \"\"\" Given a string, find out how many <distinct_word> <char_word> (<case_phrase>) does it consist of\n    >>> <fn>('xyzXYZ')\n    3\n    >>> <fn>('Jerry')\n    4\n    \"\"\"\n",
+  "templated_solution": "    return len(set(<arg1>.lower()))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["count_distinct_characters", "unique_character_count", "distinct_char_tally"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "input"]},
+    {"name": "distinct_word", "kind": "lexical", "values": ["distinct", "unique", "different"]},
+    {"name": "char_word", "kind": "lexical", "values": ["characters", "letters", "symbols"]},
+    {"name": "case_phrase", "kind": "lexical", "values": ["regardless of case", "ignoring case", "case-insensitively"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

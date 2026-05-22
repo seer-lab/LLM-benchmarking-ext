@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/148",
+  "entry_point": "bf",
+  "notes": "Planets between planet1 and planet2 in solar-system order.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    '''\n    There are eight planets in our solar system: the closerst to the Sun \n    is Mercury, the next one is Venus, then Earth, Mars, Jupiter, Saturn, \n    Uranus, Neptune.\n    <write_verb> a function that takes two planet names as strings planet1 and planet2. \n    The function should return a tuple containing all planets whose <orbit_phrase> are \n    located between the orbit of planet1 and the orbit of planet2, sorted by \n    the proximity to the sun. \n    The function should return an empty tuple if planet1 or planet2\n    are not correct planet names. \n    Examples\n    <fn>(\"Jupiter\", \"Neptune\") ==> (\"Saturn\", \"Uranus\")\n    <fn>(\"Earth\", \"Mercury\") ==> (\"Venus\")\n    <fn>(\"Mercury\", \"Uranus\") ==> (\"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\")\n    '''\n",
+  "templated_solution": "    planet_names = (\"Mercury\", \"Venus\", \"Earth\", \"Mars\", \"Jupiter\", \"Saturn\", \"Uranus\", \"Neptune\")\n    if <arg1> not in planet_names or <arg2> not in planet_names or <arg1> == <arg2>:\n        return ()\n    planet1_index = planet_names.index(<arg1>)\n    planet2_index = planet_names.index(<arg2>)\n    if planet1_index < planet2_index:\n        return (planet_names[planet1_index + 1: planet2_index])\n    else:\n        return (planet_names[planet2_index + 1 : planet1_index])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["bf", "planets_between", "intermediate_planets"]},
+    {"name": "arg1", "kind": "identifier", "values": ["planet1", "first", "p1"]},
+    {"name": "arg2", "kind": "identifier", "values": ["planet2", "second", "p2"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "orbit_phrase", "kind": "lexical", "values": ["orbits", "orbital paths", "trajectories around the Sun"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

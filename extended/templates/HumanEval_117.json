@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/117",
+  "entry_point": "select_words",
+  "notes": "Pick words with exactly n consonants.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"Given a string s and a natural number n, you have been tasked to <implement_verb> \n    a function that returns a list of all words from string s that contain exactly \n    n <consonant_word>, in order these words appear in the string s.\n    If the string s is empty then the function should return an empty list.\n    Note: you may assume the input string contains only letters and spaces.\n    Examples:\n    <fn>(\"Mary had a little lamb\", 4) ==> [\"little\"]\n    <fn>(\"Mary had a little lamb\", 3) ==> [\"Mary\", \"lamb\"]\n    <fn>(\"simple white space\", 2) ==> []\n    <fn>(\"Hello world\", 4) ==> [\"world\"]\n    <fn>(\"Uncle sam\", 3) ==> [\"Uncle\"]\n    \"\"\"\n",
+  "templated_solution": "    result = []\n    for word in <arg1>.split():\n        n_consonants = 0\n        for i in range(0, len(word)):\n            if word[i].lower() not in [\"a\",\"e\",\"i\",\"o\",\"u\"]:\n                n_consonants += 1 \n        if n_consonants == <arg2>:\n            result.append(word)\n    return result\n\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["select_words", "words_with_n_consonants", "filter_by_consonant_count"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "sentence", "text"]},
+    {"name": "arg2", "kind": "identifier", "values": ["n", "target_count", "k"]},
+    {"name": "implement_verb", "kind": "lexical", "values": ["implement", "write", "produce"]},
+    {"name": "consonant_word", "kind": "lexical", "values": ["consonants", "non-vowel letters", "consonant characters"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

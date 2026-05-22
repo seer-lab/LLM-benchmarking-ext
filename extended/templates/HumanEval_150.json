@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/150",
+  "entry_point": "x_or_y",
+  "notes": "x if n prime else y.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>, <arg3>):\n    \"\"\"A simple program which should return the value of x if n is \n    <prime_phrase> and should return the value of y otherwise.\n\n    Examples:\n    for <fn>(7, 34, 12) == 34\n    for <fn>(15, 8, 5) == 5\n    \n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == 1:\n        return <arg3>\n    for i in range(2, <arg1>):\n        if <arg1> % i == 0:\n            return <arg3>\n            break\n    else:\n        return <arg2>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["x_or_y", "select_by_primality", "prime_branch"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "value", "test"]},
+    {"name": "arg2", "kind": "identifier", "values": ["x", "if_prime", "yes"]},
+    {"name": "arg3", "kind": "identifier", "values": ["y", "if_not_prime", "no"]},
+    {"name": "prime_phrase", "kind": "lexical", "values": ["a prime number", "prime", "an integer with no divisors other than 1 and itself"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

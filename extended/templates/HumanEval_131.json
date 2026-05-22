@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/131",
+  "entry_point": "digits",
+  "notes": "Product of odd digits; 0 if all even.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Given a positive integer n, <return_verb> the <product_word> of the <odd_word> digits.\n    Return 0 if all digits are even.\n    For example:\n    <fn>(1)  == 1\n    <fn>(4)  == 0\n    <fn>(235) == 15\n    \"\"\"\n",
+  "templated_solution": "    product = 1\n    odd_count = 0\n    for digit in str(<arg1>):\n        int_digit = int(digit)\n        if int_digit%2 == 1:\n            product= product*int_digit\n            odd_count+=1\n    if odd_count ==0:\n        return 0\n    else:\n        return product\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["digits", "product_of_odd_digits", "odd_digit_product"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "num", "value"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "compute", "output"]},
+    {"name": "product_word", "kind": "lexical", "values": ["product", "multiplication", "result of multiplying"]},
+    {"name": "odd_word", "kind": "lexical", "values": ["odd", "non-even", "not-divisible-by-two"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

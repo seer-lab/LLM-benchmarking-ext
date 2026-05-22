@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/83",
+  "entry_point": "starts_one_ends",
+  "notes": "Count n-digit positive integers starting or ending with 1.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a positive integer n, <return_verb> the count of the numbers of n-digit\n    positive integers that <boundary_phrase>.\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> == 1: return 1\n    return 18 * (10 ** (<arg1> - 2))\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["starts_one_ends", "n_digit_one_bounded", "count_n_digit_one_start_or_end"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "digits", "k"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "compute", "output"]},
+    {"name": "boundary_phrase", "kind": "lexical", "values": ["start or end with 1", "begin with 1 or end with 1", "have 1 as their first or last digit"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

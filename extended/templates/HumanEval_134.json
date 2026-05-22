@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/134",
+  "entry_point": "check_if_last_char_is_a_letter",
+  "notes": "Last char is a standalone letter (i.e. preceded by space).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    <create_verb> a function that returns True if the last character\n    of a given string is an alphabetical character and is not\n    a part of a word, and False otherwise.\n    Note: \"word\" is a group of characters separated by space.\n\n    Examples:\n    <fn>(\"apple pie\") ➞ False\n    <fn>(\"apple pi e\") ➞ True\n    <fn>(\"apple pi e \") ➞ False\n    <fn>(\"\") ➞ False \n    '''\n",
+  "templated_solution": " \n    check = <arg1>.split(' ')[-1]\n    return True if len(check) == 1 and (97 <= ord(check.lower()) <= 122) else False\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["check_if_last_char_is_a_letter", "ends_with_standalone_letter", "last_is_lone_letter"]},
+    {"name": "arg1", "kind": "identifier", "values": ["txt", "s", "text"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

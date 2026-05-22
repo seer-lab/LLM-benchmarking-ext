@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/62",
+  "entry_point": "derivative",
+  "notes": "Polynomial derivative on coefficient list.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\" <arg1> represent <coeff_word> of a polynomial.\n    xs[0] + xs[1] * x + xs[2] * x^2 + ....\n     <return_verb> <derivative_word> of this polynomial in the same form.\n    >>> <fn>([3, 1, 2, 4, 5])\n    [1, 4, 12, 20]\n    >>> <fn>([1, 2, 3])\n    [2, 6]\n    \"\"\"\n",
+  "templated_solution": "    return [(i * x) for i, x in enumerate(<arg1>)][1:]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["derivative", "poly_derivative", "differentiate_polynomial"]},
+    {"name": "arg1", "kind": "identifier", "values": ["xs", "coeffs", "coefficients"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Produce"]},
+    {"name": "coeff_word", "kind": "lexical", "values": ["coefficients", "term coefficients", "the polynomial's coefficients"]},
+    {"name": "derivative_word", "kind": "lexical", "values": ["derivative", "first derivative", "differentiated form"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/157",
+  "entry_point": "right_angle_triangle",
+  "notes": "Pythagoras check on three sides.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>, <arg3>):\n    '''\n    Given the lengths of the three sides of a triangle. <return_verb> True if the three\n    sides form a <right_phrase> triangle, False otherwise.\n    A right-angled triangle is a triangle in which one angle is right angle or \n    90 degree.\n    Example:\n    <fn>(3, 4, 5) == True\n    <fn>(1, 2, 3) == False\n    '''\n",
+  "templated_solution": "    return <arg1>*<arg1> == <arg2>*<arg2> + <arg3>*<arg3> or <arg2>*<arg2> == <arg1>*<arg1> + <arg3>*<arg3> or <arg3>*<arg3> == <arg1>*<arg1> + <arg2>*<arg2>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["right_angle_triangle", "is_right_triangle", "pythagoras_check"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "x", "side_a"]},
+    {"name": "arg2", "kind": "identifier", "values": ["b", "y", "side_b"]},
+    {"name": "arg3", "kind": "identifier", "values": ["c", "z", "side_c"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Output", "Yield"]},
+    {"name": "right_phrase", "kind": "lexical", "values": ["right-angled", "right", "90-degree"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/69",
+  "entry_point": "search",
+  "notes": "Greatest integer whose frequency >= itself; else -1.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    You are given a non-empty list of positive integers. <return_verb> the <greatest_word> integer that is greater than \n    zero, and has a <frequency_word> greater than or equal to the value of the integer itself. \n    The <frequency_word> of an integer is the number of times it appears in the list.\n    If no such a value exist, return -1.\n    Examples:\n        <fn>([4, 1, 2, 2, 3, 1]) == 2\n        <fn>([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3\n        <fn>([5, 5, 4, 4, 4]) == -1\n    '''\n",
+  "templated_solution": "    frq = [0] * (max(<arg1>) + 1)\n    for i in <arg1>:\n        frq[i] += 1;\n\n    ans = -1\n    for i in range(1, len(frq)):\n        if frq[i] >= i:\n            ans = i\n    \n    return ans\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["search", "max_self_frequency", "freq_at_least_value"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "items"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Produce", "Output"]},
+    {"name": "greatest_word", "kind": "lexical", "values": ["greatest", "largest", "biggest"]},
+    {"name": "frequency_word", "kind": "lexical", "values": ["frequency", "count", "number of occurrences"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

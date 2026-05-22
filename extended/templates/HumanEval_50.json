@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/50",
+  "entry_point": "decode_shift",
+  "notes": "Decode a string encoded by the encode_shift helper. Helper kept intact since decode_shift's solution doesn't call it (it inverts manually).",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef encode_shift(s: str):\n    \"\"\"\n    returns encoded string by shifting every character by 5 in the alphabet.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) + 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])\n\n\ndef <fn>(<arg1>: str):\n    \"\"\"\n    takes as input <encoded_phrase>. <return_verb> <decoded_phrase>.\n    \"\"\"\n",
+  "templated_solution": "    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in <arg1>])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["decode_shift", "undo_shift", "reverse_caesar_five"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "encoded", "ciphertext"]},
+    {"name": "encoded_phrase", "kind": "lexical", "values": ["string encoded with encode_shift function", "a string previously encoded by encode_shift", "the output of encode_shift"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Returns", "Outputs", "Produces"]},
+    {"name": "decoded_phrase", "kind": "lexical", "values": ["decoded string", "the original string", "the pre-shift plaintext"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/31",
+  "entry_point": "is_prime",
+  "notes": "Primality test. Lexical variation on the prime descriptor and the return-verb. True/False are values, not wording, so they stay.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>):\n    \"\"\"<return_verb> true if a given <num_word> is <prime_phrase>, and false otherwise.\n    >>> <fn>(6)\n    False\n    >>> <fn>(101)\n    True\n    >>> <fn>(11)\n    True\n    >>> <fn>(13441)\n    True\n    >>> <fn>(61)\n    True\n    >>> <fn>(4)\n    False\n    >>> <fn>(1)\n    False\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> < 2:\n        return False\n    for k in range(2, <arg1> - 1):\n        if <arg1> % k == 0:\n            return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_prime", "primality_test", "prime_check"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "value", "candidate"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Output", "Yield"]},
+    {"name": "num_word", "kind": "lexical", "values": ["number", "integer", "value"]},
+    {"name": "prime_phrase", "kind": "lexical", "values": ["prime", "a prime number", "only divisible by 1 and itself"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

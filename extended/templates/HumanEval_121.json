@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/121",
+  "entry_point": "solution",
+  "notes": "Sum of odd values at even indices.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"Given a non-empty list of integers, <return_verb> the <sum_word> of all of the <odd_word> elements that are in <even_phrase>.\n    \n\n    Examples\n    <fn>([5, 8, 7, 1]) ==> 12\n    <fn>([3, 3, 3, 3, 3]) ==> 9\n    <fn>([30, 13, 24, 321]) ==>0\n    \"\"\"\n",
+  "templated_solution": "    return sum([x for idx, x in enumerate(<arg1>) if idx%2==0 and x%2==1])\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["solution", "sum_odd_at_even_positions", "odd_values_even_idx_sum"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "numbers", "items"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "compute"]},
+    {"name": "sum_word", "kind": "lexical", "values": ["sum", "total", "addition"]},
+    {"name": "odd_word", "kind": "lexical", "values": ["odd", "non-even", "not-divisible-by-two"]},
+    {"name": "even_phrase", "kind": "lexical", "values": ["even positions", "even indices", "positions 0, 2, 4, ..."]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,57 @@
+{
+  "task_id": "HumanEval/3",
+  "entry_point": "below_zero",
+  "notes": "Paper problem_4. Paper additionally varied 'True/False' to 'Yes/No', but that breaks the original HumanEval test. Wording-only variations kept here.",
+  "paper_subset": true,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[int]) -> bool:\n    \"\"\" You're given a list of deposit and withdrawal <ops_word> on a bank account that starts with\n    zero <balance_word>. Your task is to detect if at any point the balance of account fallls <comparison_phrase> zero, and\n    at that point function should return True. Otherwise it should return False.\n    >>> <fn>([1, 2, 3])\n    False\n    >>> <fn>([1, 2, -4, 5])\n    True\n    \"\"\"\n",
+  "templated_solution": "    balance = 0\n\n    for op in <arg1>:\n        balance += op\n        if balance < 0:\n            return True\n\n    return False\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "below_zero"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "operations"
+      ]
+    },
+    {
+      "name": "ops_word",
+      "kind": "lexical",
+      "values": [
+        "operations",
+        "transactions",
+        "entries",
+        "balance changes"
+      ]
+    },
+    {
+      "name": "balance_word",
+      "kind": "lexical",
+      "values": [
+        "balance",
+        "account total",
+        "running total",
+        "current sum"
+      ]
+    },
+    {
+      "name": "comparison_phrase",
+      "kind": "lexical",
+      "values": [
+        "below",
+        "under",
+        "less than"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

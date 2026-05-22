@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/135",
+  "entry_point": "can_arrange",
+  "notes": "Largest index where arr[i] < arr[i-1]; else -1.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<create_verb> a function which returns the <largest_word> index of an element which\n    is not greater than or equal to the element immediately preceding it. If\n    no such element exists then return -1. The given array will not contain\n    duplicate values.\n\n    Examples:\n    <fn>([1,2,4,3,5]) = 3\n    <fn>([1,2,3]) = -1\n    \"\"\"\n",
+  "templated_solution": "    ind=-1\n    i=1\n    while i<len(<arg1>):\n      if <arg1>[i]<<arg1>[i-1]:\n        ind=i\n      i+=1\n    return ind\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["can_arrange", "last_out_of_order_index", "rightmost_decrease_index"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]},
+    {"name": "largest_word", "kind": "lexical", "values": ["largest", "biggest", "highest"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

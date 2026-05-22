@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/102",
+  "entry_point": "choose_num",
+  "notes": "Biggest even in [x, y]; -1 if none.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"This function takes two positive numbers x and y and returns the\n    <biggest_word> <even_word> integer number that is in the range [x, y] inclusive. If \n    there's no such number, then the function should return -1.\n\n    For example:\n    <fn>(12, 15) = 14\n    <fn>(13, 12) = -1\n    \"\"\"\n",
+  "templated_solution": "    if <arg1> > <arg2>:\n        return -1\n    if <arg2> % 2 == 0:\n        return <arg2>\n    if <arg1> == <arg2>:\n        return -1\n    return <arg2> - 1\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["choose_num", "biggest_even_in_range", "max_even_between"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "lo", "start"]},
+    {"name": "arg2", "kind": "identifier", "values": ["y", "hi", "end"]},
+    {"name": "biggest_word", "kind": "lexical", "values": ["biggest", "largest", "greatest"]},
+    {"name": "even_word", "kind": "lexical", "values": ["even", "evenly divisible", "divisible-by-two"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

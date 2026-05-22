@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/92",
+  "entry_point": "any_int",
+  "notes": "True if all three are ints AND one equals sum of other two.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>, <arg3>):\n    '''\n    <create_verb> a function that takes 3 numbers.\n    Returns true if one of the numbers is equal to the sum of the other two, and all numbers are integers.\n    Returns false in any other cases.\n    \n    Examples\n    <fn>(5, 2, 7) ➞ True\n    \n    <fn>(3, 2, 2) ➞ False\n\n    <fn>(3, -2, 1) ➞ True\n    \n    <fn>(3.6, -2.2, 2) ➞ False\n  \n\n    \n    '''\n",
+  "templated_solution": "    \n    if isinstance(<arg1>,int) and isinstance(<arg2>,int) and isinstance(<arg3>,int):\n        if (<arg1>+<arg2>==<arg3>) or (<arg1>+<arg3>==<arg2>) or (<arg2>+<arg3>==<arg1>):\n            return True\n        return False\n    return False\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["any_int", "one_is_sum_of_others", "any_pair_sums_to_third"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "a", "first"]},
+    {"name": "arg2", "kind": "identifier", "values": ["y", "b", "second"]},
+    {"name": "arg3", "kind": "identifier", "values": ["z", "c", "third"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

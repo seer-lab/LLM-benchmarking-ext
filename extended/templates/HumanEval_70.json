@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/70",
+  "entry_point": "strange_sort_list",
+  "notes": "Alternate min, max, min, max, ... from the remaining elements.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    Given list of integers, return list in <strange_word> order.\n    <strange_word> sorting, is when you start with the <min_word>,\n    then <max_word> of the remaining integers, then <min_word> and so on.\n\n    Examples:\n    <fn>([1, 2, 3, 4]) == [1, 4, 2, 3]\n    <fn>([5, 5, 5, 5]) == [5, 5, 5, 5]\n    <fn>([]) == []\n    '''\n",
+  "templated_solution": "    res, switch = [], True\n    while <arg1>:\n        res.append(min(<arg1>) if switch else max(<arg1>))\n        <arg1>.remove(res[-1])\n        switch = not switch\n    return res\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["strange_sort_list", "alternating_min_max_sort", "zigzag_sort"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "items", "numbers"]},
+    {"name": "strange_word", "kind": "lexical", "values": ["strange", "alternating", "zigzag"]},
+    {"name": "min_word", "kind": "lexical", "values": ["minimum value", "smallest remaining", "least element"]},
+    {"name": "max_word", "kind": "lexical", "values": ["maximum", "largest remaining", "greatest element"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/88",
+  "entry_point": "sort_array",
+  "notes": "Sort asc/desc based on parity of (first+last).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given an array of non-negative integers, <return_verb> a copy of the given array after sorting,\n    you will sort the given array in <asc_phrase> if the sum( first index value, last index value) is odd,\n    or sort it in <desc_phrase> if the sum( first index value, last index value) is even.\n\n    Note:\n    * don't change the given array.\n\n    Examples:\n    * <fn>([]) => []\n    * <fn>([5]) => [5]\n    * <fn>([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]\n    * <fn>([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]\n    \"\"\"\n",
+  "templated_solution": "    return [] if len(<arg1>) == 0 else sorted(<arg1>, reverse= (<arg1>[0]+<arg1>[-1]) % 2 == 0) \n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sort_array", "parity_sort", "sort_by_endpoint_parity"]},
+    {"name": "arg1", "kind": "identifier", "values": ["array", "lst", "items"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "give back"]},
+    {"name": "asc_phrase", "kind": "lexical", "values": ["ascending order", "increasing order", "smallest-to-largest order"]},
+    {"name": "desc_phrase", "kind": "lexical", "values": ["descending order", "decreasing order", "largest-to-smallest order"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

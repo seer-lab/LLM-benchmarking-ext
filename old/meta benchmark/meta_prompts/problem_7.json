@@ -1,0 +1,56 @@
+problem_7_versions = {
+    "problem": "Problem 7",
+    "meta_prompt": "Given an input list of <X>, filter the list to include only those that contain the specified <Y>.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given an input list of strings, filter the list to include only those that contain the specified substring.",
+            "assertions": [
+                {"input": {"strings": [], "substring": "a"}, "output": []},
+                {"input": {"strings": ["abc", "bacd", "cde", "array"], "substring": "a"}, "output": ["abc", "bacd", "array"]},
+                {"input": {"strings": ["hello", "world", "hell"], "substring": "hell"}, "output": ["hello", "hell"]},
+                {"input": {"strings": ["test", "text", "tent"], "substring": "te"}, "output": ["test", "text", "tent"]}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given an input list of words, filter the list to include only those that contain the specified sequence.",
+            "assertions": [
+                {"input": {"strings": ["apple", "banana", "cherry", "apricot"], "substring": "ap"}, "output": ["apple", "apricot"]},
+                {"input": {"strings": ["joy", "enjoy", "toy"], "substring": "oy"}, "output": ["joy", "enjoy", "toy"]},
+                {"input": {"strings": ["sunny", "rainy", "snowy"], "substring": "nny"}, "output": ["sunny"]},
+                {"input": {"strings": ["abc", "abcd", "abcde"], "substring": "bcd"}, "output": ["abcd", "abcde"]}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given an input list of text elements, filter the list to include only those that contain the specified pattern.",
+            "assertions": [
+                {"input": {"strings": ["pattern", "repeat", "petite", "paint"], "substring": "pat"}, "output": ["pattern"]},
+                {"input": {"strings": ["smile", "mile", "tile"], "substring": "ile"}, "output": ["smile", "mile", "tile"]},
+                {"input": {"strings": ["clock", "rock", "sock"], "substring": "ock"}, "output": ["clock", "rock", "sock"]},
+                {"input": {"strings": ["heat", "neat", "meat"], "substring": "eat"}, "output": ["heat", "neat", "meat"]}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given an input list of phrases, filter the list to include only those that contain the specified text fragment.",
+            "assertions": [
+                {"input": {"strings": ["go home", "stay home", "no way home"], "substring": "home"}, "output": ["go home", "stay home", "no way home"]},
+                {"input": {"strings": ["big apple", "apple pie", "pineapple"], "substring": "apple"}, "output": ["big apple", "apple pie", "pineapple"]},
+                {"input": {"strings": ["fly high", "so high", "aim high"], "substring": "high"}, "output": ["fly high", "so high", "aim high"]},
+                {"input": {"strings": ["walk", "walk away", "run"], "substring": "walk"}, "output": ["walk", "walk away"]}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given an input list of words, filter the list to include only those that contain the specified substring.",
+            "assertions": [
+                {"input": {"strings": ["star", "start", "stare", "stash"], "substring": "sta"}, "output": ["star", "start", "stare", "stash"]},
+                {"input": {"strings": ["light", "flight", "tight"], "substring": "ight"}, "output": ["light", "flight", "tight"]},
+                {"input": {"strings": ["car", "cart", "scar", "carbon"], "substring": "car"}, "output": ["car", "cart", "scar", "carbon"]},
+                {"input": {"strings": ["red", "bread", "read"], "substring": "red"}, "output": ["red"]}
+            ]
+        }
+    ]
+}

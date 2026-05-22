@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/145",
+  "entry_point": "order_by_points",
+  "notes": "Stable sort by signed digit sum.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    <write_verb> a function which sorts the given list of integers\n    in <ascending_phrase> according to the <sum_phrase> of their digits.\n    Note: if there are several items with similar sum of their digits,\n    order them based on their index in original list.\n\n    For example:\n    >>> <fn>([1, 11, -1, -11, -12]) == [-1, -11, 1, -12, 11]\n    >>> <fn>([]) == []\n    \"\"\"\n",
+  "templated_solution": "    def digits_sum(n):\n        neg = 1\n        if n < 0: n, neg = -1 * n, -1 \n        n = [int(i) for i in str(n)]\n        n[0] = n[0] * neg\n        return sum(n)\n    return sorted(<arg1>, key=digits_sum)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["order_by_points", "sort_by_signed_digit_sum", "stable_sort_by_digit_sum"]},
+    {"name": "arg1", "kind": "identifier", "values": ["nums", "lst", "values"]},
+    {"name": "write_verb", "kind": "lexical", "values": ["Write", "Implement", "Define"]},
+    {"name": "ascending_phrase", "kind": "lexical", "values": ["ascending order", "non-decreasing order", "increasing order"]},
+    {"name": "sum_phrase", "kind": "lexical", "values": ["sum", "signed sum", "total"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

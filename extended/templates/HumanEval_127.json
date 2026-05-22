@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/127",
+  "entry_point": "intersection",
+  "notes": "Is the length of the interval intersection prime?",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"You are given two <interval_word>,\n    where each interval is a pair of integers. For example, interval = (start, end) = (1, 2).\n    The given <interval_word> are closed which means that the interval (start, end)\n    includes both start and end.\n    For each given interval, it is assumed that its start is less or equal its end.\n    Your task is to <determine_verb> whether the length of intersection of these two \n    <interval_word> is a prime number.\n    Example, the intersection of the <interval_word> (1, 3), (2, 4) is (2, 3)\n    which its length is 1, which not a prime number.\n    If the length of the intersection is a prime number, return \"YES\",\n    otherwise, return \"NO\".\n    If the two <interval_word> don't intersect, return \"NO\".\n\n\n    [input/output] samples:\n    <fn>((1, 2), (2, 3)) ==> \"NO\"\n    <fn>((-1, 1), (0, 4)) ==> \"NO\"\n    <fn>((-3, -1), (-5, 5)) ==> \"YES\"\n    \"\"\"\n",
+  "templated_solution": "    def is_prime(num):\n        if num == 1 or num == 0:\n            return False\n        if num == 2:\n            return True\n        for i in range(2, num):\n            if num%i == 0:\n                return False\n        return True\n\n    l = max(<arg1>[0], <arg2>[0])\n    r = min(<arg1>[1], <arg2>[1])\n    length = r - l\n    if length > 0 and is_prime(length):\n        return \"YES\"\n    return \"NO\"\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["intersection", "interval_overlap_length_prime", "prime_overlap_test"]},
+    {"name": "arg1", "kind": "identifier", "values": ["interval1", "a", "first"]},
+    {"name": "arg2", "kind": "identifier", "values": ["interval2", "b", "second"]},
+    {"name": "interval_word", "kind": "lexical", "values": ["intervals", "ranges", "closed segments"]},
+    {"name": "determine_verb", "kind": "lexical", "values": ["determine", "decide", "find out"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

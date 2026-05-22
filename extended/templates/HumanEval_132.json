@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/132",
+  "entry_point": "is_nested",
+  "notes": "True iff some pair of brackets is nested within another.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    <create_verb> a function that takes a string as input which contains only square brackets.\n    The function should return True if and only if there is a valid subsequence of brackets \n    where at least one bracket in the subsequence is <nested_word>.\n\n    <fn>('[[]]') ➞ True\n    <fn>('[]]]]]]][[[[[]') ➞ False\n    <fn>('[][]') ➞ False\n    <fn>('[]') ➞ False\n    <fn>('[[][]]') ➞ True\n    <fn>('[[]][[') ➞ True\n    '''\n",
+  "templated_solution": "    opening_bracket_index = []\n    closing_bracket_index = []\n    for i in range(len(<arg1>)):\n        if <arg1>[i] == '[':\n            opening_bracket_index.append(i)\n        else:\n            closing_bracket_index.append(i)\n    closing_bracket_index.reverse()\n    cnt = 0\n    i = 0\n    l = len(closing_bracket_index)\n    for idx in opening_bracket_index:\n        if i < l and idx < closing_bracket_index[i]:\n            cnt += 1\n            i += 1\n    return cnt >= 2\n\n    \n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["is_nested", "has_nested_brackets", "any_nesting"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "brackets", "s"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]},
+    {"name": "nested_word", "kind": "lexical", "values": ["nested", "inside another", "embedded"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

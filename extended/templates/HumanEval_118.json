@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/118",
+  "entry_point": "get_closest_vowel",
+  "notes": "Rightmost vowel sandwiched between two consonants (not at word edge).",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"You are given a word. Your task is to <find_verb> the <closest_word> vowel that stands between \n    two consonants from the right side of the word (case sensitive).\n    \n    Vowels in the beginning and ending doesn't count. Return empty string if you didn't\n    <find_verb> any vowel met the above condition. \n\n    You may assume that the given string contains English letter only.\n\n    Example:\n    <fn>(\"yogurt\") ==> \"u\"\n    <fn>(\"FULL\") ==> \"U\"\n    <fn>(\"quick\") ==> \"\"\n    <fn>(\"ab\") ==> \"\"\n    \"\"\"\n",
+  "templated_solution": "    if len(<arg1>) < 3:\n        return \"\"\n\n    vowels = {\"a\", \"e\", \"i\", \"o\", \"u\", \"A\", \"E\", 'O', 'U', 'I'}\n    for i in range(len(<arg1>)-2, 0, -1):\n        if <arg1>[i] in vowels:\n            if (<arg1>[i+1] not in vowels) and (<arg1>[i-1] not in vowels):\n                return <arg1>[i]\n    return \"\"\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["get_closest_vowel", "rightmost_sandwiched_vowel", "rightward_consonant_bounded_vowel"]},
+    {"name": "arg1", "kind": "identifier", "values": ["word", "s", "text"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "locate", "identify"]},
+    {"name": "closest_word", "kind": "lexical", "values": ["closest", "nearest", "rightmost-applicable"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

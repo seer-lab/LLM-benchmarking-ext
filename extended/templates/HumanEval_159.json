@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/159",
+  "entry_point": "eat",
+  "notes": "Rabbit eats min(need, remaining); returns [eaten, leftover].",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>, <arg3>):\n    \"\"\"\n    You're a hungry <animal_word>, and you already have eaten a certain number of <food_word>,\n    but now you need to eat more <food_word> to complete the day's meals.\n    you should return an array of [ total number of eaten <food_word> after your meals,\n                                    the number of <food_word> left after your meals ]\n    if there are not enough remaining <food_word>, you will eat all remaining <food_word>, but will still be hungry.\n    \n    Example:\n    * <fn>(5, 6, 10) -> [11, 4]\n    * <fn>(4, 8, 9) -> [12, 1]\n    * <fn>(1, 10, 10) -> [11, 0]\n    * <fn>(2, 11, 5) -> [7, 0]\n    \n    Variables:\n    @number : integer\n        the number of <food_word> that you have eaten.\n    @need : integer\n        the number of <food_word> that you need to eat.\n    @remaining : integer\n        the number of remaining <food_word> thet exist in stock\n    \n    Constrain:\n    * 0 <= number <= 1000\n    * 0 <= need <= 1000\n    * 0 <= remaining <= 1000\n\n    Have fun :)\n    \"\"\"\n",
+  "templated_solution": "    if(<arg2> <= <arg3>):\n        return [ <arg1> + <arg2> , <arg3>-<arg2> ]\n    else:\n        return [ <arg1> + <arg3> , 0]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["eat", "rabbit_meal_plan", "eaten_and_leftover"]},
+    {"name": "arg1", "kind": "identifier", "values": ["number", "eaten", "consumed"]},
+    {"name": "arg2", "kind": "identifier", "values": ["need", "required", "appetite"]},
+    {"name": "arg3", "kind": "identifier", "values": ["remaining", "stock", "available"]},
+    {"name": "animal_word", "kind": "lexical", "values": ["rabbit", "bunny", "hare"]},
+    {"name": "food_word", "kind": "lexical", "values": ["carrots", "carrot pieces", "carrot units"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

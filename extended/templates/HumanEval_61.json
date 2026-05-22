@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/61",
+  "entry_point": "correct_bracketing",
+  "notes": "Same function name as HE/56 but operates on '()' not '<>'. Treated as a distinct problem.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: str):\n    \"\"\" <arg1> is a string of \"(\" and \")\".\n    <return_verb> True if every <open_phrase> has a corresponding <close_phrase>.\n\n    >>> <fn>(\"(\")\n    False\n    >>> <fn>(\"()\")\n    True\n    >>> <fn>(\"(()())\")\n    True\n    >>> <fn>(\")(()\")\n    False\n    \"\"\"\n",
+  "templated_solution": "    depth = 0\n    for b in <arg1>:\n        if b == \"(\":\n            depth += 1\n        else:\n            depth -= 1\n        if depth < 0:\n            return False\n    return depth == 0\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["correct_bracketing", "parens_balanced", "matched_parens"]},
+    {"name": "arg1", "kind": "identifier", "values": ["brackets", "parens", "s"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "yield", "give"]},
+    {"name": "open_phrase", "kind": "lexical", "values": ["opening bracket", "open parenthesis", "'(' character"]},
+    {"name": "close_phrase", "kind": "lexical", "values": ["closing bracket", "close parenthesis", "')' character"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

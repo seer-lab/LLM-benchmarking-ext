@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/49",
+  "entry_point": "modp",
+  "notes": "Compute 2^n mod p. Short docstring with a numerics caveat.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int, <arg2>: int):\n    \"\"\"<return_verb> <exp_phrase> modulo p (be aware of numerics).\n    >>> <fn>(3, 5)\n    3\n    >>> <fn>(1101, 101)\n    2\n    >>> <fn>(0, 101)\n    1\n    >>> <fn>(3, 11)\n    8\n    >>> <fn>(100, 101)\n    1\n    \"\"\"\n",
+  "templated_solution": "    ret = 1\n    for i in range(<arg1>):\n        ret = (2 * ret) % <arg2>\n    return ret\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["modp", "two_pow_mod", "pow_two_mod"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "exp", "exponent"]},
+    {"name": "arg2", "kind": "identifier", "values": ["p", "modulus", "m"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Give"]},
+    {"name": "exp_phrase", "kind": "lexical", "values": ["2^n", "two to the power of n", "the n-th power of 2"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

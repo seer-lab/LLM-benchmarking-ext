@@ -1,0 +1,56 @@
+problem_9_versions = {
+    "problem": "Problem 9",
+    "meta_prompt": "For a given list of <X>, generate a list of <Y> found until the current point in the sequence.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "For a given list of integers, generate a list of rolling maximums found until the current point in the sequence.",
+            "assertions": [
+                {"input": {"numbers": []}, "output": []},
+                {"input": {"numbers": [1, 2, 3, 2, 3, 4, 2]}, "output": [1, 2, 3, 3, 3, 4, 4]},
+                {"input": {"numbers": [4, 3, 2, 1]}, "output": [4, 4, 4, 4]},
+                {"input": {"numbers": [3, 2, 3, 100, 3]}, "output": [3, 3, 3, 100, 100]}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "For a given list of floats, generate a list of cumulative maximums found until the current point in the sequence.",
+            "assertions": [
+                {"input": {"numbers": [1.0, 1.5, 0.5, 2.5, 2.0]}, "output": [1.0, 1.5, 1.5, 2.5, 2.5]},
+                {"input": {"numbers": [7.5, 7.2, 7.9, 7.1]}, "output": [7.5, 7.5, 7.9, 7.9]},
+                {"input": {"numbers": [-1.0, 0.0, -2.0, 3.0]}, "output": [-1.0, 0.0, 0.0, 3.0]},
+                {"input": {"numbers": [3.3, 3.1, 3.5]}, "output": [3.3, 3.3, 3.5]}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "For a given list of doubles, generate a list of progressive highest values found until the current point in the sequence.",
+            "assertions": [
+                {"input": {"numbers": [2.0, 3.1, 2.5, 4.5]}, "output": [2.0, 3.1, 3.1, 4.5]},
+                {"input": {"numbers": [8.8, 8.9, 7.7]}, "output": [8.8, 8.9, 8.9]},
+                {"input": {"numbers": [1.1, 0.9, 1.2]}, "output": [1.1, 1.1, 1.2]},
+                {"input": {"numbers": [5.5, 5.0, 5.6]}, "output": [5.5, 5.5, 5.6]}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "For a given list of values, generate a list of cumulative minima found until the current point in the sequence.",
+            "assertions": [
+                {"input": {"numbers": [10, 15, 5, 20]}, "output": [10, 10, 5, 5]},
+                {"input": {"numbers": [7, 6, 8, 5]}, "output": [7, 6, 6, 5]},
+                {"input": {"numbers": [3, 4, 2, 5]}, "output": [3, 3, 2, 2]},
+                {"input": {"numbers": [5, 5, 5]}, "output": [5, 5, 5]}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "For a given list of numbers, generate a list of rolling minimums found until the current point in the sequence.",
+            "assertions": [
+                {"input": {"numbers": [3, 3, 2, 2, 4]}, "output": [3, 3, 2, 2, 2]},
+                {"input": {"numbers": [1, 2, 3]}, "output": [1, 1, 1]},
+                {"input": {"numbers": [8, 7, 9, 6]}, "output": [8, 7, 7, 6]},
+                {"input": {"numbers": [2, 1, 2, 3]}, "output": [2, 1, 1, 1]}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+problem_6_versions = {
+    "problem": "Problem 6",
+    "meta_prompt": "Given a list of <X>, insert a <Y> between every two consecutive elements of the input list.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a list of numbers, insert a delimiter between every two consecutive elements of the input list.",
+            "assertions": [
+                {"input": {"numbers": [], "delimeter": 4}, "output": []},
+                {"input": {"numbers": [1, 2, 3], "delimeter": 4}, "output": [1, 4, 2, 4, 3]},
+                {"input": {"numbers": [5, 6, 3, 2], "delimeter": 8}, "output": [5, 8, 6, 8, 3, 8, 2]},
+                {"input": {"numbers": [2, 2, 2], "delimeter": 2}, "output": [2, 2, 2, 2, 2]}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a list of integers, insert a separator between every two consecutive elements of the input list.",
+            "assertions": [
+                {"input": {"numbers": [10, 20, 30], "delimeter": 5}, "output": [10, 5, 20, 5, 30]},
+                {"input": {"numbers": [1, 3, 5], "delimeter": 0}, "output": [1, 0, 3, 0, 5]},
+                {"input": {"numbers": [9], "delimeter": 7}, "output": [9]},
+                {"input": {"numbers": [8, 8, 8, 8], "delimeter": 3}, "output": [8, 3, 8, 3, 8, 3, 8]}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a list of values, insert an inserted value between every two consecutive elements of the input list.",
+            "assertions": [
+                {"input": {"numbers": [1, 2, 3, 4], "delimeter": -1}, "output": [1, -1, 2, -1, 3, -1, 4]},
+                {"input": {"numbers": [100, 200], "delimeter": 50}, "output": [100, 50, 200]},
+                {"input": {"numbers": [10], "delimeter": 5}, "output": [10]},
+                {"input": {"numbers": [3, 3, 3], "delimeter": 3}, "output": [3, 3, 3, 3, 3]}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a list of elements, insert a marker between every two consecutive elements of the input list.",
+            "assertions": [
+                {"input": {"numbers": [9, 8, 7], "delimeter": 6}, "output": [9, 6, 8, 6, 7]},
+                {"input": {"numbers": [4, 2], "delimeter": 1}, "output": [4, 1, 2]},
+                {"input": {"numbers": [7, 7, 7, 7], "delimeter": 0}, "output": [7, 0, 7, 0, 7, 0, 7]},
+                {"input": {"numbers": [2, 5, 9], "delimeter": 3}, "output": [2, 3, 5, 3, 9]}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a list of integers, insert a delimiter between every two consecutive elements of the input list.",
+            "assertions": [
+                {"input": {"numbers": [1, 4, 7], "delimeter": 0}, "output": [1, 0, 4, 0, 7]},
+                {"input": {"numbers": [2, 3, 5], "delimeter": 1}, "output": [2, 1, 3, 1, 5]},
+                {"input": {"numbers": [6, 9], "delimeter": 8}, "output": [6, 8, 9]},
+                {"input": {"numbers": [2], "delimeter": 9}, "output": [2]}
+            ]
+        }
+    ]
+}

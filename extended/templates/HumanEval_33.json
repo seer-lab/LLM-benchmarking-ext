@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/33",
+  "entry_point": "sort_third",
+  "notes": "Sort only the elements at indices divisible by 3 (positions 0, 3, 6, ...); others stay put. Lexical variation on the 'divisible by three' phrasing.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list):\n    \"\"\"This function takes a list l and returns a list l' such that\n    l' is identical to l in the indicies that are not <divisible_phrase>, while its values at the indicies that are <divisible_phrase> are equal\n    to the values of the corresponding indicies of l, but sorted.\n    >>> <fn>([1, 2, 3])\n    [1, 2, 3]\n    >>> <fn>([5, 6, 3, 4, 8, 9, 2])\n    [2, 6, 3, 4, 8, 9, 5]\n    \"\"\"\n",
+  "templated_solution": "    <arg1> = list(<arg1>)\n    <arg1>[::3] = sorted(<arg1>[::3])\n    return <arg1>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["sort_third", "sort_thirds", "sort_every_third_position"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "lst", "values"]},
+    {"name": "divisible_phrase", "kind": "lexical", "values": ["divisible by three", "multiples of three", "positions where the index is a multiple of 3"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

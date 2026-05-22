@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/13",
+  "entry_point": "greatest_common_divisor",
+  "notes": "Standard Euclidean GCD. Short docstring so the lexical surface is small: GCD phrase + 'two integers' wording + 'Return' verb.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int, <arg2>: int) -> int:\n    \"\"\" <return_verb> a <gcd_phrase> of two <int_word> a and b\n    >>> <fn>(3, 5)\n    1\n    >>> <fn>(25, 15)\n    5\n    \"\"\"\n",
+  "templated_solution": "    while <arg2>:\n        <arg1>, <arg2> = <arg2>, <arg1> % <arg2>\n    return <arg1>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["greatest_common_divisor", "gcd", "common_factor"]},
+    {"name": "arg1", "kind": "identifier", "values": ["a", "x", "m"]},
+    {"name": "arg2", "kind": "identifier", "values": ["b", "y", "n"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Compute", "Find"]},
+    {"name": "gcd_phrase", "kind": "lexical", "values": ["greatest common divisor", "largest common factor", "highest common factor"]},
+    {"name": "int_word", "kind": "lexical", "values": ["integers", "whole numbers", "integer values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

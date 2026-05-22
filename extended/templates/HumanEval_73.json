@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/73",
+  "entry_point": "smallest_change",
+  "notes": "Min element changes to make the array palindromic.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given an array arr of integers, <find_verb> the <min_word> number of elements that\n    need to be changed to make the array <palindromic_word>. A <palindromic_word> array is an array that\n    is read the same backwards and forwards. In one change, you can change one element to any other element.\n\n    For example:\n    <fn>([1,2,3,5,4,7,9,6]) == 4\n    <fn>([1, 2, 3, 4, 3, 2, 2]) == 1\n    <fn>([1, 2, 3, 2, 1]) == 0\n    \"\"\"\n",
+  "templated_solution": "    ans = 0\n    for i in range(len(<arg1>) // 2):\n        if <arg1>[i] != <arg1>[len(<arg1>) - i - 1]:\n            ans += 1\n    return ans\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["smallest_change", "min_changes_to_palindrome", "palindrome_distance"]},
+    {"name": "arg1", "kind": "identifier", "values": ["arr", "lst", "values"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["find", "compute", "determine"]},
+    {"name": "min_word", "kind": "lexical", "values": ["minimum", "smallest", "fewest"]},
+    {"name": "palindromic_word", "kind": "lexical", "values": ["palindromic", "a palindrome", "symmetric"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

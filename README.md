@@ -1,69 +1,15 @@
+# HumanEval_T
 
-# Combinatorial Benchmark HumanEval_T
+Two versions of the work live here:
 
-This repository contains the implementation and evaluation framework for the paper titled "Addressing Data Leakage in HumanEval Using
-Combinatorial Test Design"
+- **`old/`** — workshop paper artifacts ([arXiv 2412.01526](https://arxiv.org/abs/2412.01526)): the original 10-problem subset, meta-prompts, and v1 evaluator.
+- **`extended/`** — **current work.** Hand-crafted templates + PICT-driven pairwise expansion across all 164 HumanEval problems, plus a Streamlit authoring/inspection UI.
 
-## Repository Structure
+## Run
 
-```
-combinatorial-benchmark/
-├── humanEval benchmark/           # HumanEval-style programming challenges
-│   ├── prompts/                  # Individual problem definitions
-│   │   └── problem[1-10].json    # Problem specifications and test cases
-│   ├── generated_outputs_problem[1-10].txt  # Model outputs for each problem
-│   ├── huggingfaceBenchmark.ipynb  # Jupyter notebook for HuggingFace model evaluation
-│   └── human.py                  # Human baseline implementation
-├── meta benchmark/               # Meta-learning benchmark tasks
-│   ├── meta_prompts/            # Meta-learning problem definitions
-│   │   └── problem_[1-10].json  # Meta-problem specifications
-│   └── generated_outputs_problem[1-10].txt  # Model outputs for meta-problems
-├── main.py                      # Main evaluation script
-└── README.md                    # This file
+```powershell
+pip install -r extended/requirements.txt
+streamlit run app.py
 ```
 
-## Components
-
-### HumanEval Benchmark
-- Contains 10 programming problems from the HumanEval benchmark
-- Each problem in `prompts/` includes:
-  - Problem description
-  - Input/output specifications
-  - Test cases
-  - Evaluation criteria
-- Generated outputs are stored in separate files for analysis
-- Includes a Jupyter notebook for evaluating HuggingFace models
-- `human.py` provides code to evaluate the humanEval dataset samples
-
-### Meta Benchmark
-- Features 10 template problems to assess LLMs' ability to generalize across problem patterns
-- Problems in `meta_prompts/` include:
-  - template descriptions
-  - Instance generation rules
-  - Evaluation metrics
-
-
-### Main Script
-The `main.py` script provides functionality for:
-- Loading and processing problem definitions
-- Interfacing with different LLM providers (OpenAI, Anthropic, Ollama)
-- Running evaluations and collecting results
-- Testing generated solutions against provided test cases
-
-## Usage
-
-1. Install dependencies:
-```bash
-pip install openai anthropic requests
-```
-
-2. Set up API keys in environment variables:
-```bash
-export OPENAI_API_KEY="your_key_here"
-export ANTHROPIC_API_KEY="your_key_here"
-```
-
-3. Run evaluations:
-```bash
-python main.py
-```
+For full setup, CLI, and layout details, see [`extended/README.md`](extended/README.md).

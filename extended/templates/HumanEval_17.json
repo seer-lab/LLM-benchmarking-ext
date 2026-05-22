@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/17",
+  "entry_point": "parse_music",
+  "notes": "Parses an ASCII music-notation string into note durations. Lexical variation on the music vocabulary itself (notes/notation/melody) and on 'beats'. The legend mapping ('o' -> 4, 'o|' -> 2, '.|' -> 1) stays intact because the function depends on those literal tokens.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: str) -> List[int]:\n    \"\"\" Input to this function is a string representing <notation_word> in a special ASCII format.\n    Your task is to parse this string and return list of integers corresponding to how many <duration_word> does each\n    not last.\n\n    Here is a legend:\n    'o' - whole note, lasts four <duration_word>\n    'o|' - half note, lasts two <duration_word>\n    '.|' - quater note, lasts one beat\n\n    >>> <fn>('o o| .| o| o| .| .| .| .| o o')\n    [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]\n    \"\"\"\n",
+  "templated_solution": "    note_map = {'o': 4, 'o|': 2, '.|': 1}\n    return [note_map[x] for x in <arg1>.split(' ') if x]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["parse_music", "note_durations", "music_to_beats"]},
+    {"name": "arg1", "kind": "identifier", "values": ["music_string", "notation", "score"]},
+    {"name": "notation_word", "kind": "lexical", "values": ["musical notes", "music notation", "a melody"]},
+    {"name": "duration_word", "kind": "lexical", "values": ["beats", "time units", "ticks"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

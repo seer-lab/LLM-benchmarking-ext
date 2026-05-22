@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/89",
+  "entry_point": "encrypt",
+  "notes": "Caesar shift by 4 (2*2). Alphabet literal stays intact.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"<create_verb> a function encrypt that takes a string as an argument and\n    returns a string encrypted with the alphabet being rotated. \n    The alphabet should be rotated in a manner such that the letters \n    shift down by two multiplied to two places.\n    For example:\n    <fn>('hi') returns 'lm'\n    <fn>('asdfghjkl') returns 'ewhjklnop'\n    <fn>('gf') returns 'kj'\n    <fn>('et') returns 'ix'\n    \"\"\"\n",
+  "templated_solution": "    d = 'abcdefghijklmnopqrstuvwxyz'\n    out = ''\n    for c in <arg1>:\n        if c in d:\n            out += d[(d.index(c)+2*2) % 26]\n        else:\n            out += c\n    return out\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["encrypt", "caesar_shift_four", "rotate_alphabet_by_four"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "plaintext"]},
+    {"name": "create_verb", "kind": "lexical", "values": ["Create", "Write", "Implement"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

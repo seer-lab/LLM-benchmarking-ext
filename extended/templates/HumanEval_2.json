@@ -1,0 +1,48 @@
+{
+  "task_id": "HumanEval/2",
+  "entry_point": "truncate_number",
+  "notes": "Paper problem_3. Wording-only; the math is identical (return x - int(x)).",
+  "paper_subset": true,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: float) -> float:\n    \"\"\" Given a positive floating point <noun>, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the <result_phrase> of the number.\n    >>> <fn>(3.5)\n    0.5\n    \"\"\"\n",
+  "templated_solution": "    return <arg1> % 1.0\n",
+  "variables": [
+    {
+      "name": "fn",
+      "kind": "identifier",
+      "values": [
+        "truncate_number"
+      ]
+    },
+    {
+      "name": "arg1",
+      "kind": "identifier",
+      "values": [
+        "number"
+      ]
+    },
+    {
+      "name": "noun",
+      "kind": "lexical",
+      "values": [
+        "number",
+        "value",
+        "measurement",
+        "amount"
+      ]
+    },
+    {
+      "name": "result_phrase",
+      "kind": "lexical",
+      "values": [
+        "decimal part",
+        "fractional component",
+        "fractional remainder",
+        "decimal remainder"
+      ]
+    }
+  ],
+  "constraints": [],
+  "test_strategy": {
+    "mode": "keep_original"
+  }
+}

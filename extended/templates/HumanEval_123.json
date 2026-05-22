@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/123",
+  "entry_point": "get_odd_collatz",
+  "notes": "Sorted odd terms in the Collatz sequence starting at n.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"\n    Given a positive integer n, <return_verb> a sorted list that has the <odd_word> in collatz sequence.\n\n    The Collatz conjecture is a conjecture in mathematics that concerns a sequence defined\n    as follows: start with any positive integer n. Then each term is obtained from the \n    previous term as follows: if the previous term is even, the next term is one half of \n    the previous term. If the previous term is odd, the next term is 3 times the previous\n    term plus 1. The conjecture is that no matter what value of n, the sequence will always reach 1.\n\n    Note: \n        1. Collatz(1) is [1].\n        2. returned list sorted in increasing order.\n\n    For example:\n    <fn>(5) returns [1, 5] # The collatz sequence for 5 is [5, 16, 8, 4, 2, 1], so the odd numbers are only 1, and 5.\n    \"\"\"\n",
+  "templated_solution": "    if <arg1>%2==0:\n        odd_collatz = [] \n    else:\n        odd_collatz = [<arg1>]\n    while <arg1> > 1:\n        if <arg1> % 2 == 0:\n            <arg1> = <arg1>/2\n        else:\n            <arg1> = <arg1>*3 + 1\n            \n        if <arg1>%2 == 1:\n            odd_collatz.append(int(<arg1>))\n\n    return sorted(odd_collatz)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["get_odd_collatz", "odd_terms_in_collatz", "collatz_odd_sorted"]},
+    {"name": "arg1", "kind": "identifier", "values": ["n", "start", "seed"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["return", "produce", "output"]},
+    {"name": "odd_word", "kind": "lexical", "values": ["odd numbers", "odd terms", "odd-valued elements"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

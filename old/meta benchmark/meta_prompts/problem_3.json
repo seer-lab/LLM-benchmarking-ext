@@ -1,0 +1,56 @@
+problem_3_versions = {
+    "problem": "Problem 3",
+    "meta_prompt": "Given a positive floating-point <X>, return the <Y> of the number.",
+    "versions": [
+        {
+            "version_number": 1,
+            "problem_description": "Given a positive floating-point number, return the decimal part of the number.",
+            "assertions": [
+                {"input": 3.5, "output": 0.5},
+                {"input": 1.33, "output": 0.33},
+                {"input": 123.456, "output": 0.456},
+                {"input": 10.99, "output": 0.99}
+            ]
+        },
+        {
+            "version_number": 2,
+            "problem_description": "Given a positive floating-point value, return the fractional component of the number.",
+            "assertions": [
+                {"input": 2.718, "output": 0.718},
+                {"input": 1.333, "output": 0.333},
+                {"input": 456.789, "output": 0.789},
+                {"input": 3.14159, "output": 0.14159}
+            ]
+        },
+        {
+            "version_number": 3,
+            "problem_description": "Given a positive floating-point measurement, return the remaining fraction of the number.",
+            "assertions": [
+                {"input": 6.75, "output": 0.75},
+                {"input": 0.123, "output": 0.123},
+                {"input": 789.456, "output": 0.456},
+                {"input": 42.001, "output": 0.001}
+            ]
+        },
+        {
+            "version_number": 4,
+            "problem_description": "Given a positive floating-point input, return the fractional remainder of the number.",
+            "assertions": [
+                {"input": 8.125, "output": 0.125},
+                {"input": 5.555, "output": 0.555},
+                {"input": 0.987654, "output": 0.987654},
+                {"input": 999.001, "output": 0.001}
+            ]
+        },
+        {
+            "version_number": 5,
+            "problem_description": "Given a positive floating-point amount, return the decimal remainder of the number.",
+            "assertions": [
+                {"input": 19.99, "output": 0.99},
+                {"input": 27.1234, "output": 0.1234},
+                {"input": 1000.0001, "output": 0.0001},
+                {"input": 15.75, "output": 0.75}
+            ]
+        }
+    ]
+}

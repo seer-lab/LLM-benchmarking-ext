@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/10",
+  "entry_point": "make_palindrome",
+  "notes": "Function appends the minimal suffix to make the input a palindrome. Lexical variation focuses on the palindrome verb and the descriptor of the input string; the suffix-finding algorithm description stays intact.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef <fn>(<arg1>: str) -> str:\n    \"\"\" <find_verb> the <shortest_word> palindrome that begins with a supplied <input_word>.\n    Algorithm idea is simple:\n    - <find_verb> the longest postfix of supplied <input_word> that is a palindrome.\n    - Append to the end of the <input_word> reverse of a <input_word> prefix that comes before the palindromic suffix.\n    >>> <fn>('')\n    ''\n    >>> <fn>('cat')\n    'catac'\n    >>> <fn>('cata')\n    'catac'\n    \"\"\"\n",
+  "templated_solution": "    if not <arg1>:\n        return ''\n\n    beginning_of_suffix = 0\n\n    while not is_palindrome(<arg1>[beginning_of_suffix:]):\n        beginning_of_suffix += 1\n\n    return <arg1> + <arg1>[:beginning_of_suffix][::-1]\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["make_palindrome", "shortest_palindrome", "build_palindrome", "complete_palindrome"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "prefix"]},
+    {"name": "find_verb", "kind": "lexical", "values": ["Find", "Compute", "Construct"]},
+    {"name": "shortest_word", "kind": "lexical", "values": ["shortest", "minimum-length", "smallest"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

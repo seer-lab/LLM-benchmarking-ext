@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/160",
+  "entry_point": "do_algebra",
+  "notes": "Build expression with operators+operands, eval it.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>, <arg2>):\n    \"\"\"\n    Given two lists operator, and operand. The first list has basic algebra operations, and \n    the second list is a list of integers. Use the two given lists to <build_verb> the algebric \n    expression and return the evaluation of this expression.\n\n    The basic algebra operations:\n    Addition ( + ) \n    Subtraction ( - ) \n    Multiplication ( * ) \n    Floor division ( // ) \n    Exponentiation ( ** ) \n\n    Example:\n    operator['+', '*', '-']\n    array = [2, 3, 4, 5]\n    result = 2 + 3 * 4 - 5\n    => result = 9\n\n    Note:\n        The length of operator list is equal to the length of operand list minus one.\n        Operand is a list of of non-negative integers.\n        Operator list has at least one operator, and operand list has at least two operands.\n\n    \"\"\"\n",
+  "templated_solution": "    expression = str(<arg2>[0])\n    for oprt, oprn in zip(<arg1>, <arg2>[1:]):\n        expression+= oprt + str(oprn)\n    return eval(expression)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["do_algebra", "evaluate_algebra_expression", "interleave_and_eval"]},
+    {"name": "arg1", "kind": "identifier", "values": ["operator", "ops", "operators"]},
+    {"name": "arg2", "kind": "identifier", "values": ["operand", "operands", "values"]},
+    {"name": "build_verb", "kind": "lexical", "values": ["build", "construct", "assemble"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

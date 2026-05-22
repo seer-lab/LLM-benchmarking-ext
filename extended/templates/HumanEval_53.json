@@ -1,0 +1,17 @@
+{
+  "task_id": "HumanEval/53",
+  "entry_point": "add",
+  "notes": "Trivial two-arg add. Almost no lexical surface; identifiers carry the variation.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: int, <arg2>: int):\n    \"\"\"<add_verb> <two_phrase> x and y\n    >>> <fn>(2, 3)\n    5\n    >>> <fn>(5, 7)\n    12\n    \"\"\"\n",
+  "templated_solution": "    return <arg1> + <arg2>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["add", "sum_two", "addition", "plus"]},
+    {"name": "arg1", "kind": "identifier", "values": ["x", "a", "first"]},
+    {"name": "arg2", "kind": "identifier", "values": ["y", "b", "second"]},
+    {"name": "add_verb", "kind": "lexical", "values": ["Add", "Sum", "Compute the sum of"]},
+    {"name": "two_phrase", "kind": "lexical", "values": ["two numbers", "two integers", "two values"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

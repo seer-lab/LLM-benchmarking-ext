@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/28",
+  "entry_point": "concatenate",
+  "notes": "String join. Tiny docstring; mostly identifier variation + the verb 'Concatenate'.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: List[str]) -> str:\n    \"\"\" <concat_verb> list of <string_word> into a single <string_word>\n    >>> <fn>([])\n    ''\n    >>> <fn>(['a', 'b', 'c'])\n    'abc'\n    \"\"\"\n",
+  "templated_solution": "    return ''.join(<arg1>)\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["concatenate", "join_strings", "combine_strings"]},
+    {"name": "arg1", "kind": "identifier", "values": ["strings", "parts", "pieces"]},
+    {"name": "concat_verb", "kind": "lexical", "values": ["Concatenate", "Join", "Combine"]},
+    {"name": "string_word", "kind": "lexical", "values": ["strings", "text fragments", "string pieces"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

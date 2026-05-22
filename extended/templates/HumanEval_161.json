@@ -1,0 +1,15 @@
+{
+  "task_id": "HumanEval/161",
+  "entry_point": "solve",
+  "notes": "Swap case of letters; if no letters, reverse the whole string. Same fn name as HE/84 but distinct.",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    \"\"\"You are given a string s.\n    if s[i] is a letter, <swap_phrase>, \n    otherwise keep it as it is.\n    If the string contains no letters, reverse the string.\n    The function should return the resulted string.\n    Examples\n    <fn>(\"1234\") = \"4321\"\n    <fn>(\"ab\") = \"AB\"\n    <fn>(\"#a@C\") = \"#A@c\"\n    \"\"\"\n",
+  "templated_solution": "    flg = 0\n    idx = 0\n    new_str = list(<arg1>)\n    for i in <arg1>:\n        if i.isalpha():\n            new_str[idx] = i.swapcase()\n            flg = 1\n        idx += 1\n    <arg1> = \"\"\n    for i in new_str:\n        <arg1> += i\n    if flg == 0:\n        return <arg1>[len(<arg1>)::-1]\n    return <arg1>\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["solve", "swap_letters_or_reverse", "case_swap_else_reverse"]},
+    {"name": "arg1", "kind": "identifier", "values": ["s", "text", "input"]},
+    {"name": "swap_phrase", "kind": "lexical", "values": ["reverse its case from lower to upper or vise versa", "swap its case (upper-to-lower and vice versa)", "invert the case of the letter"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

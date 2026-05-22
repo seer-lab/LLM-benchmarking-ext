@@ -1,0 +1,16 @@
+{
+  "task_id": "HumanEval/119",
+  "entry_point": "match_parens",
+  "notes": "Can two paren strings concat in some order to form balanced string?",
+  "paper_subset": false,
+  "templated_prompt": "\ndef <fn>(<arg1>):\n    '''\n    You are given a list of two strings, both strings consist of open\n    parentheses '(' or close parentheses ')' only.\n    Your job is to check if it is possible to concatenate the two strings in\n    some order, that the resulting string will be <good_word>.\n    A string S is considered to be <good_word> if and only if all parentheses in S\n    are balanced. For example: the string '(())()' is <good_word>, while the string\n    '())' is not.\n    <return_verb> 'Yes' if there's a way to make a <good_word> string, and return 'No' otherwise.\n\n    Examples:\n    <fn>(['()(', ')']) == 'Yes'\n    <fn>([')', ')']) == 'No'\n    '''\n",
+  "templated_solution": "    def check(s):\n        val = 0\n        for i in s:\n            if i == '(':\n                val = val + 1\n            else:\n                val = val - 1\n            if val < 0:\n                return False\n        return True if val == 0 else False\n\n    S1 = <arg1>[0] + <arg1>[1]\n    S2 = <arg1>[1] + <arg1>[0]\n    return 'Yes' if check(S1) or check(S2) else 'No'\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["match_parens", "concatable_to_balanced", "either_order_balanced"]},
+    {"name": "arg1", "kind": "identifier", "values": ["lst", "pair", "strings"]},
+    {"name": "good_word", "kind": "lexical", "values": ["good", "balanced", "well-formed"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Output", "Produce"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

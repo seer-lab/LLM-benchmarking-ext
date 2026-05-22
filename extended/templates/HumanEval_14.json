@@ -1,0 +1,18 @@
+{
+  "task_id": "HumanEval/14",
+  "entry_point": "all_prefixes",
+  "notes": "Returns all cumulative prefixes from shortest to longest. Lexical variation on 'prefixes' (the key noun) and the length-ordering phrasing.",
+  "paper_subset": false,
+  "templated_prompt": "from typing import List\n\n\ndef <fn>(<arg1>: str) -> List[str]:\n    \"\"\" <return_verb> list of all <prefix_word> from <order_phrase> of the input <input_word>\n    >>> <fn>('abc')\n    ['a', 'ab', 'abc']\n    \"\"\"\n",
+  "templated_solution": "    result = []\n\n    for i in range(len(<arg1>)):\n        result.append(<arg1>[:i+1])\n    return result\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["all_prefixes", "list_prefixes", "every_prefix"]},
+    {"name": "arg1", "kind": "identifier", "values": ["string", "text", "s"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Produce", "Generate"]},
+    {"name": "prefix_word", "kind": "lexical", "values": ["prefixes", "leading substrings", "beginnings"]},
+    {"name": "order_phrase", "kind": "lexical", "values": ["shortest to longest", "smallest to biggest in length", "the one-character prefix up to the full input"]},
+    {"name": "input_word", "kind": "lexical", "values": ["string", "text", "input"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}

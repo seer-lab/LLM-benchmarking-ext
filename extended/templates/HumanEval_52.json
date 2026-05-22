@@ -1,0 +1,19 @@
+{
+  "task_id": "HumanEval/52",
+  "entry_point": "below_threshold",
+  "notes": "All-below check. Lexical variation on 'below' (strictly less than) and threshold noun.",
+  "paper_subset": false,
+  "templated_prompt": "\n\ndef <fn>(<arg1>: list, <arg2>: int):\n    \"\"\"<return_verb> True if all <num_word> in the list l are <below_phrase> <threshold_word> t.\n    >>> <fn>([1, 2, 4, 10], 100)\n    True\n    >>> <fn>([1, 20, 4, 10], 5)\n    False\n    \"\"\"\n",
+  "templated_solution": "    for e in <arg1>:\n        if e >= <arg2>:\n            return False\n    return True\n",
+  "variables": [
+    {"name": "fn", "kind": "identifier", "values": ["below_threshold", "all_under", "all_strictly_below"]},
+    {"name": "arg1", "kind": "identifier", "values": ["l", "numbers", "items"]},
+    {"name": "arg2", "kind": "identifier", "values": ["t", "threshold", "limit"]},
+    {"name": "return_verb", "kind": "lexical", "values": ["Return", "Yield", "Produce"]},
+    {"name": "num_word", "kind": "lexical", "values": ["numbers", "values", "elements"]},
+    {"name": "below_phrase", "kind": "lexical", "values": ["below", "strictly less than", "smaller than"]},
+    {"name": "threshold_word", "kind": "lexical", "values": ["threshold", "limit", "cutoff"]}
+  ],
+  "constraints": [],
+  "test_strategy": {"mode": "keep_original"}
+}
